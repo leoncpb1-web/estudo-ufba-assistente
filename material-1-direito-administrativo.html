@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>UFBA 2026 • Assistente em Administração • Direito Administrativo</title>
+<meta name="description" content="Material interativo de Direito Administrativo para o concurso UFBA 2026, Cargo 201 — Assistente em Administração.">
+<style>
+:root{
+  --bg:#f6f8fc; --card:#ffffff; --ink:#172033; --muted:#58657a; --line:#dce3ef;
+  --brand:#243b78; --brand2:#5a36a6; --ok:#176b4d; --warn:#8b5b00; --bad:#a12626;
+  --soft:#edf2ff; --soft2:#f4efff; --focus:#fff7cc; --shadow:0 10px 30px rgba(22,38,76,.09);
+  --radius:18px; --fs:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:var(--fs)/1.58 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+button,input,select{font:inherit}
+button{cursor:pointer}
+a{color:var(--brand)}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.topbar{max-width:1200px;margin:auto;padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.brand{font-weight:850;letter-spacing:-.02em;margin-right:auto}
+.controls{display:flex;gap:7px;flex-wrap:wrap}
+.ctrl{
+  border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:12px;padding:8px 10px;
+}
+.ctrl:hover,.ctrl:focus-visible{border-color:var(--brand);outline:3px solid #dfe7ff}
+.progress-wrap{height:5px;background:#e8ecf4}
+#progressBar{height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--brand2));transition:width .25s}
+.shell{max-width:1200px;margin:0 auto;padding:22px 16px 70px;display:grid;grid-template-columns:270px 1fr;gap:18px}
+aside{position:sticky;top:78px;align-self:start;max-height:calc(100vh - 95px);overflow:auto}
+.panel,.hero,.module,.roadmap,.sourcebox{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)
+}
+.panel{padding:14px}
+.panel h3{margin:0 0 10px}
+.navbtn{
+  width:100%;text-align:left;border:0;background:transparent;padding:10px;border-radius:10px;
+  color:var(--ink);margin:2px 0
+}
+.navbtn:hover,.navbtn.active{background:var(--soft);color:var(--brand);font-weight:750}
+.navbtn.done::after{content:" ✓";color:var(--ok);font-weight:900}
+.hero{padding:25px;background:linear-gradient(135deg,#fff 0%,#f0f4ff 60%,#f6efff 100%)}
+.eyebrow{font-size:.82rem;text-transform:uppercase;letter-spacing:.09em;font-weight:800;color:var(--brand)}
+h1{font-size:clamp(1.65rem,4vw,2.6rem);line-height:1.08;margin:.35rem 0 .8rem;letter-spacing:-.035em}
+h2{font-size:clamp(1.3rem,3vw,1.8rem);line-height:1.2;letter-spacing:-.02em}
+h3{line-height:1.25}
+.lead{font-size:1.06rem;color:#35435b;max-width:78ch}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.badge{padding:7px 10px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.88rem;font-weight:700}
+.tip{margin-top:15px;padding:12px 14px;border-left:5px solid var(--brand);background:#f4f7ff;border-radius:10px}
+.roadmap{padding:18px;margin-top:18px}
+.roadgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.roaditem{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}
+.roaditem strong{display:block}
+.roaditem small{color:var(--muted)}
+.roaditem.current{background:var(--soft);border-color:#aebff1}
+.module{margin-top:18px;overflow:hidden}
+.module-head{padding:18px 20px;background:linear-gradient(90deg,#f7f9ff,#fff)}
+.module-head .meta{color:var(--muted);font-size:.9rem}
+.module-body{padding:0 20px 22px}
+.mask{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:14px 0 18px
+}
+.mask span{padding:9px;border-radius:12px;border:1px solid var(--line);background:#fff;text-align:center;font-size:.82rem;font-weight:800}
+.chunk{border-top:1px solid var(--line);padding:18px 0}
+.chunk:first-child{border-top:0}
+.chunk h3{margin-top:0}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.card{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}
+.card strong{color:var(--brand)}
+.deep{background:#fbfcff;border:1px dashed #aeb9cf;border-radius:14px;padding:13px;margin:12px 0}
+.deep summary{cursor:pointer;font-weight:800}
+.trap{background:#fff8e7;border:1px solid #efd79c;border-radius:14px;padding:12px 14px;margin:12px 0}
+.trap b{color:var(--warn)}
+.activity{
+  margin-top:14px;padding:15px;border:1px solid #cad4eb;border-radius:16px;background:#fbfcff
+}
+.activity h4{margin:.1rem 0 .35rem}
+.activity p{margin:.35rem 0}
+.instructions{color:var(--muted);font-size:.9rem}
+.itempool,.dropzones{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.dragitem{
+  border:1px solid #aeb9cf;background:#fff;border-radius:10px;padding:9px 10px;min-height:42px;
+  user-select:none;touch-action:manipulation
+}
+.dragitem.selected{outline:3px solid #cdd8ff;border-color:var(--brand)}
+.dropzone{
+  flex:1 1 190px;min-height:100px;border:2px dashed #b8c2d6;border-radius:13px;padding:9px;background:#fff
+}
+.dropzone.over{border-color:var(--brand);background:var(--soft)}
+.dropzone h5{margin:0 0 8px;font-size:.93rem}
+.dropzone .dragitem{display:block;width:100%;margin:5px 0;text-align:left}
+.actrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.primary,.secondary{
+  border:0;border-radius:11px;padding:9px 13px;font-weight:800
+}
+.primary{background:var(--brand);color:#fff}
+.secondary{background:#eef1f7;color:var(--ink)}
+.feedback{margin-top:9px;font-weight:750;min-height:1.4em}
+.feedback.ok{color:var(--ok)} .feedback.bad{color:var(--bad)}
+.fillgrid{display:grid;grid-template-columns:1fr;gap:9px;margin-top:10px}
+.fillrow{display:grid;grid-template-columns:minmax(130px,1fr) minmax(100px,220px);gap:10px;align-items:center}
+.fillrow input{width:100%;border:1px solid #aeb9cf;border-radius:10px;padding:9px}
+.options{display:grid;gap:8px;margin-top:10px}
+.option{
+  text-align:left;border:1px solid #b9c4d7;background:#fff;border-radius:11px;padding:10px
+}
+.option:hover,.option:focus-visible{border-color:var(--brand);outline:3px solid #e1e7ff}
+.option.correct{background:#eaf8f1;border-color:#7fc2a5}
+.option.wrong{background:#fff0f0;border-color:#dd9898}
+.flashgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.flash{
+  min-height:115px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:12px;text-align:left
+}
+.flash .back{display:none;color:#34415a}
+.flash.flipped{background:var(--soft2)}
+.flash.flipped .front{display:none}.flash.flipped .back{display:block}
+.orderlist{display:grid;gap:7px;margin-top:10px}
+.orderitem{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:11px;background:#fff;padding:8px}
+.orderitem span{flex:1}
+.minibtn{border:1px solid var(--line);background:#f7f8fb;border-radius:8px;padding:5px 8px}
+.module-done{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;padding-top:13px;border-top:1px solid var(--line)}
+.donebtn{border:1px solid #a7c9ba;background:#eef9f4;color:var(--ok);border-radius:11px;padding:9px 12px;font-weight:850}
+.donebtn.checked{background:var(--ok);color:#fff}
+.sourcebox{padding:16px;margin-top:18px}
+.sourcebox li{margin:.4rem 0}
+.hidden{display:none!important}
+.focus-mode aside,.focus-mode .roadmap{display:none}
+.focus-mode .shell{grid-template-columns:1fr;max-width:900px}
+.large-text{--fs:18px}
+.extra-large-text{--fs:20px}
+.high-contrast{--bg:#fff;--card:#fff;--ink:#000;--muted:#222;--line:#222;--brand:#001f66;--soft:#fff;--soft2:#fff}
+.reduced-motion *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+.timer{
+  font-variant-numeric:tabular-nums;font-weight:900;padding:7px 10px;border-radius:10px;background:#101827;color:#fff;min-width:74px;text-align:center
+}
+kbd{background:#eef1f6;border:1px solid #c9d0dd;border-bottom-width:2px;border-radius:5px;padding:1px 5px}
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr}
+  aside{position:static;max-height:none}
+  .roadgrid{grid-template-columns:1fr 1fr}
+  .mask{grid-template-columns:1fr 1fr 1fr}
+}
+@media(max-width:600px){
+  .shell{padding:12px 10px 55px}
+  .hero,.module-body,.module-head{padding-left:14px;padding-right:14px}
+  .roadgrid,.cards,.flashgrid{grid-template-columns:1fr}
+  .mask{grid-template-columns:1fr 1fr}
+  .fillrow{grid-template-columns:1fr}
+  .topbar{padding:8px 10px}
+  .brand{width:100%}
+  .ctrl{padding:7px 9px}
+}
+@media print{
+  header,aside,.controls,.activity,.donebtn{display:none!important}
+  body{background:#fff}
+  .shell{display:block;padding:0}
+  .hero,.module,.roadmap,.sourcebox{box-shadow:none;border:1px solid #bbb;break-inside:avoid}
+}
+
+/* ===== V2: identificação, tempos, pausa e relatório ===== */
+.student-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;background:#eef3ff;border:1px solid #cad5f2;font-size:.86rem;font-weight:800}
+.modal-backdrop{position:fixed;inset:0;z-index:500;background:rgba(12,20,38,.72);display:grid;place-items:center;padding:16px}
+.start-card,.pause-card{width:min(620px,100%);background:#fff;border-radius:22px;padding:22px;box-shadow:0 24px 70px rgba(0,0,0,.28);border:1px solid #d8dfed}
+.start-card h2,.pause-card h2{margin:.1rem 0 .7rem}
+.start-card label{display:block;font-weight:800;margin-top:12px}
+.start-card input{width:100%;padding:12px 13px;border:1px solid #aeb9cf;border-radius:12px;margin-top:6px}
+.start-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.notice{margin:12px 0;padding:12px 14px;border-radius:13px;background:#fff7d8;border:1px solid #ebd27b}
+.notice strong{color:#765300}
+.pause-screen{position:fixed;inset:0;z-index:480;background:rgba(13,20,35,.72);display:grid;place-items:center;padding:16px}
+.trackbox{margin:0 0 16px;padding:12px 14px;border:1px solid #d6def0;border-radius:14px;background:#f8faff;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.trackbox .time{font-variant-numeric:tabular-nums;font-weight:900;color:var(--brand)}
+.trackbox .reading-meta{color:var(--muted);font-size:.88rem}
+.activity-timer{display:inline-flex;gap:7px;align-items:center;margin-top:8px;padding:5px 9px;border-radius:999px;background:#f2f4f8;border:1px solid var(--line);font-size:.82rem;font-weight:800}
+.activity.is-active{outline:3px solid #dce5ff}
+.activity.is-complete{border-color:#8ec7aa;background:#fbfffd}
+.restart-task{border:1px solid #d0a88c;background:#fff7f1;color:#7d3d18;border-radius:11px;padding:9px 12px;font-weight:800}
+.finishbox{margin-top:18px;padding:18px;border-radius:18px;background:linear-gradient(135deg,#eef3ff,#f8f3ff);border:1px solid #cdd8ef}
+.finishbox .remaining{color:var(--muted);font-weight:700}
+.report{margin-top:18px;padding:18px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.report-head{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:13px;margin-bottom:14px}
+.report-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0 18px}
+.metric{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fbfcff}
+.metric .big{font-size:1.5rem;font-weight:900;line-height:1.1}
+.metric small{color:var(--muted)}
+.report-section{margin-top:18px}
+.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:14px}
+.report table{width:100%;border-collapse:collapse;min-width:760px}
+.report th,.report td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.report th{background:#f4f6fb;font-size:.86rem}
+.band{display:inline-block;padding:4px 8px;border-radius:999px;font-size:.78rem;font-weight:900;white-space:nowrap}
+.band.green{background:#e7f6ee;color:#126347;border:1px solid #8bc8aa}
+.band.yellow{background:#fff4c9;color:#775500;border:1px solid #e1c35a}
+.band.red{background:#ffe7e7;color:#922525;border:1px solid #df8d8d}
+.band.gray{background:#eef0f4;color:#5d6570;border:1px solid #cbd1da}
+.report-note{padding:12px 14px;border-left:5px solid var(--brand);background:#f4f7ff;border-radius:11px}
+.screen-hint{text-align:center;margin:18px 0 4px;padding:14px;border-radius:14px;background:#eef9f4;border:1px solid #9ecbb8;font-weight:850}
+.live-status{font-size:.82rem;color:var(--muted);font-weight:750}
+@media(max-width:760px){.report-grid{grid-template-columns:1fr 1fr}.trackbox{align-items:flex-start}}
+@media(max-width:420px){.report-grid{grid-template-columns:1fr}}
+@media print{body.print-report .shell,body.print-report header,body.print-report .modal-backdrop,body.print-report .pause-screen{display:none!important}body.print-report #finalReport{display:block!important;box-shadow:none;border:0;margin:0;padding:0}body.print-report .report-actions{display:none!important}}
+
+
+/* ===== V3: turma-reserva + QR compatível com Painel do Professor ===== */
+.study-destination{margin:12px 0;padding:12px 14px;border:1px solid #b8c8ef;border-radius:14px;background:#f1f5ff}
+.study-destination strong{color:var(--brand)}
+.fixed-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:10px}
+.fixed-field{border:1px solid var(--line);border-radius:12px;padding:9px 10px;background:#fafbff}
+.fixed-field small{display:block;color:var(--muted);font-weight:700}.fixed-field b{display:block;margin-top:2px}
+.qr-panel{margin-top:18px;padding:16px;border:1px solid #bac7e6;border-radius:17px;background:#f8faff;text-align:center}
+.qr-panel h3{margin:.1rem 0 .4rem}.qr-panel p{margin:.35rem auto;max-width:68ch}
+#resultQr{display:grid;place-items:center;margin:14px auto;min-height:220px}
+#resultQr img,#resultQr canvas{max-width:220px!important;width:100%!important;height:auto!important}
+.qr-code-text{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.75rem;word-break:break-all;text-align:left;max-height:90px;overflow:auto;background:#fff;border:1px solid var(--line);padding:8px;border-radius:10px}
+.reserve-badge{display:inline-block;margin-top:6px;padding:5px 8px;border-radius:999px;background:#ede9fe;color:#5b21b6;font-size:.78rem;font-weight:900}
+@media(max-width:600px){.fixed-fields{grid-template-columns:1fr}.qr-panel{padding:12px}}
+
+
+/* ===== V4: QR por módulo compatível com o professor.html já publicado ===== */
+.module-qr-panel{margin-top:14px;padding:15px;border:1px solid #cfd9ef;border-radius:16px;background:linear-gradient(135deg,#f8faff,#f5f1ff)}
+.module-qr-panel.locked{opacity:.76;background:#fafbfc}
+.module-qr-panel h4{margin:.1rem 0 .4rem}
+.module-qr-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center}
+.module-qr-box{width:190px;min-height:190px;display:grid;place-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px}
+.module-qr-box img,.module-qr-box canvas{max-width:174px!important;height:auto!important}
+.module-qr-meta{font-size:.9rem;color:var(--muted)}
+.module-qr-status{font-weight:850;margin-top:6px}
+.compat-note{margin-top:10px;padding:10px 12px;border-left:4px solid var(--brand);background:#f5f7ff;border-radius:10px;font-size:.88rem}
+@media(max-width:620px){.module-qr-grid{grid-template-columns:1fr}.module-qr-box{margin:auto}}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+<div class="modal-backdrop" id="startModal">
+  <div class="start-card" role="dialog" aria-modal="true" aria-labelledby="startTitle">
+    <div class="eyebrow">UFBA 2026 • Direito Administrativo</div>
+    <h2 id="startTitle">Antes de começar</h2>
+    <p>Digite o nome da estudante. Este material usará uma <strong>turma-reserva</strong> do Painel do Professor para que o resultado possa ser enviado por QR Code ao mesmo banco Supabase dos módulos escolares.</p>
+    <label for="studentNameInput">Nome da estudante</label>
+    <input id="studentNameInput" type="text" autocomplete="name" placeholder="Digite o nome">
+    <div class="study-destination">
+      <strong>Destino reservado deste estudo</strong>
+      <div class="fixed-fields">
+        <div class="fixed-field"><small>Série</small><b>7º ano</b></div>
+        <div class="fixed-field"><small>Turma</small><b>A</b></div>
+        <div class="fixed-field"><small>Disciplina</small><b>Matemática</b></div>
+      </div>
+      <span class="reserve-badge">Conteúdo especial: Direito Administrativo • UFBA</span>
+    </div>
+    <div class="notice"><strong>Importante no celular:</strong> mantenha esta aba aberta durante o estudo. Se você trocar de aplicativo ou aba, o cronômetro será pausado automaticamente. O progresso já salvo continuará no aparelho.</div>
+    <div class="start-actions">
+      <button class="primary" id="startStudyBtn" type="button">▶ Iniciar / continuar atividade</button>
+      <button class="secondary hidden" id="newStudyBtn" type="button">↻ Iniciar novo estudo e zerar relatório</button>
+    </div>
+    <p class="live-status" id="savedSessionInfo"></p>
+  </div>
+</div>
+<div class="pause-screen hidden" id="pauseScreen">
+  <div class="pause-card">
+    <div class="eyebrow">Tempo pausado</div>
+    <h2>Estudo em pausa</h2>
+    <p id="pauseReason">O cronômetro está parado. Quando estiver pronta, continue do mesmo ponto.</p>
+    <button class="primary" id="resumeStudyBtn" type="button">▶ Continuar estudo</button>
+  </div>
+</div>
+
+<header>
+  <div class="topbar">
+    <div class="brand">UFBA 2026 • Assistente em Administração</div>
+    <div class="controls" aria-label="Controles de acessibilidade e foco">
+      <button class="ctrl" id="focusBtn" type="button">🎯 Modo foco</button>
+      <button class="ctrl" id="fontBtn" type="button">A+ Texto</button>
+      <button class="ctrl" id="contrastBtn" type="button">◐ Contraste</button>
+      <button class="ctrl" id="motionBtn" type="button">↯ Menos movimento</button>
+      <button class="ctrl" id="pauseStudyBtn" type="button">⏸ Pausar estudo</button>
+      <button class="ctrl" id="timerBtn" type="button">⏱ 10 min</button>
+      <span class="timer hidden" id="timer" aria-live="polite">10:00</span>
+      <span class="student-chip hidden" id="studentChip">👤 <span id="studentNameChip"></span></span>
+    </div>
+  </div>
+  <div class="progress-wrap" aria-label="Progresso do bloco"><div id="progressBar"></div></div>
+</header>
+
+<div class="shell">
+  <aside>
+    <div class="panel">
+      <h3>Direito Administrativo</h3>
+      <button class="navbtn" data-go="m1">1. Estado, Governo e Administração</button>
+      <button class="navbtn" data-go="m2">2. Organização Administrativa</button>
+      <button class="navbtn" data-go="m3">3. Agentes Públicos</button>
+      <button class="navbtn" data-go="m4">4. Poderes Administrativos</button>
+      <button class="navbtn" data-go="m5">5. Serviços Públicos</button>
+      <button class="navbtn" data-go="m6">6. Controle e Responsabilidade</button>
+      <button class="navbtn" data-go="m7">7. Lei 14.133/2021</button>
+      <hr style="border:0;border-top:1px solid var(--line);margin:12px 0">
+      <button class="secondary" id="resetProgress" type="button">Reiniciar progresso</button>
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Bloco 1 • Conhecimentos Específicos</div>
+      <h1>Direito Administrativo em Máscaras de Tutoria</h1>
+      <p class="lead">Material responsivo, organizado em ciclos curtos de atenção, com uma ideia principal por etapa, recuperação ativa, comparação visual e feedback imediato. O conteúdo segue os <strong>7 tópicos de Direito Administrativo</strong> do cargo 201 — Assistente em Administração da UFBA.</p>
+      <div class="badges">
+        <span class="badge">📱 Celular, tablet e computador</span>
+        <span class="badge">🧩 Drag & drop + toque</span>
+        <span class="badge">✍️ Lacunas</span>
+        <span class="badge">🧠 Recuperação ativa</span>
+        <span class="badge">💾 Progresso salvo no navegador</span>
+      </div>
+      <div class="tip"><strong>Como usar:</strong> faça um módulo por vez. Leia a “Essência”, abra o “Aprofundamento” somente depois, realize a atividade sem olhar a resposta e finalize marcando o módulo como concluído. No celular, o arrastar também funciona por <strong>toque no cartão → toque na categoria</strong>.</div>
+    </section>
+
+    <section class="roadmap">
+      <h2>Mapa geral do curso</h2>
+      <div class="roadgrid">
+        <div class="roaditem current"><strong>Bloco 1 — Direito Administrativo</strong><small>7 módulos • desenvolvido nesta versão</small></div>
+        <div class="roaditem"><strong>Bloco 2 — Administração Pública Federal</strong><small>CF/88, Lei 8.112, ética, improbidade, processo, LAI/LGPD, governo digital, UFBA</small></div>
+        <div class="roaditem"><strong>Bloco 3 — Administração Geral</strong><small>estrutura, processo organizacional, processos, qualidade e projetos</small></div>
+        <div class="roaditem"><strong>Bloco 4 — Gestão de Pessoas</strong><small>função de GP, políticas, sistemas, motivação e liderança</small></div>
+        <div class="roaditem"><strong>Bloco 5 — Recursos Materiais</strong><small>classificação, estoques, compras, fornecedores, recebimento e armazenagem</small></div>
+        <div class="roaditem"><strong>Bloco 6 — Arquivologia</strong><small>gestão documental, protocolo, avaliação, três idades, preservação e automação</small></div>
+        <div class="roaditem"><strong>Bloco 7 — Atendimento ao Público</strong><small>qualidade, comunicação, trabalho em equipe e relações interpessoais</small></div>
+        <div class="roaditem"><strong>Bloco 8 — Português e Redação Oficial</strong><small>interpretação, gramática aplicada, reescrita e comunicação oficial</small></div>
+        <div class="roaditem"><strong>Bloco 9 — Informática</strong><small>Windows, Office, internet, nuvem e segurança</small></div>
+      </div>
+    </section>
+
+    <!-- M1 -->
+    <section class="module" id="m1" data-module="m1">
+      <div class="module-head">
+        <div class="eyebrow">Módulo 1</div>
+        <h2>Estado, Governo e Administração Pública</h2>
+        <div class="meta">Edital: conceitos, elementos, poderes, organização, natureza, fins e princípios.</div>
+      </div>
+      <div class="module-body">
+        <div class="mask" aria-label="Máscara de Tutoria">
+          <span>1. ATIVE</span><span>2. FOQUE</span><span>3. COMPARE</span><span>4. PRATIQUE</span><span>5. RECUPERE</span>
+        </div>
+        <div class="chunk">
+          <h3>Essência em 90 segundos</h3>
+          <div class="cards">
+            <div class="card"><strong>Estado</strong><br>Organização jurídica e política soberana, tradicionalmente estudada pelos elementos <em>povo, território e soberania</em>.</div>
+            <div class="card"><strong>Governo</strong><br>Direção política do Estado: define prioridades, políticas e orientação geral.</div>
+            <div class="card"><strong>Administração Pública</strong><br>Conjunto de órgãos, entidades e atividades voltados à execução concreta das funções administrativas.</div>
+            <div class="card"><strong>Órgão × entidade</strong><br>Órgão integra uma estrutura; entidade possui personalidade jurídica. Essa diferença reaparece em organização administrativa.</div>
+          </div>
+          <div class="trap"><b>Pegadinha:</b> Estado, Governo e Administração não são sinônimos. Em questão objetiva, procure primeiro <em>quem dirige politicamente</em> e <em>quem executa administrativamente</em>.</div>
+          <details class="deep"><summary>Aprofundamento: princípios que a banca pode misturar</summary>
+            <p>O art. 37 da Constituição traz o núcleo <strong>LIMPE</strong>: legalidade, impessoalidade, moralidade, publicidade e eficiência. No processo administrativo federal, a Lei 9.784/1999 também enumera, entre outros, finalidade, motivação, razoabilidade, proporcionalidade, ampla defesa, contraditório, segurança jurídica e interesse público.</p>
+            <p><strong>Legalidade administrativa:</strong> o agente público atua conforme a ordem jurídica e dentro de sua competência. <strong>Impessoalidade:</strong> foco no interesse público, sem promoção pessoal. <strong>Moralidade:</strong> exige padrão ético-jurídico. <strong>Publicidade:</strong> transparência, ressalvados sigilos legais. <strong>Eficiência:</strong> busca resultados com boa utilização dos recursos.</p>
+          </details>
+        </div>
+
+        <div class="activity classify" data-id="m1c1">
+          <h4>🧩 Classifique: quem é quem?</h4>
+          <p class="instructions">Arraste os cartões ou toque em um cartão e depois na categoria.</p>
+          <div class="itempool">
+            <button class="dragitem" draggable="true" data-answer="Estado">Povo + território + soberania</button>
+            <button class="dragitem" draggable="true" data-answer="Governo">Direção política e definição de prioridades</button>
+            <button class="dragitem" draggable="true" data-answer="Administração">Execução concreta de atividades administrativas</button>
+            <button class="dragitem" draggable="true" data-answer="Administração">Órgãos e entidades executando funções administrativas</button>
+          </div>
+          <div class="dropzones">
+            <div class="dropzone" tabindex="0" data-zone="Estado"><h5>Estado</h5></div>
+            <div class="dropzone" tabindex="0" data-zone="Governo"><h5>Governo</h5></div>
+            <div class="dropzone" tabindex="0" data-zone="Administração"><h5>Administração</h5></div>
+          </div>
+          <div class="actrow"><button class="primary check-classify">Conferir</button><button class="secondary reset-activity">Refazer</button></div>
+          <div class="feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="activity fill" data-id="m1f1">
+          <h4>✍️ Lacuna-relâmpago: LIMPE</h4>
+          <p>Complete os cinco princípios constitucionais do art. 37:</p>
+          <div class="fillgrid">
+            <div class="fillrow"><label>1. L =</label><input data-answer="legalidade" autocomplete="off"></div>
+            <div class="fillrow"><label>2. I =</label><input data-answer="impessoalidade" autocomplete="off"></div>
+            <div class="fillrow"><label>3. M =</label><input data-answer="moralidade" autocomplete="off"></div>
+            <div class="fillrow"><label>4. P =</label><input data-answer="publicidade" autocomplete="off"></div>
+            <div class="fillrow"><label>5. E =</label><input data-answer="eficiência|eficiencia" autocomplete="off"></div>
+          </div>
+          <div class="actrow"><button class="primary check-fill">Conferir</button><button class="secondary reset-activity">Limpar</button></div>
+          <div class="feedback" aria-live="polite"></div>
+        </div>
+        <div class="module-done"><span>Conseguiu explicar Estado × Governo × Administração sem consultar?</span><button class="donebtn">Marcar módulo concluído</button></div>
+
+        <div class="module-qr-panel locked" data-module-qr="m1">
+          <div class="module-qr-grid">
+            <div>
+              <h4>📷 QR deste módulo para o Painel do Professor</h4>
+              <p class="module-qr-meta">Destino fixo: <strong>7º ano • Turma A • Matemática</strong>. Cada módulo gera uma tentativa separada para você registrar no Supabase ao longo dos dias.</p>
+              <div class="module-qr-status">🔒 Conclua todas as atividades deste módulo para liberar o QR.</div>
+              <div class="compat-note">O seu <strong>professor.html atual não precisa ser alterado</strong>. Para compatibilidade, o campo técnico de conteúdo permanece “Probabilidade”; no histórico, o título identifica <strong>UFBA • Direito Administrativo — Módulo 1</strong>.</div>
+              <div class="actrow"><button class="secondary copy-module-qr" type="button" disabled>📋 Copiar conteúdo do QR</button></div>
+            </div>
+            <div class="module-qr-box" aria-label="QR do módulo 1"><span style="text-align:center;color:var(--muted)">QR ainda bloqueado</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- M2 -->
+    <section class="module" id="m2" data-module="m2">
+      <div class="module-head">
+        <div class="eyebrow">Módulo 2</div>
+        <h2>Organização Administrativa da União</h2>
+        <div class="meta">Edital: Administração direta e indireta.</div>
+      </div>
+      <div class="module-body">
+        <div class="mask"><span>1. ATIVE</span><span>2. FOQUE</span><span>3. COMPARE</span><span>4. PRATIQUE</span><span>5. RECUPERE</span></div>
+        <div class="chunk">
+          <h3>Mapa mental mínimo</h3>
+          <div class="cards">
+            <div class="card"><strong>Administração Direta</strong><br>Órgãos integrados à estrutura das pessoas políticas. No plano federal, o Decreto-Lei 200/1967 cita Presidência da República e Ministérios.</div>
+            <div class="card"><strong>Administração Indireta</strong><br>Entidades com personalidade jurídica própria: autarquias, empresas públicas, sociedades de economia mista e fundações públicas.</div>
+            <div class="card"><strong>Desconcentração</strong><br>Distribuição interna de competências dentro da mesma pessoa jurídica. Cria/organiza órgãos, não nova pessoa jurídica.</div>
+            <div class="card"><strong>Descentralização</strong><br>Execução/atribuição passa para outra pessoa jurídica ou particular, conforme o instrumento jurídico aplicável.</div>
+          </div>
+          <details class="deep"><summary>Aprofundamento: quatro entidades da indireta</summary>
+            <p><strong>Autarquia:</strong> pessoa jurídica de direito público, criada por lei, para desempenho descentralizado de atividades típicas do Estado. <strong>Empresa pública:</strong> pessoa jurídica de direito privado, capital público, forma societária admitida em direito. <strong>Sociedade de economia mista:</strong> pessoa jurídica de direito privado, normalmente sociedade anônima, com controle estatal e participação de capital privado. <strong>Fundação pública:</strong> integra a Administração Indireta; o regime pode exigir atenção à natureza jurídica definida no caso concreto e na legislação.</p>
+          </details>
+          <div class="trap"><b>Pegadinha:</b> <strong>órgão</strong> não tem personalidade jurídica própria; <strong>entidade</strong> tem. E “vinculação” de uma entidade da indireta a um Ministério não é sinônimo de subordinação hierárquica.</div>
+        </div>
+        <div class="activity classify" data-id="m2c1">
+          <h4>🧩 Direta ou indireta?</h4>
+          <div class="itempool">
+            <button class="dragitem" draggable="true" data-answer="Direta">Ministério</button>
+            <button class="dragitem" draggable="true" data-answer="Direta">Presidência da República</button>
+            <button class="dragitem" draggable="true" data-answer="Indireta">Autarquia</button>
+            <button class="dragitem" draggable="true" data-answer="Indireta">Empresa pública</button>
+            <button class="dragitem" draggable="true" data-answer="Indireta">Sociedade de economia mista</button>
+            <button class="dragitem" draggable="true" data-answer="Indireta">Fundação pública</button>
+          </div>
+          <div class="dropzones">
+            <div class="dropzone" tabindex="0" data-zone="Direta"><h5>Administração Direta</h5></div>
+            <div class="dropzone" tabindex="0" data-zone="Indireta"><h5>Administração Indireta</h5></div>
+          </div>
+          <div class="actrow"><button class="primary check-classify">Conferir</button><button class="secondary reset-activity">Refazer</button></div>
+          <div class="feedback"></div>
+        </div>
+        <div class="activity mcq" data-id="m2q1" data-correct="1">
+          <h4>🎯 Situação-problema</h4>
+          <p>Um Ministério distribui internamente competências entre secretarias e departamentos, sem criar nova pessoa jurídica. O fenômeno é:</p>
+          <div class="options">
+            <button class="option">Descentralização</button>
+            <button class="option">Desconcentração</button>
+            <button class="option">Delegação de serviço público</button>
+            <button class="option">Privatização</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+        <div class="module-done"><span>Você distingue direta × indireta e descentralização × desconcentração?</span><button class="donebtn">Marcar módulo concluído</button></div>
+
+        <div class="module-qr-panel locked" data-module-qr="m2">
+          <div class="module-qr-grid">
+            <div>
+              <h4>📷 QR deste módulo para o Painel do Professor</h4>
+              <p class="module-qr-meta">Destino fixo: <strong>7º ano • Turma A • Matemática</strong>. Cada módulo gera uma tentativa separada para você registrar no Supabase ao longo dos dias.</p>
+              <div class="module-qr-status">🔒 Conclua todas as atividades deste módulo para liberar o QR.</div>
+              <div class="compat-note">O seu <strong>professor.html atual não precisa ser alterado</strong>. Para compatibilidade, o campo técnico de conteúdo permanece “Probabilidade”; no histórico, o título identifica <strong>UFBA • Direito Administrativo — Módulo 2</strong>.</div>
+              <div class="actrow"><button class="secondary copy-module-qr" type="button" disabled>📋 Copiar conteúdo do QR</button></div>
+            </div>
+            <div class="module-qr-box" aria-label="QR do módulo 2"><span style="text-align:center;color:var(--muted)">QR ainda bloqueado</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- M3 -->
+    <section class="module" id="m3" data-module="m3">
+      <div class="module-head">
+        <div class="eyebrow">Módulo 3</div>
+        <h2>Agentes Públicos</h2>
+        <div class="meta">Edital: espécies e classificação; poderes, deveres e prerrogativas; cargo, emprego e função pública.</div>
+      </div>
+      <div class="module-body">
+        <div class="mask"><span>1. ATIVE</span><span>2. FOQUE</span><span>3. COMPARE</span><span>4. PRATIQUE</span><span>5. RECUPERE</span></div>
+        <div class="chunk">
+          <h3>Três palavras que a banca troca</h3>
+          <div class="cards">
+            <div class="card"><strong>Cargo público</strong><br>Conjunto de atribuições e responsabilidades criado por lei; no regime estatutário, é ocupado por servidor.</div>
+            <div class="card"><strong>Emprego público</strong><br>Vínculo contratual trabalhista, em regra regido pela CLT, presente especialmente em entidades de direito privado da Administração.</div>
+            <div class="card"><strong>Função pública</strong><br>Conjunto de atribuições exercidas por agente público; pode existir função sem corresponder a um cargo autônomo.</div>
+            <div class="card"><strong>Agente público</strong><br>Expressão ampla para quem exerce função estatal por eleição, nomeação, designação, contratação ou outra forma de vínculo.</div>
+          </div>
+          <details class="deep"><summary>Aprofundamento: classificação doutrinária</summary>
+            <p>Uma classificação tradicional encontrada em concursos separa agentes em <strong>políticos, administrativos, honoríficos, delegados e credenciados</strong>. Como se trata de classificação doutrinária, a nomenclatura pode variar conforme o autor. Em prova, observe a definição apresentada no próprio enunciado.</p>
+            <p><strong>Poderes e prerrogativas</strong> existem para viabilizar o interesse público, não como privilégio pessoal. <strong>Deveres</strong> incluem atuação dentro da competência, finalidade pública, probidade, eficiência e responsabilização quando cabível.</p>
+          </details>
+          <div class="trap"><b>Pegadinha:</b> “agente público” é gênero amplo; “servidor público” é uma categoria dentro desse universo.</div>
+        </div>
+
+        <div class="activity classify" data-id="m3c1">
+          <h4>🧩 Cargo, emprego ou função?</h4>
+          <div class="itempool">
+            <button class="dragitem" draggable="true" data-answer="Cargo">Regime estatutário e posição criada por lei</button>
+            <button class="dragitem" draggable="true" data-answer="Emprego">Vínculo contratual trabalhista</button>
+            <button class="dragitem" draggable="true" data-answer="Função">Conjunto de atribuições exercidas</button>
+          </div>
+          <div class="dropzones">
+            <div class="dropzone" tabindex="0" data-zone="Cargo"><h5>Cargo</h5></div>
+            <div class="dropzone" tabindex="0" data-zone="Emprego"><h5>Emprego</h5></div>
+            <div class="dropzone" tabindex="0" data-zone="Função"><h5>Função</h5></div>
+          </div>
+          <div class="actrow"><button class="primary check-classify">Conferir</button><button class="secondary reset-activity">Refazer</button></div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="flashgrid" aria-label="Cartões de recuperação ativa">
+          <button class="flash"><span class="front"><strong>Agente público</strong><br>Toque para lembrar a definição.</span><span class="back">Pessoa que exerce mandato, cargo, emprego ou função pública por algum vínculo juridicamente reconhecido.</span></button>
+          <button class="flash"><span class="front"><strong>Prerrogativa</strong><br>É benefício pessoal?</span><span class="back">Não. Deve ser funcional e instrumental ao interesse público.</span></button>
+          <button class="flash"><span class="front"><strong>Classificações</strong><br>São todas legais?</span><span class="back">Não. Muitas categorias usadas em concursos são doutrinárias; confira a definição usada na questão.</span></button>
+        </div>
+        <div class="module-done"><span>Consegue diferenciar cargo, emprego, função e agente público?</span><button class="donebtn">Marcar módulo concluído</button></div>
+
+        <div class="module-qr-panel locked" data-module-qr="m3">
+          <div class="module-qr-grid">
+            <div>
+              <h4>📷 QR deste módulo para o Painel do Professor</h4>
+              <p class="module-qr-meta">Destino fixo: <strong>7º ano • Turma A • Matemática</strong>. Cada módulo gera uma tentativa separada para você registrar no Supabase ao longo dos dias.</p>
+              <div class="module-qr-status">🔒 Conclua todas as atividades deste módulo para liberar o QR.</div>
+              <div class="compat-note">O seu <strong>professor.html atual não precisa ser alterado</strong>. Para compatibilidade, o campo técnico de conteúdo permanece “Probabilidade”; no histórico, o título identifica <strong>UFBA • Direito Administrativo — Módulo 3</strong>.</div>
+              <div class="actrow"><button class="secondary copy-module-qr" type="button" disabled>📋 Copiar conteúdo do QR</button></div>
+            </div>
+            <div class="module-qr-box" aria-label="QR do módulo 3"><span style="text-align:center;color:var(--muted)">QR ainda bloqueado</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- M4 -->
+    <section class="module" id="m4" data-module="m4">
+      <div class="module-head">
+        <div class="eyebrow">Módulo 4</div>
+        <h2>Poderes Administrativos</h2>
+        <div class="meta">Edital: hierárquico, disciplinar, regulamentar, polícia, uso e abuso do poder.</div>
+      </div>
+      <div class="module-body">
+        <div class="mask"><span>1. ATIVE</span><span>2. FOQUE</span><span>3. COMPARE</span><span>4. PRATIQUE</span><span>5. RECUPERE</span></div>
+        <div class="chunk">
+          <h3>Quadro de reconhecimento rápido</h3>
+          <div class="cards">
+            <div class="card"><strong>Hierárquico</strong><br>Organiza relações internas, distribui e fiscaliza funções, permite ordens e revisão nos limites jurídicos.</div>
+            <div class="card"><strong>Disciplinar</strong><br>Apura infrações e aplica sanções a pessoas sujeitas à disciplina administrativa.</div>
+            <div class="card"><strong>Regulamentar</strong><br>Expede atos normativos para viabilizar a execução da lei, dentro dos limites do ordenamento.</div>
+            <div class="card"><strong>Poder de polícia</strong><br>Condiciona ou restringe direitos, bens e atividades em favor do interesse coletivo, nos limites legais.</div>
+          </div>
+          <div class="trap"><b>Pegadinha dupla:</b> poder de polícia administrativa não é sinônimo de polícia de segurança. E o poder disciplinar não se limita apenas a servidores: pode alcançar particulares vinculados à Administração por relação jurídica específica.</div>
+          <details class="deep"><summary>Aprofundamento: abuso de poder</summary>
+            <p><strong>Excesso de poder:</strong> o agente ultrapassa os limites de sua competência. <strong>Desvio de finalidade:</strong> atua dentro de uma competência aparente, mas busca finalidade diferente daquela prevista juridicamente. Ambos são formas clássicas de abuso de poder em Direito Administrativo.</p>
+          </details>
+        </div>
+
+        <div class="activity classify" data-id="m4c1">
+          <h4>🧩 Qual poder aparece na situação?</h4>
+          <div class="itempool">
+            <button class="dragitem" draggable="true" data-answer="Hierárquico">Chefia distribui tarefas entre setores subordinados</button>
+            <button class="dragitem" draggable="true" data-answer="Disciplinar">Apuração de infração funcional com possível sanção</button>
+            <button class="dragitem" draggable="true" data-answer="Regulamentar">Edição de regulamento para execução da lei</button>
+            <button class="dragitem" draggable="true" data-answer="Polícia">Fiscalização sanitária limita atividade privada por norma legal</button>
+          </div>
+          <div class="dropzones">
+            <div class="dropzone" tabindex="0" data-zone="Hierárquico"><h5>Hierárquico</h5></div>
+            <div class="dropzone" tabindex="0" data-zone="Disciplinar"><h5>Disciplinar</h5></div>
+            <div class="dropzone" tabindex="0" data-zone="Regulamentar"><h5>Regulamentar</h5></div>
+            <div class="dropzone" tabindex="0" data-zone="Polícia"><h5>Polícia</h5></div>
+          </div>
+          <div class="actrow"><button class="primary check-classify">Conferir</button><button class="secondary reset-activity">Refazer</button></div>
+          <div class="feedback"></div>
+        </div>
+        <div class="activity mcq" data-id="m4q1" data-correct="2">
+          <h4>🎯 Pegadinha de abuso de poder</h4>
+          <p>Um agente tem competência para praticar determinado ato, mas o utiliza para perseguir finalidade pessoal estranha ao interesse previsto em lei. A descrição corresponde a:</p>
+          <div class="options">
+            <button class="option">Poder hierárquico</button>
+            <button class="option">Excesso de poder</button>
+            <button class="option">Desvio de finalidade</button>
+            <button class="option">Delegação de competência</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+        <div class="module-done"><span>Você identifica o poder pelo verbo da situação?</span><button class="donebtn">Marcar módulo concluído</button></div>
+
+        <div class="module-qr-panel locked" data-module-qr="m4">
+          <div class="module-qr-grid">
+            <div>
+              <h4>📷 QR deste módulo para o Painel do Professor</h4>
+              <p class="module-qr-meta">Destino fixo: <strong>7º ano • Turma A • Matemática</strong>. Cada módulo gera uma tentativa separada para você registrar no Supabase ao longo dos dias.</p>
+              <div class="module-qr-status">🔒 Conclua todas as atividades deste módulo para liberar o QR.</div>
+              <div class="compat-note">O seu <strong>professor.html atual não precisa ser alterado</strong>. Para compatibilidade, o campo técnico de conteúdo permanece “Probabilidade”; no histórico, o título identifica <strong>UFBA • Direito Administrativo — Módulo 4</strong>.</div>
+              <div class="actrow"><button class="secondary copy-module-qr" type="button" disabled>📋 Copiar conteúdo do QR</button></div>
+            </div>
+            <div class="module-qr-box" aria-label="QR do módulo 4"><span style="text-align:center;color:var(--muted)">QR ainda bloqueado</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- M5 -->
+    <section class="module" id="m5" data-module="m5">
+      <div class="module-head">
+        <div class="eyebrow">Módulo 5</div>
+        <h2>Serviços Públicos</h2>
+        <div class="meta">Edital: conceito, classificação, regulamentação e controle; forma, meios e requisitos; concessão, permissão e autorização.</div>
+      </div>
+      <div class="module-body">
+        <div class="mask"><span>1. ATIVE</span><span>2. FOQUE</span><span>3. COMPARE</span><span>4. PRATIQUE</span><span>5. RECUPERE</span></div>
+        <div class="chunk">
+          <h3>O que lembrar primeiro</h3>
+          <p>Serviço público é atividade destinada à satisfação de necessidades coletivas cuja prestação o ordenamento atribui ao Poder Público, diretamente ou por delegação, conforme o regime jurídico aplicável.</p>
+          <div class="cards">
+            <div class="card"><strong>Concessão</strong><br>Delegação contratual, precedida de licitação, a pessoa jurídica ou consórcio, por sua conta e risco e por prazo determinado.</div>
+            <div class="card"><strong>Permissão</strong><br>A Lei 8.987/1995 a define como delegação a título precário, mediante licitação, a pessoa física ou jurídica; é formalizada por contrato de adesão.</div>
+            <div class="card"><strong>Autorização</strong><br>Figura que depende do setor e da legislação específica; em questões gerais costuma ser tratada como forma mais precária de consentimento/delegação, mas o regime concreto deve ser conferido.</div>
+            <div class="card"><strong>Serviço adequado</strong><br>Regularidade, continuidade, eficiência, segurança, atualidade, generalidade, cortesia e modicidade das tarifas.</div>
+          </div>
+          <details class="deep"><summary>Aprofundamento: classificações que aparecem em prova</summary>
+            <p><strong>Uti universi:</strong> fruição geral e indivisível pela coletividade. <strong>Uti singuli:</strong> utilização individualizável. Outra distinção comum é entre serviços cuja execução pode ser delegada e aqueles que, pela natureza ou pela Constituição, permanecem sob atuação estatal específica.</p>
+          </details>
+          <div class="trap"><b>Pegadinha:</b> “continuidade” não significa impossibilidade absoluta de interrupção. A Lei 8.987 prevê hipóteses legais em que a interrupção não caracteriza descontinuidade.</div>
+        </div>
+
+        <div class="activity fill" data-id="m5f1">
+          <h4>✍️ Complete o serviço adequado</h4>
+          <p>Preencha três requisitos previstos no art. 6º, §1º, da Lei 8.987/1995.</p>
+          <div class="fillgrid">
+            <div class="fillrow"><label>R__________</label><input data-answer="regularidade" autocomplete="off"></div>
+            <div class="fillrow"><label>C__________</label><input data-answer="continuidade" autocomplete="off"></div>
+            <div class="fillrow"><label>M__________ das tarifas</label><input data-answer="modicidade" autocomplete="off"></div>
+          </div>
+          <div class="actrow"><button class="primary check-fill">Conferir</button><button class="secondary reset-activity">Limpar</button></div>
+          <div class="feedback"></div>
+        </div>
+        <div class="activity mcq" data-id="m5q1" data-correct="1">
+          <h4>🎯 Concessão × permissão</h4>
+          <p>Qual alternativa descreve corretamente a permissão de serviço público segundo a Lei 8.987/1995?</p>
+          <div class="options">
+            <button class="option">É sempre feita sem licitação e somente a pessoa jurídica.</button>
+            <button class="option">É delegação a título precário, mediante licitação, a pessoa física ou jurídica capaz de desempenhar o serviço.</button>
+            <button class="option">É idêntica à concessão em todos os aspectos.</button>
+            <button class="option">Dispensa qualquer instrumento contratual.</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+        <div class="module-done"><span>Consegue comparar concessão, permissão e autorização sem decorar frases soltas?</span><button class="donebtn">Marcar módulo concluído</button></div>
+
+        <div class="module-qr-panel locked" data-module-qr="m5">
+          <div class="module-qr-grid">
+            <div>
+              <h4>📷 QR deste módulo para o Painel do Professor</h4>
+              <p class="module-qr-meta">Destino fixo: <strong>7º ano • Turma A • Matemática</strong>. Cada módulo gera uma tentativa separada para você registrar no Supabase ao longo dos dias.</p>
+              <div class="module-qr-status">🔒 Conclua todas as atividades deste módulo para liberar o QR.</div>
+              <div class="compat-note">O seu <strong>professor.html atual não precisa ser alterado</strong>. Para compatibilidade, o campo técnico de conteúdo permanece “Probabilidade”; no histórico, o título identifica <strong>UFBA • Direito Administrativo — Módulo 5</strong>.</div>
+              <div class="actrow"><button class="secondary copy-module-qr" type="button" disabled>📋 Copiar conteúdo do QR</button></div>
+            </div>
+            <div class="module-qr-box" aria-label="QR do módulo 5"><span style="text-align:center;color:var(--muted)">QR ainda bloqueado</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- M6 -->
+    <section class="module" id="m6" data-module="m6">
+      <div class="module-head">
+        <div class="eyebrow">Módulo 6</div>
+        <h2>Controle e Responsabilização da Administração</h2>
+        <div class="meta">Edital: controle administrativo, judicial e legislativo; responsabilidade civil do Estado.</div>
+      </div>
+      <div class="module-body">
+        <div class="mask"><span>1. ATIVE</span><span>2. FOQUE</span><span>3. COMPARE</span><span>4. PRATIQUE</span><span>5. RECUPERE</span></div>
+        <div class="chunk">
+          <h3>Três controles, três perguntas</h3>
+          <div class="cards">
+            <div class="card"><strong>Administrativo</strong><br>A própria Administração fiscaliza, corrige, revê e controla seus atos dentro das competências legais.</div>
+            <div class="card"><strong>Judicial</strong><br>O Poder Judiciário examina lesão ou ameaça a direito e controla juridicidade; não substitui livremente a Administração em escolhas legítimas de mérito.</div>
+            <div class="card"><strong>Legislativo</strong><br>O Poder Legislativo exerce controles previstos na Constituição, inclusive com auxílio dos Tribunais de Contas nas matérias cabíveis.</div>
+            <div class="card"><strong>Responsabilidade civil</strong><br>O art. 37, §6º, prevê responsabilidade das pessoas jurídicas de direito público e das privadas prestadoras de serviço público pelos danos causados por seus agentes a terceiros, com direito de regresso em caso de dolo ou culpa.</div>
+          </div>
+          <details class="deep"><summary>Aprofundamento: como resolver questão de responsabilidade</summary>
+            <p>Faça uma sequência: <strong>(1)</strong> quem causou o dano? <strong>(2)</strong> agia nessa qualidade? <strong>(3)</strong> há dano e nexo? <strong>(4)</strong> é hipótese constitucional de responsabilidade objetiva? <strong>(5)</strong> existe excludente ou atenuante juridicamente relevante? <strong>(6)</strong> ação regressiva contra o agente exige dolo ou culpa, conforme o art. 37, §6º.</p>
+          </details>
+          <div class="trap"><b>Pegadinha:</b> responsabilidade objetiva do Estado não significa responsabilidade automática em qualquer situação; ainda se examinam dano, nexo causal e circunstâncias juridicamente relevantes.</div>
+        </div>
+
+        <div class="activity classify" data-id="m6c1">
+          <h4>🧩 Tipo de controle</h4>
+          <div class="itempool">
+            <button class="dragitem" draggable="true" data-answer="Administrativo">Órgão revê internamente um ato administrativo</button>
+            <button class="dragitem" draggable="true" data-answer="Judicial">Juiz examina ilegalidade alegada em ato da Administração</button>
+            <button class="dragitem" draggable="true" data-answer="Legislativo">Congresso exerce fiscalização com auxílio do TCU</button>
+          </div>
+          <div class="dropzones">
+            <div class="dropzone" tabindex="0" data-zone="Administrativo"><h5>Administrativo</h5></div>
+            <div class="dropzone" tabindex="0" data-zone="Judicial"><h5>Judicial</h5></div>
+            <div class="dropzone" tabindex="0" data-zone="Legislativo"><h5>Legislativo</h5></div>
+          </div>
+          <div class="actrow"><button class="primary check-classify">Conferir</button><button class="secondary reset-activity">Refazer</button></div>
+          <div class="feedback"></div>
+        </div>
+        <div class="activity mcq" data-id="m6q1" data-correct="3">
+          <h4>🎯 Responsabilidade civil</h4>
+          <p>Nos termos do art. 37, §6º, da Constituição, o direito de regresso contra o agente responsável ocorre:</p>
+          <div class="options">
+            <button class="option">Sempre, mesmo sem dolo ou culpa.</button>
+            <button class="option">Somente quando houver crime.</button>
+            <button class="option">Somente se o terceiro não for indenizado.</button>
+            <button class="option">Nos casos de dolo ou culpa do agente.</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+        <div class="module-done"><span>Você distingue quem controla e a lógica da responsabilidade civil?</span><button class="donebtn">Marcar módulo concluído</button></div>
+
+        <div class="module-qr-panel locked" data-module-qr="m6">
+          <div class="module-qr-grid">
+            <div>
+              <h4>📷 QR deste módulo para o Painel do Professor</h4>
+              <p class="module-qr-meta">Destino fixo: <strong>7º ano • Turma A • Matemática</strong>. Cada módulo gera uma tentativa separada para você registrar no Supabase ao longo dos dias.</p>
+              <div class="module-qr-status">🔒 Conclua todas as atividades deste módulo para liberar o QR.</div>
+              <div class="compat-note">O seu <strong>professor.html atual não precisa ser alterado</strong>. Para compatibilidade, o campo técnico de conteúdo permanece “Probabilidade”; no histórico, o título identifica <strong>UFBA • Direito Administrativo — Módulo 6</strong>.</div>
+              <div class="actrow"><button class="secondary copy-module-qr" type="button" disabled>📋 Copiar conteúdo do QR</button></div>
+            </div>
+            <div class="module-qr-box" aria-label="QR do módulo 6"><span style="text-align:center;color:var(--muted)">QR ainda bloqueado</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- M7 -->
+    <section class="module" id="m7" data-module="m7">
+      <div class="module-head">
+        <div class="eyebrow">Módulo 7</div>
+        <h2>Lei 14.133/2021 — Licitações e Contratos</h2>
+        <div class="meta">Edital específico: conceito, objeto, finalidades, princípios, obrigatoriedade, dispensa, inexigibilidade, vedação, modalidades, procedimentos, fases, revogação, invalidação, desistência e controle.</div>
+      </div>
+      <div class="module-body">
+        <div class="mask"><span>1. ATIVE</span><span>2. FOQUE</span><span>3. COMPARE</span><span>4. PRATIQUE</span><span>5. RECUPERE</span></div>
+        <div class="chunk">
+          <h3>Primeiro mapa: o que a lei organiza?</h3>
+          <p>A Lei 14.133/2021 estabelece normas gerais de licitação e contratação para as Administrações Públicas diretas, autárquicas e fundacionais dos entes federativos, além de outras hipóteses previstas em seu art. 1º.</p>
+          <div class="cards">
+            <div class="card"><strong>Modalidades</strong><br>Pregão, concorrência, concurso, leilão e diálogo competitivo.</div>
+            <div class="card"><strong>Contratação direta</strong><br><strong>Dispensa:</strong> competição pode ser possível, mas a lei autoriza contratar diretamente na hipótese legal. <strong>Inexigibilidade:</strong> inviabilidade de competição.</div>
+            <div class="card"><strong>Princípios</strong><br>Além do LIMPE, a lei menciona planejamento, transparência, segregação de funções, motivação, vinculação ao edital, julgamento objetivo, segurança jurídica, competitividade, economicidade e outros.</div>
+            <div class="card"><strong>Fases</strong><br>Regra geral: preparatória → divulgação do edital → propostas/lances → julgamento → habilitação → recursal → homologação.</div>
+          </div>
+          <div class="trap"><b>Pegadinha central:</b> <strong>dispensa ≠ inexigibilidade</strong>. A pergunta-chave é: “há possibilidade real de competição?”. Se a competição é inviável, a lógica é de inexigibilidade; se a competição seria possível, mas a lei prevê contratação direta, trata-se de dispensa.</div>
+          <details class="deep"><summary>Aprofundamento: fases e inversão</summary>
+            <p>A Lei 14.133 adota, como sequência geral, julgamento antes da habilitação. A habilitação pode anteceder propostas e julgamento quando houver ato motivado e previsão expressa no edital, conforme a própria lei. Em prova, desconfie de alternativas que tratem uma sequência como absolutamente imutável.</p>
+            <p><strong>Revogação</strong> relaciona-se a razões de interesse público superveniente devidamente comprovadas, nos termos legais. <strong>Anulação</strong> relaciona-se a ilegalidade. Não trate os dois institutos como sinônimos.</p>
+          </details>
+        </div>
+
+        <div class="activity classify" data-id="m7c1">
+          <h4>🧩 Modalidade ou contratação direta?</h4>
+          <div class="itempool">
+            <button class="dragitem" draggable="true" data-answer="Modalidade">Pregão</button>
+            <button class="dragitem" draggable="true" data-answer="Modalidade">Concorrência</button>
+            <button class="dragitem" draggable="true" data-answer="Modalidade">Concurso</button>
+            <button class="dragitem" draggable="true" data-answer="Modalidade">Leilão</button>
+            <button class="dragitem" draggable="true" data-answer="Modalidade">Diálogo competitivo</button>
+            <button class="dragitem" draggable="true" data-answer="Direta">Dispensa</button>
+            <button class="dragitem" draggable="true" data-answer="Direta">Inexigibilidade</button>
+          </div>
+          <div class="dropzones">
+            <div class="dropzone" tabindex="0" data-zone="Modalidade"><h5>Modalidade de licitação</h5></div>
+            <div class="dropzone" tabindex="0" data-zone="Direta"><h5>Contratação direta</h5></div>
+          </div>
+          <div class="actrow"><button class="primary check-classify">Conferir</button><button class="secondary reset-activity">Refazer</button></div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="activity order" data-id="m7o1" data-answer="Preparatória|Divulgação do edital|Propostas ou lances|Julgamento|Habilitação|Recursal|Homologação">
+          <h4>↕️ Coloque as fases na ordem geral</h4>
+          <p class="instructions">Use as setas para reorganizar.</p>
+          <div class="orderlist">
+            <div class="orderitem"><span>Preparatória</span><button class="minibtn up">↑</button><button class="minibtn down">↓</button></div>
+            <div class="orderitem"><span>Julgamento</span><button class="minibtn up">↑</button><button class="minibtn down">↓</button></div>
+            <div class="orderitem"><span>Divulgação do edital</span><button class="minibtn up">↑</button><button class="minibtn down">↓</button></div>
+            <div class="orderitem"><span>Habilitação</span><button class="minibtn up">↑</button><button class="minibtn down">↓</button></div>
+            <div class="orderitem"><span>Propostas ou lances</span><button class="minibtn up">↑</button><button class="minibtn down">↓</button></div>
+            <div class="orderitem"><span>Homologação</span><button class="minibtn up">↑</button><button class="minibtn down">↓</button></div>
+            <div class="orderitem"><span>Recursal</span><button class="minibtn up">↑</button><button class="minibtn down">↓</button></div>
+          </div>
+          <div class="actrow"><button class="primary check-order">Conferir ordem</button><button class="secondary reset-order">Embaralhar novamente</button></div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="activity mcq" data-id="m7q1" data-correct="2">
+          <h4>🎯 Dispensa × inexigibilidade</h4>
+          <p>Quando a competição é juridicamente inviável, a contratação direta enquadra-se, em regra, como:</p>
+          <div class="options">
+            <button class="option">Pregão</button>
+            <button class="option">Dispensa</button>
+            <button class="option">Inexigibilidade</button>
+            <button class="option">Concurso</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+        <div class="module-done"><span>Consegue explicar modalidades, contratação direta e fases sem consultar?</span><button class="donebtn">Marcar módulo concluído</button></div>
+
+        <div class="module-qr-panel locked" data-module-qr="m7">
+          <div class="module-qr-grid">
+            <div>
+              <h4>📷 QR deste módulo para o Painel do Professor</h4>
+              <p class="module-qr-meta">Destino fixo: <strong>7º ano • Turma A • Matemática</strong>. Cada módulo gera uma tentativa separada para você registrar no Supabase ao longo dos dias.</p>
+              <div class="module-qr-status">🔒 Conclua todas as atividades deste módulo para liberar o QR.</div>
+              <div class="compat-note">O seu <strong>professor.html atual não precisa ser alterado</strong>. Para compatibilidade, o campo técnico de conteúdo permanece “Probabilidade”; no histórico, o título identifica <strong>UFBA • Direito Administrativo — Módulo 7</strong>.</div>
+              <div class="actrow"><button class="secondary copy-module-qr" type="button" disabled>📋 Copiar conteúdo do QR</button></div>
+            </div>
+            <div class="module-qr-box" aria-label="QR do módulo 7"><span style="text-align:center;color:var(--muted)">QR ainda bloqueado</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sourcebox">
+      <h2>Fontes normativas usadas nesta versão</h2>
+      <p>Material de estudo para concurso. Para questões de literalidade, prevalece sempre o texto legal atualizado.</p>
+      <ul>
+        <li><strong>Edital UFBA 007/2026 — Anexo II:</strong> Cargo 201 — Assistente em Administração, tópicos 1 a 7 de Direito Administrativo.</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm" target="_blank" rel="noopener">Constituição Federal de 1988 — texto atualizado</a>.</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del0200.htm" target="_blank" rel="noopener">Decreto-Lei 200/1967 — organização da Administração Federal</a>.</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l9784.htm" target="_blank" rel="noopener">Lei 9.784/1999 — processo administrativo federal</a>.</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8987cons.htm" target="_blank" rel="noopener">Lei 8.987/1995 — concessões e permissões de serviços públicos</a>.</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm" target="_blank" rel="noopener">Lei 14.133/2021 — licitações e contratos administrativos</a>.</li>
+      </ul>
+      <p><strong>Versão:</strong> 1.0 • Estrutura pedagógica: Máscaras de Tutoria em ciclos curtos (Ative → Foque → Compare → Pratique → Recupere).</p>
+    </section>
+
+<section class="finishbox" id="finishBox">
+  <h2>Finalização</h2>
+  <p>O relatório final é liberado quando todas as atividades interativas forem concluídas. Os tempos de leitura aparecem quando você usa os botões <strong>Iniciar leitura</strong> e <strong>Terminei a leitura</strong> de cada módulo.</p>
+  <button class="primary" id="finishReportBtn" type="button" disabled>Gerar relatório final</button>
+  <div class="remaining" id="remainingText"></div>
+</section>
+<section class="report hidden" id="finalReport" aria-live="polite"></section>
+
+  </main>
+</div>
+
+<script>
+(() => {
+  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+  const norm=s=>(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim().toLowerCase();
+  const fmt=s=>{s=Math.max(0,Math.round(Number(s)||0));const m=Math.floor(s/60),sec=s%60;return `${m}:${String(sec).padStart(2,"0")}`};
+  const fmtLong=s=>{s=Math.max(0,Math.round(Number(s)||0));const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;return h?`${h}h ${m}min ${sec}s`:`${m}min ${sec}s`};
+
+  const progress=JSON.parse(localStorage.getItem("ufba_da_v1")||'{"done":[],"activities":{}}');
+  if(!Array.isArray(progress.done))progress.done=[];
+  if(!progress.activities||typeof progress.activities!=="object")progress.activities={};
+  const saveProgress=()=>localStorage.setItem("ufba_da_v1",JSON.stringify(progress));
+
+  const SESSION_KEY="ufba_da_v3_session";
+  const freshSession=()=>({studentName:"",grade:"7º ano",className:"A",discipline:"Matemática",contentName:"Direito Administrativo",attemptId:"",moduleAttemptIds:{},sessionStarted:null,finishedAt:null,paused:false,autoPaused:false,activeKey:null,lastActiveKey:null,reading:{},activities:{},version:4});
+  let session;try{session=JSON.parse(localStorage.getItem(SESSION_KEY)||"null")||freshSession()}catch(e){session=freshSession()}
+  session.reading=session.reading||{};session.activities=session.activities||{};session.moduleAttemptIds=session.moduleAttemptIds||{};
+  const saveSession=()=>localStorage.setItem(SESSION_KEY,JSON.stringify(session));
+
+  const expectedActivity={
+    m1c1:[90,180],m1f1:[60,120],m2c1:[120,240],m2q1:[45,120],m3c1:[90,180],
+    m4c1:[120,240],m4q1:[45,120],m5f1:[60,150],m5q1:[45,120],m6c1:[90,180],
+    m6q1:[45,120],m7c1:[120,240],m7o1:[120,240],m7q1:[45,120]
+  };
+
+  function activityRecord(id){
+    if(!session.activities[id])session.activities[id]={seconds:0,attempts:0,firstScore:null,completed:false,restarts:0};
+    const r=session.activities[id];
+    if(typeof r.seconds!=="number")r.seconds=0;if(typeof r.attempts!=="number")r.attempts=0;
+    if(!("firstScore" in r))r.firstScore=null;if(typeof r.completed!=="boolean")r.completed=false;
+    if(typeof r.restarts!=="number")r.restarts=0;return r
+  }
+  function readingRecord(mid){
+    if(!session.reading[mid])session.reading[mid]={seconds:0,completed:false,restarts:0};
+    const r=session.reading[mid];if(typeof r.seconds!=="number")r.seconds=0;if(typeof r.completed!=="boolean")r.completed=false;if(typeof r.restarts!=="number")r.restarts=0;return r
+  }
+  const activityTitle=id=>{const a=document.querySelector(`.activity[data-id="${id}"]`);return a?(($("h4",a)?.textContent||id).replace(/^[^\p{L}\p{N}]+/u,"").trim()):id};
+  const moduleTitle=mid=>{const m=document.getElementById(mid);return m?($("h2",m)?.textContent||mid).trim():mid};
+
+  function readingWordCount(mid){
+    const m=document.getElementById(mid);if(!m)return 0;
+    const clone=m.cloneNode(true);clone.querySelectorAll(".activity,.module-done,.mask,.trackbox,.flashgrid,.meta,.eyebrow").forEach(x=>x.remove());
+    const t=clone.textContent.replace(/\s+/g," ").trim();return t?t.split(" ").filter(Boolean).length:0
+  }
+  function expectedReading(mid){const words=readingWordCount(mid),base=Math.max(90,(words/130)*60);return[Math.round(base*.65),Math.round(base*1.75),words]}
+  function timingBand(sec,min,max){
+    if(!sec)return{cls:"gray",text:"não registrado"};
+    if(sec<min*.55)return{cls:"red",text:"muito abaixo do esperado"};
+    if(sec<min)return{cls:"yellow",text:"abaixo do esperado"};
+    if(sec<=max)return{cls:"green",text:"dentro do esperado"};
+    if(sec<=max*1.5)return{cls:"yellow",text:"acima do esperado"};
+    return{cls:"red",text:"muito acima do esperado"}
+  }
+  function scoreLabel(score){if(score>=85)return"Domínio forte na 1ª tentativa";if(score>=70)return"Bom desempenho inicial";if(score>=55)return"Conteúdo em consolidação";return"Revisão recomendada"}
+
+  function updateProgress(){
+    const total=$$(".module").length,pct=Math.round((progress.done.length/total)*100);$("#progressBar").style.width=pct+"%";
+    $$(".navbtn[data-go]").forEach(b=>b.classList.toggle("done",progress.done.includes(b.dataset.go)));
+    $$(".module").forEach(m=>{const btn=$(".donebtn",m);if(btn){const yes=progress.done.includes(m.dataset.module);btn.classList.toggle("checked",yes);btn.textContent=yes?"✓ Módulo concluído":"Marcar módulo concluído"}})
+  }
+
+  function refreshStartModal(){
+    const has=!!session.studentName;$("#newStudyBtn").classList.toggle("hidden",!has);$("#studentNameInput").value=session.studentName||"";
+    $("#savedSessionInfo").textContent=has?`Sessão salva encontrada para ${session.studentName}. Você pode continuar ou iniciar um novo estudo.`:""
+  }
+  function beginStudy(reset=false){
+    const name=$("#studentNameInput").value.trim();if(!name){$("#studentNameInput").focus();return}
+    if(reset){
+      localStorage.setItem("ufba_da_v1",JSON.stringify({done:[],activities:{}}));session=freshSession();session.studentName=name;session.sessionStarted=new Date().toISOString();
+      progress.done.length=0;progress.activities={}
+    }else{const firstEver=!session.sessionStarted;session.studentName=name;if(firstEver){session.sessionStarted=new Date().toISOString();progress.done.length=0;progress.activities={}}}
+    session.grade="7º ano";session.className="A";session.discipline="Matemática";session.contentName="Direito Administrativo";session.paused=false;session.autoPaused=false;saveSession();saveProgress();$("#startModal").classList.add("hidden");
+    $("#studentChip").classList.remove("hidden");$("#studentNameChip").textContent=session.studentName;updateProgress();updateLiveTimers();updateFinalButton()
+  }
+  $("#startStudyBtn").addEventListener("click",()=>beginStudy(false));
+  $("#newStudyBtn").addEventListener("click",()=>{if(confirm("Isso zera tempos, pontuação e progresso desta sessão. Deseja iniciar um novo estudo?"))beginStudy(true)});
+  $("#studentNameInput").addEventListener("keydown",e=>{if(e.key==="Enter")beginStudy(false)});
+
+  $$(".module").forEach(m=>{
+    const mid=m.dataset.module,[emin,emax,words]=expectedReading(mid),box=document.createElement("div");
+    box.className="trackbox reading-controls";box.dataset.module=mid;
+    box.innerHTML=`<div><strong>📖 Tempo de leitura deste módulo</strong><div class="reading-meta">Estimativa pedagógica: ${fmt(emin)} a ${fmt(emax)} • cerca de ${words} palavras</div><div class="live-status reading-status">Ainda não iniciado.</div></div><div><span class="time reading-time">0:00</span><div class="actrow"><button class="secondary start-reading" type="button">▶ Iniciar leitura</button><button class="primary finish-reading" type="button">✓ Terminei a leitura</button><button class="restart-task restart-reading" type="button">↻ Recomeçar leitura</button></div></div>`;
+    $(".mask",m).insertAdjacentElement("afterend",box)
+  });
+
+  function setActive(key){
+    if(session.paused||!session.studentName)return;session.activeKey=key;session.lastActiveKey=key;saveSession();
+    $$(".activity").forEach(a=>a.classList.toggle("is-active",key===`act:${a.dataset.id}`));updateReadingStatus()
+  }
+  function startReading(mid){const r=readingRecord(mid);if(!r.completed)setActive(`read:${mid}`)}
+  function finishReading(mid){const r=readingRecord(mid);if(r.seconds<1)return;r.completed=true;if(session.activeKey===`read:${mid}`)session.activeKey=null;saveSession();updateReadingStatus();updateLiveTimers();updateModuleQrPanels()}
+  function restartReading(mid){const r=readingRecord(mid);r.seconds=0;r.completed=false;r.restarts++;if(session.activeKey===`read:${mid}`)session.activeKey=null;saveSession();updateReadingStatus();updateLiveTimers();updateModuleQrPanels()}
+  $$(".start-reading").forEach(b=>b.addEventListener("click",()=>startReading(b.closest(".reading-controls").dataset.module)));
+  $$(".finish-reading").forEach(b=>b.addEventListener("click",()=>finishReading(b.closest(".reading-controls").dataset.module)));
+  $$(".restart-reading").forEach(b=>b.addEventListener("click",()=>restartReading(b.closest(".reading-controls").dataset.module)));
+  function updateReadingStatus(){
+    $$(".reading-controls").forEach(box=>{const mid=box.dataset.module,r=readingRecord(mid),active=session.activeKey===`read:${mid}`;
+      $(".reading-time",box).textContent=fmt(r.seconds);$(".reading-status",box).textContent=r.completed?"Leitura concluída e registrada.":active?"Cronômetro de leitura em andamento.":r.seconds?"Leitura pausada; toque em Iniciar leitura para continuar.":"Ainda não iniciado."})
+  }
+
+  $$(".activity").forEach(a=>{
+    const id=a.dataset.id,[emin,emax]=expectedActivity[id]||[60,180],badge=document.createElement("div");badge.className="activity-timer";
+    badge.innerHTML=`⏱ <span class="activity-time">0:00</span> <span>• esperado ${fmt(emin)}–${fmt(emax)}</span>`;$("h4",a).insertAdjacentElement("afterend",badge);
+    a.addEventListener("pointerdown",e=>{if(e.target.closest(".restart-task"))return;const r=activityRecord(id);if(!r.completed&&session.studentName&&!session.paused)setActive(`act:${id}`)},{passive:true});
+    if(activityRecord(id).completed)a.classList.add("is-complete")
+  });
+
+  function recordAttempt(a,firstScore){const r=activityRecord(a.dataset.id);r.attempts++;if(r.firstScore===null)r.firstScore=Math.max(0,Math.min(100,Math.round(firstScore)));saveSession()}
+  function completeActivity(a){
+    const id=a.dataset.id,r=activityRecord(id);r.completed=true;progress.activities[id]=true;if(session.activeKey===`act:${id}`)session.activeKey=null;
+    a.classList.remove("is-active");a.classList.add("is-complete");saveProgress();saveSession();updateFinalButton();updateLiveTimers();updateModuleQrPanels()
+  }
+  function restartActivity(a){
+    const id=a.dataset.id,r=activityRecord(id);r.seconds=0;r.attempts=0;r.firstScore=null;r.completed=false;r.restarts++;delete progress.activities[id];
+    if(session.activeKey===`act:${id}`)session.activeKey=null;a.classList.remove("is-active","is-complete");
+    if(a.classList.contains("classify")){const pool=$(".itempool",a);$$(".dragitem",a).forEach(i=>pool.appendChild(i))}
+    if(a.classList.contains("fill"))$$("input",a).forEach(i=>{i.value="";i.style.borderColor=""});
+    if(a.classList.contains("mcq"))$$(".option",a).forEach(o=>o.classList.remove("correct","wrong"));
+    if(a.classList.contains("order")){const list=$(".orderlist",a),arr=$$(".orderitem",a);arr.sort(()=>Math.random()-.5).forEach(x=>list.appendChild(x))}
+    const fb=$(".feedback",a);if(fb){fb.textContent="";fb.className="feedback"}saveProgress();saveSession();updateFinalButton();updateLiveTimers();updateModuleQrPanels()
+  }
+
+  let selected=null;
+  $$(".dragitem").forEach(item=>{
+    item.addEventListener("dragstart",e=>{selected=item;e.dataTransfer.setData("text/plain","x");item.classList.add("selected")});
+    item.addEventListener("dragend",()=>{item.classList.remove("selected");selected=null});
+    item.addEventListener("click",()=>{const a=item.closest(".activity");if(a&&!activityRecord(a.dataset.id).completed)setActive(`act:${a.dataset.id}`);if(selected===item){item.classList.remove("selected");selected=null}else{if(selected)selected.classList.remove("selected");selected=item;item.classList.add("selected")}})
+  });
+  $$(".dropzone").forEach(z=>{
+    z.addEventListener("dragover",e=>{e.preventDefault();z.classList.add("over")});z.addEventListener("dragleave",()=>z.classList.remove("over"));
+    z.addEventListener("drop",e=>{e.preventDefault();z.classList.remove("over");if(selected){z.appendChild(selected);selected.classList.remove("selected");selected=null}});
+    z.addEventListener("click",e=>{if(e.target.closest(".dragitem"))return;if(selected){z.appendChild(selected);selected.classList.remove("selected");selected=null}});
+    z.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&selected){e.preventDefault();z.appendChild(selected);selected.classList.remove("selected");selected=null}})
+  });
+
+  $$(".check-classify").forEach(btn=>btn.addEventListener("click",()=>{
+    const a=btn.closest(".activity");let total=0,correct=0;$$(".dropzone",a).forEach(z=>$$(".dragitem",z).forEach(i=>{total++;if(i.dataset.answer===z.dataset.zone)correct++}));
+    const expected=$$(".dragitem",a).length;recordAttempt(a,expected?correct/expected*100:0);const fb=$(".feedback",a);
+    if(total===expected&&correct===expected){fb.textContent="✓ Perfeito. Classificação completa.";fb.className="feedback ok";completeActivity(a)}
+    else{fb.textContent=`Ainda não: ${correct} de ${expected} corretos. Releia apenas os cartões que geraram dúvida.`;fb.className="feedback bad"}
+  }));
+  $$(".check-fill").forEach(btn=>btn.addEventListener("click",()=>{
+    const a=btn.closest(".activity");let correct=0;const inputs=$$("input[data-answer]",a);inputs.forEach(inp=>{const answers=inp.dataset.answer.split("|").map(norm),ok=answers.includes(norm(inp.value));inp.style.borderColor=ok?"#55a782":"#d27e7e";if(ok)correct++});
+    recordAttempt(a,inputs.length?correct/inputs.length*100:0);const fb=$(".feedback",a);
+    if(correct===inputs.length){fb.textContent="✓ Todas as lacunas corretas.";fb.className="feedback ok";completeActivity(a)}else{fb.textContent=`Você acertou ${correct} de ${inputs.length}. Tente recuperar de memória antes de abrir o aprofundamento.`;fb.className="feedback bad"}
+  }));
+  $$(".mcq").forEach(a=>{$$(".option",a).forEach((opt,idx)=>opt.addEventListener("click",()=>{
+    const r=activityRecord(a.dataset.id);if(r.completed)return;const correct=Number(a.dataset.correct),fb=$(".feedback",a);recordAttempt(a,idx===correct?100:0);
+    if(idx===correct){opt.classList.add("correct");fb.textContent="✓ Correto. Explique em voz alta por que as outras opções estão erradas.";fb.className="feedback ok";completeActivity(a)}
+    else{opt.classList.add("wrong");fb.textContent="Ainda não. Elimine a alternativa pelo conceito-chave e tente novamente.";fb.className="feedback bad"}
+  }))});
+  $$(".flash").forEach(f=>f.addEventListener("click",()=>f.classList.toggle("flipped")));
+  $$(".order").forEach(a=>{
+    function move(btn,dir){const row=btn.closest(".orderitem"),list=row.parentElement;if(dir<0&&row.previousElementSibling)list.insertBefore(row,row.previousElementSibling);if(dir>0&&row.nextElementSibling)list.insertBefore(row.nextElementSibling,row);if(!activityRecord(a.dataset.id).completed)setActive(`act:${a.dataset.id}`)}
+    $$(".up",a).forEach(b=>b.addEventListener("click",()=>move(b,-1)));$$(".down",a).forEach(b=>b.addEventListener("click",()=>move(b,1)));
+    $(".check-order",a).addEventListener("click",()=>{const got=$$(".orderitem span",a).map(x=>x.textContent.trim()).join("|"),ok=got===a.dataset.answer;recordAttempt(a,ok?100:0);const fb=$(".feedback",a);if(ok){fb.textContent="✓ Ordem geral correta.";fb.className="feedback ok";completeActivity(a)}else{fb.textContent="Ainda não. Pense no fluxo: planejar → publicar → competir → julgar → habilitar → recorrer → homologar.";fb.className="feedback bad"}})
+  });
+
+  $$(".reset-activity,.reset-order").forEach(btn=>{btn.textContent="↻ Recomeçar atividade";btn.classList.remove("secondary");btn.classList.add("restart-task");const clone=btn.cloneNode(true);btn.replaceWith(clone);clone.addEventListener("click",()=>restartActivity(clone.closest(".activity")))});
+
+  $$(".donebtn").forEach(btn=>btn.addEventListener("click",()=>{const id=btn.closest(".module").dataset.module,ix=progress.done.indexOf(id);if(ix>=0)progress.done.splice(ix,1);else progress.done.push(id);saveProgress();updateProgress()}));
+  $$(".navbtn[data-go]").forEach(b=>b.addEventListener("click",()=>document.getElementById(b.dataset.go).scrollIntoView({behavior:"smooth",block:"start"})));
+  $("#resetProgress").addEventListener("click",()=>{if(confirm("Apagar apenas as marcações de módulos concluídos? Os tempos do relatório serão mantidos.")){progress.done.length=0;saveProgress();updateProgress()}});
+
+  function pauseStudy(auto=false){
+    if(session.paused||!session.studentName)return;session.paused=true;session.autoPaused=auto;session.lastActiveKey=session.activeKey;session.activeKey=null;saveSession();
+    $("#pauseReason").textContent=auto?"Você saiu desta aba ou o celular colocou a página em segundo plano. O cronômetro foi pausado automaticamente para não contar esse período.":"O cronômetro está parado. Quando estiver pronta, continue do mesmo ponto.";
+    $("#pauseScreen").classList.remove("hidden");$("#pauseStudyBtn").textContent="▶ Continuar estudo"
+  }
+  function resumeStudy(){
+    if(!session.studentName)return;session.paused=false;session.autoPaused=false;if(session.lastActiveKey){const k=session.lastActiveKey;if(k.startsWith("act:")&&!activityRecord(k.slice(4)).completed)session.activeKey=k;else if(k.startsWith("read:")&&!readingRecord(k.slice(5)).completed)session.activeKey=k}
+    saveSession();$("#pauseScreen").classList.add("hidden");$("#pauseStudyBtn").textContent="⏸ Pausar estudo";updateReadingStatus()
+  }
+  $("#pauseStudyBtn").addEventListener("click",()=>session.paused?resumeStudy():pauseStudy(false));$("#resumeStudyBtn").addEventListener("click",resumeStudy);
+  document.addEventListener("visibilitychange",()=>{if(document.hidden&&!session.paused&&session.studentName)pauseStudy(true)});
+
+  let saveTick=0;setInterval(()=>{if(session.studentName&&!session.paused&&session.activeKey){if(session.activeKey.startsWith("read:"))readingRecord(session.activeKey.slice(5)).seconds++;if(session.activeKey.startsWith("act:"))activityRecord(session.activeKey.slice(4)).seconds++;updateLiveTimers();saveTick++;if(saveTick>=5){saveTick=0;saveSession()}}},1000);
+  function updateLiveTimers(){updateReadingStatus();$$(".activity").forEach(a=>{const r=activityRecord(a.dataset.id),el=$(".activity-time",a);if(el)el.textContent=fmt(r.seconds);a.classList.toggle("is-complete",r.completed);a.classList.toggle("is-active",session.activeKey===`act:${a.dataset.id}`)})}
+
+  let interval=null,seconds=600;
+  $("#timerBtn").addEventListener("click",()=>{const el=$("#timer");if(interval){clearInterval(interval);interval=null;el.classList.add("hidden");seconds=600;$("#timerBtn").textContent="⏱ 10 min";return}el.classList.remove("hidden");$("#timerBtn").textContent="■ Parar";const draw=()=>{el.textContent=String(Math.floor(seconds/60)).padStart(2,"0")+":"+String(seconds%60).padStart(2,"0")};draw();interval=setInterval(()=>{if(!session.paused){seconds--;draw()}if(seconds<=0){clearInterval(interval);interval=null;alert("Ciclo de 10 minutos concluído. Faça uma pausa breve ou marque o que conseguiu recuperar.");seconds=600;$("#timerBtn").textContent="⏱ 10 min"}},1000)});
+  $("#focusBtn").addEventListener("click",()=>document.body.classList.toggle("focus-mode"));let fs=0;
+  $("#fontBtn").addEventListener("click",()=>{fs=(fs+1)%3;document.body.classList.remove("large-text","extra-large-text");if(fs===1)document.body.classList.add("large-text");if(fs===2)document.body.classList.add("extra-large-text")});
+  $("#contrastBtn").addEventListener("click",()=>document.body.classList.toggle("high-contrast"));$("#motionBtn").addEventListener("click",()=>document.body.classList.toggle("reduced-motion"));
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){$$(".navbtn").forEach(b=>b.classList.toggle("active",b.dataset.go===e.target.id))}})},{rootMargin:"-25% 0px -65% 0px"});$$(".module").forEach(m=>obs.observe(m));
+
+  function base64UrlEncode(str){
+    const bytes=new TextEncoder().encode(str);let bin="";bytes.forEach(b=>bin+=String.fromCharCode(b));
+    return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/g,"")
+  }
+  function makeAttemptId(key="final"){
+    if(key==="final"){
+      if(session.attemptId)return session.attemptId;
+      session.attemptId=`UFBA-DA-FINAL-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2,7).toUpperCase()}`;
+      saveSession();return session.attemptId
+    }
+    session.moduleAttemptIds=session.moduleAttemptIds||{};
+    if(session.moduleAttemptIds[key])return session.moduleAttemptIds[key];
+    session.moduleAttemptIds[key]=`UFBA-DA-${key.toUpperCase()}-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2,7).toUpperCase()}`;
+    saveSession();return session.moduleAttemptIds[key]
+  }
+  function compactPanelResult(score,totalSeconds,opts={}){
+    const mid=opts.mid||"final",moduleNumber=opts.moduleNumber||"Final";
+    return {a:makeAttemptId(mid),n:session.studentName,g:"7º ano",t:"A",d:Math.max(0,Math.round(totalSeconds)),p:score,x:100,
+      s:[-1,-1,-1,-1,-1,-1],f:new Date().toISOString(),m:mid==="final"?"ufba-da-final":`ufba-da-${mid}`,
+      mt:mid==="final"?"UFBA • Direito Administrativo — Resultado Final":`UFBA • Direito Administrativo — Módulo ${moduleNumber}`,
+      ct:"Probabilidade",q:"Matemática",u:"matematica"}
+  }
+  function buildQrText(score,totalSeconds,opts={}){
+    const payload=base64UrlEncode(JSON.stringify(compactPanelResult(score,totalSeconds,opts)));
+    const hosted=location.protocol==="https:"||location.protocol==="http:";
+    return hosted?`${location.origin}${location.pathname}#r=${payload}`:payload
+  }
+  function drawQr(box,text,size=220){
+    box.innerHTML="";box.dataset.qrText=text;
+    try{if(window.QRCode)new QRCode(box,{text,width:size,height:size,correctLevel:QRCode.CorrectLevel.L});else box.innerHTML="<p>O gerador de QR não carregou. Use o botão de copiar o conteúdo do QR.</p>"}
+    catch(e){box.innerHTML="<p>Não foi possível desenhar o QR. Use o botão de copiar o conteúdo.</p>"}
+  }
+  function renderResultQr(score,totalSeconds){
+    const box=$("#resultQr");if(!box)return "";
+    const text=buildQrText(score,totalSeconds,{mid:"final",moduleNumber:"Final"});drawQr(box,text,220);return text
+  }
+  function moduleMetrics(mid){
+    const mod=document.getElementById(mid);if(!mod)return {complete:false,score:0,seconds:0,count:0};
+    const acts=$$(".activity[data-id]",mod),records=acts.map(a=>activityRecord(a.dataset.id));
+    const complete=records.length>0&&records.every(r=>r.completed);
+    const vals=records.map(r=>r.firstScore===null?0:Number(r.firstScore)||0);
+    const score=vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):0;
+    const seconds=readingRecord(mid).seconds+records.reduce((s,r)=>s+(Number(r.seconds)||0),0);
+    return {complete,score,seconds,count:records.length}
+  }
+  function renderModuleQr(mid){
+    const mod=document.getElementById(mid),panel=mod?.querySelector('.module-qr-panel');if(!mod||!panel)return;
+    const num=mid.replace(/\D/g,'')||mid,met=moduleMetrics(mid),status=panel.querySelector('.module-qr-status'),box=panel.querySelector('.module-qr-box'),copy=panel.querySelector('.copy-module-qr');
+    panel.classList.toggle('locked',!met.complete);
+    if(!met.complete){status.textContent='🔒 Conclua todas as atividades deste módulo para liberar o QR.';box.innerHTML='<span style="text-align:center;color:var(--muted)">QR ainda bloqueado</span>';copy.disabled=true;delete box.dataset.qrText;return}
+    const text=buildQrText(met.score,met.seconds,{mid,moduleNumber:num});drawQr(box,text,174);copy.disabled=false;
+    status.textContent=`✓ QR liberado • ${met.score}% na 1ª tentativa • ${fmtLong(met.seconds)} registrados`
+  }
+  function updateModuleQrPanels(){$$('.module').forEach(m=>renderModuleQr(m.dataset.module))}
+
+  function allActivityIds(){return $$(".activity[data-id]").map(a=>a.dataset.id)}
+  function updateFinalButton(){const ids=allActivityIds(),done=ids.filter(id=>activityRecord(id).completed).length,remain=ids.length-done;$("#finishReportBtn").disabled=remain>0;$("#remainingText").textContent=remain?`Faltam ${remain} de ${ids.length} atividades para liberar o relatório.`:`✓ Todas as ${ids.length} atividades foram concluídas. O relatório está liberado.`}
+  function makeReport(){
+    const ids=allActivityIds();if(ids.some(id=>!activityRecord(id).completed)){updateFinalButton();return}
+    session.finishedAt=new Date().toISOString();session.activeKey=null;saveSession();
+    const activityScores=ids.map(id=>activityRecord(id).firstScore??0),globalScore=Math.round(activityScores.reduce((a,b)=>a+b,0)/Math.max(1,activityScores.length));
+    const totalAct=ids.reduce((s,id)=>s+activityRecord(id).seconds,0),mids=$$(".module").map(m=>m.dataset.module),totalRead=mids.reduce((s,id)=>s+readingRecord(id).seconds,0),totalTracked=totalAct+totalRead,completedRead=mids.filter(id=>readingRecord(id).completed).length;
+    let readingRows=mids.map(mid=>{const r=readingRecord(mid),[emin,emax,words]=expectedReading(mid),b=timingBand(r.seconds,emin,emax);return `<tr><td><strong>${moduleTitle(mid)}</strong><br><small>${words} palavras estimadas</small></td><td>${r.completed?fmtLong(r.seconds):r.seconds?fmtLong(r.seconds)+" (não finalizada)":"—"}</td><td>${fmt(emin)}–${fmt(emax)}</td><td><span class="band ${b.cls}">${b.text}</span></td><td>${r.restarts||0}</td></tr>`}).join("");
+    let activityRows=ids.map(id=>{const r=activityRecord(id),[emin,emax]=expectedActivity[id]||[60,180],b=timingBand(r.seconds,emin,emax);return `<tr><td><strong>${activityTitle(id)}</strong></td><td>${fmtLong(r.seconds)}</td><td>${fmt(emin)}–${fmt(emax)}</td><td><span class="band ${b.cls}">${b.text}</span></td><td>${r.firstScore===null?"—":r.firstScore+"%"}</td><td>${r.attempts}</td><td>${r.restarts||0}</td></tr>`}).join("");
+    const allBands=[...ids.map(id=>{const[a,b]=expectedActivity[id]||[60,180];return timingBand(activityRecord(id).seconds,a,b)}),...mids.filter(id=>readingRecord(id).seconds>0).map(id=>{const[a,b]=expectedReading(id);return timingBand(readingRecord(id).seconds,a,b)})];
+    const green=allBands.filter(x=>x.cls==="green").length,yellow=allBands.filter(x=>x.cls==="yellow").length,red=allBands.filter(x=>x.cls==="red").length,date=new Date(session.finishedAt).toLocaleString("pt-BR");
+    $("#finalReport").innerHTML=`<div class="report-head"><div><div class="eyebrow">Relatório de estudo • Direito Administrativo</div><h2 style="margin:.25rem 0">${session.studentName}</h2><div class="live-status">Finalizado em ${date}</div></div><div class="report-actions actrow"><button class="secondary" id="copyReportBtn" type="button">📋 Copiar resumo</button><button class="primary" id="printReportBtn" type="button">🖨️ Imprimir / salvar PDF</button></div></div>
+    <div class="report-grid"><div class="metric"><div class="big">${globalScore}%</div><small>Pontuação global — primeira tentativa</small></div><div class="metric"><div class="big">${scoreLabel(globalScore)}</div><small>Desempenho global</small></div><div class="metric"><div class="big">${fmtLong(totalTracked)}</div><small>Tempo total efetivamente registrado</small></div><div class="metric"><div class="big">${completedRead}/${mids.length}</div><small>Leituras concluídas com cronômetro</small></div></div>
+    <div class="report-note"><strong>Como interpretar as cores:</strong> verde = dentro da faixa pedagógica estimada; amarelo = um pouco abaixo/acima; vermelho = muito abaixo ou muito acima. Tempo muito curto pode indicar leitura acelerada ou etapa pulada; tempo muito longo pode indicar dúvida, interrupção ou necessidade de revisão. <strong>Essas faixas são pedagógicas, não são diagnóstico clínico nem medem inteligência.</strong></div>
+    <div class="report-section"><h3>📖 Leitura por módulo</h3><div class="tablewrap"><table><thead><tr><th>Módulo</th><th>Tempo</th><th>Faixa esperada</th><th>Análise</th><th>Recomeços</th></tr></thead><tbody>${readingRows}</tbody></table></div></div>
+    <div class="report-section"><h3>🧩 Atividades interativas</h3><div class="tablewrap"><table><thead><tr><th>Atividade</th><th>Tempo</th><th>Faixa esperada</th><th>Análise</th><th>1ª tentativa</th><th>Tentativas</th><th>Recomeços</th></tr></thead><tbody>${activityRows}</tbody></table></div></div>
+    <div class="report-section"><h3>Resumo dos tempos</h3><p><span class="band green">${green} dentro da faixa</span> <span class="band yellow">${yellow} atenção</span> <span class="band red">${red} muito fora da faixa</span></p><p><strong>Tempo de leitura registrado:</strong> ${fmtLong(totalRead)} • <strong>Tempo nas atividades:</strong> ${fmtLong(totalAct)}.</p></div>
+    <div class="qr-panel"><h3>📷 QR Code para o Painel do Professor</h3><p>Este QR identifica <strong>${session.studentName}</strong> como <strong>7º ano • Turma A • Matemática</strong>, com o título <strong>UFBA • Direito Administrativo — Resultado Final</strong>. Para compatibilidade com o professor.html atual, o campo técnico de conteúdo é registrado como <strong>Probabilidade</strong>.</p><div id="resultQr" aria-label="QR Code do resultado"></div><p class="live-status">No Painel do Professor, use <strong>Escanear QR</strong> → leia este código → confirme o salvamento. A turma 7º ano A pode ser criada automaticamente se ainda não existir.</p><div class="actrow" style="justify-content:center"><button class="secondary" id="copyQrBtn" type="button">📋 Copiar conteúdo do QR</button></div></div>
+    <div class="screen-hint">📱 Faça um print desta tela e envie ao seu pai. Depois, envie também o QR Code acima para registro no Painel do Professor.</div>`;
+    $("#finalReport").classList.remove("hidden");
+    const qrText=renderResultQr(globalScore,totalTracked);
+    $("#copyQrBtn")?.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(qrText);$("#copyQrBtn").textContent="✓ Conteúdo do QR copiado"}catch(e){alert(qrText)}});
+    $("#finalReport").scrollIntoView({behavior:"smooth",block:"start"});
+    $("#printReportBtn").addEventListener("click",()=>{document.body.classList.add("print-report");window.print();setTimeout(()=>document.body.classList.remove("print-report"),500)});
+    $("#copyReportBtn").addEventListener("click",async()=>{const txt=`UFBA 2026 — Direito Administrativo\nEstudante: ${session.studentName}\nPontuação global (1ª tentativa): ${globalScore}%\nDesempenho: ${scoreLabel(globalScore)}\nTempo registrado: ${fmtLong(totalTracked)}\nDestino do QR: Matemática • 7º ano • Turma A • título UFBA/Direito Administrativo\nLeituras concluídas: ${completedRead}/${mids.length}\nFaixas: ${green} dentro, ${yellow} atenção, ${red} muito fora.`;try{await navigator.clipboard.writeText(txt);$("#copyReportBtn").textContent="✓ Resumo copiado"}catch(e){alert(txt)}})
+  }
+  $("#finishReportBtn").addEventListener("click",makeReport);
+
+  $$('.copy-module-qr').forEach(btn=>btn.addEventListener('click',async()=>{
+    const panel=btn.closest('.module-qr-panel'),box=panel?.querySelector('.module-qr-box'),txt=box?.dataset.qrText||'';
+    if(!txt)return;
+    try{await navigator.clipboard.writeText(txt);const old=btn.textContent;btn.textContent='✓ Conteúdo do QR copiado';setTimeout(()=>btn.textContent=old,1600)}catch(e){alert(txt)}
+  }));
+
+  refreshStartModal();updateProgress();updateLiveTimers();updateFinalButton();updateModuleQrPanels();
+  if(session.studentName){$("#studentChip").classList.remove("hidden");$("#studentNameChip").textContent=session.studentName}
+})();
+</script>
+</body>
+</html>
