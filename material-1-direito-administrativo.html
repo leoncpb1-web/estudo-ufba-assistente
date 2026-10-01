@@ -168,8 +168,8 @@ kbd{background:#eef1f6;border:1px solid #c9d0dd;border-bottom-width:2px;border-r
 
 /* ===== V2: identificação, tempos, pausa e relatório ===== */
 .student-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;background:#eef3ff;border:1px solid #cad5f2;font-size:.86rem;font-weight:800}
-.modal-backdrop{position:fixed;inset:0;z-index:500;background:rgba(12,20,38,.72);display:grid;place-items:center;padding:16px}
-.start-card,.pause-card{width:min(620px,100%);background:#fff;border-radius:22px;padding:22px;box-shadow:0 24px 70px rgba(0,0,0,.28);border:1px solid #d8dfed}
+.modal-backdrop{position:fixed;inset:0;z-index:500;background:rgba(12,20,38,.72);display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.start-card,.pause-card{width:min(620px,100%);background:#fff;border-radius:22px;padding:22px;box-shadow:0 24px 70px rgba(0,0,0,.28);border:1px solid #d8dfed}.start-card{max-height:calc(100dvh - 32px);max-height:calc(100svh - 32px);overflow-y:auto;overscroll-behavior:contain;margin:auto 0}
 .start-card h2,.pause-card h2{margin:.1rem 0 .7rem}
 .start-card label{display:block;font-weight:800;margin-top:12px}
 .start-card input{width:100%;padding:12px 13px;border:1px solid #aeb9cf;border-radius:12px;margin-top:6px}
@@ -249,6 +249,11 @@ kbd{background:#eef1f6;border:1px solid #c9d0dd;border-bottom-width:2px;border-r
     <p>Digite o nome da estudante. Este material usará uma <strong>turma-reserva</strong> do Painel do Professor para que o resultado possa ser enviado por QR Code ao mesmo banco Supabase dos módulos escolares.</p>
     <label for="studentNameInput">Nome da estudante</label>
     <input id="studentNameInput" type="text" autocomplete="name" placeholder="Digite o nome">
+    <div class="start-actions">
+      <button class="primary" id="startStudyBtn" type="button">▶ Iniciar / continuar atividade</button>
+      <button class="secondary hidden" id="newStudyBtn" type="button">↻ Iniciar novo estudo e zerar relatório</button>
+    </div>
+    <p class="live-status" id="savedSessionInfo"></p>
     <div class="study-destination">
       <strong>Destino reservado deste estudo</strong>
       <div class="fixed-fields">
@@ -259,11 +264,6 @@ kbd{background:#eef1f6;border:1px solid #c9d0dd;border-bottom-width:2px;border-r
       <span class="reserve-badge">Conteúdo especial: Direito Administrativo • UFBA</span>
     </div>
     <div class="notice"><strong>Importante no celular:</strong> mantenha esta aba aberta durante o estudo. Se você trocar de aplicativo ou aba, o cronômetro será pausado automaticamente. O progresso já salvo continuará no aparelho.</div>
-    <div class="start-actions">
-      <button class="primary" id="startStudyBtn" type="button">▶ Iniciar / continuar atividade</button>
-      <button class="secondary hidden" id="newStudyBtn" type="button">↻ Iniciar novo estudo e zerar relatório</button>
-    </div>
-    <p class="live-status" id="savedSessionInfo"></p>
   </div>
 </div>
 <div class="pause-screen hidden" id="pauseScreen">
