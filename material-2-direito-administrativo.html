@@ -1,0 +1,1973 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Direito Administrativo — UFBA 2026, Assistente em Administração</title>
+<meta name="description" content="Módulo interativo de Direito Administrativo para o concurso UFBA 2026 (Edital nº 7/2026), cargo 201 — Assistente em Administração.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eaf0ef; --surface:#ffffff; --sunk:#f3f6f6; --ink:#15212b; --muted:#56636f; --line:#d3dddd;
+  --accent:#0d6687; --accent-ink:#ffffff; --accent-soft:#dcedf3;
+  --reward:#b97800; --reward-soft:#fff1d2;
+  --ok:#17744a; --ok-soft:#dff3e8; --bad:#b1261d; --bad-soft:#fbe4e1;
+  --trap:#8a5a00; --trap-soft:#fff5dc; --law:#2b4f9a; --law-soft:#e7edfb; --ufba:#1b6b63; --ufba-soft:#dff2ef;
+  --c1:#3a66c9; --c2:#0d8577; --c3:#7650bd; --c4:#bd4466; --c5:#b57400; --c6:#2f7a34; --c7:#1b5c9e; --csim:#15212b;
+  --mark:#fff0a8;
+  --font:"Lexend", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fs:17px; --lh:1.65; --ls:0;
+  --r-s:8px; --r-m:14px; --r-l:22px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e161c; --surface:#16212a; --sunk:#111b22; --ink:#e3ebef; --muted:#9dafba; --line:#27363f;
+    --accent:#5cb8d8; --accent-ink:#06202b; --accent-soft:#16384a;
+    --reward:#f0b53d; --reward-soft:#3a2d10;
+    --ok:#5fcf93; --ok-soft:#133226; --bad:#ff8a7e; --bad-soft:#3b1a17;
+    --trap:#f2c15a; --trap-soft:#2f2612; --law:#9db8ff; --law-soft:#1b2640; --ufba:#6fd3c4; --ufba-soft:#12302c;
+    --c1:#7da0f0; --c2:#4cc6b6; --c3:#b494ee; --c4:#ee86a3; --c5:#f0b53d; --c6:#79c67d; --c7:#6aa9ec; --csim:#e3ebef;
+    --mark:#5a4b10; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e161c; --surface:#16212a; --sunk:#111b22; --ink:#e3ebef; --muted:#9dafba; --line:#27363f;
+  --accent:#5cb8d8; --accent-ink:#06202b; --accent-soft:#16384a;
+  --reward:#f0b53d; --reward-soft:#3a2d10;
+  --ok:#5fcf93; --ok-soft:#133226; --bad:#ff8a7e; --bad-soft:#3b1a17;
+  --trap:#f2c15a; --trap-soft:#2f2612; --law:#9db8ff; --law-soft:#1b2640; --ufba:#6fd3c4; --ufba-soft:#12302c;
+  --c1:#7da0f0; --c2:#4cc6b6; --c3:#b494ee; --c4:#ee86a3; --c5:#f0b53d; --c6:#79c67d; --c7:#6aa9ec; --csim:#e3ebef;
+  --mark:#5a4b10; color-scheme:dark;
+}
+:root[data-font="atkinson"]{--font:"Atkinson Hyperlegible", system-ui, sans-serif}
+:root[data-font="system"]{--font:system-ui, -apple-system, "Segoe UI", Roboto, sans-serif}
+:root[data-size="0"]{--fs:15.5px} :root[data-size="2"]{--fs:19px} :root[data-size="3"]{--fs:21px}
+:root[data-spacing="wide"]{--lh:1.9; --ls:.02em}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px); -webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); font-size:var(--fs); line-height:var(--lh); letter-spacing:var(--ls); overflow-x:hidden}
+button,input,select{font:inherit; color:inherit; letter-spacing:inherit}
+button{cursor:pointer}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:6px}
+img,svg{max-width:100%}
+mark{background:var(--mark); color:inherit; padding:0 .15em; border-radius:3px}
+.sr{position:absolute!important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+
+/* ---------- top bar ---------- */
+.top{position:sticky; top:0; z-index:40; background:color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); padding-top:env(safe-area-inset-top,0px); margin-top:calc(-1 * env(safe-area-inset-top,0px))}
+.top-in{max-width:1240px; margin:0 auto; padding:10px 18px; display:flex; align-items:center; gap:10px}
+.brand{display:flex; align-items:center; gap:10px; margin-right:auto; min-width:0; background:none; border:0; padding:4px; text-align:left}
+.brand-mark{width:34px; height:34px; border-radius:10px; background:var(--accent); color:var(--accent-ink); display:grid; place-items:center; font-weight:700; font-size:.95rem; flex:none}
+.brand-txt{display:flex; flex-direction:column; line-height:1.15; min-width:0}
+.brand-txt b{font-size:.98rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.brand-txt small{color:var(--muted); font-size:.78rem}
+.pill{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:6px 12px; font-size:.86rem; font-variant-numeric:tabular-nums; white-space:nowrap}
+.pill.pts{border-color:color-mix(in srgb, var(--reward) 45%, var(--line)); background:var(--reward-soft); font-weight:600}
+.pill.paused{color:var(--muted); border-style:dashed}
+.icon-btn{border:1px solid var(--line); background:var(--surface); border-radius:12px; min-width:40px; height:40px; padding:0 10px; display:inline-flex; align-items:center; justify-content:center; gap:6px; font-size:.86rem}
+.icon-btn:hover{border-color:var(--accent)}
+.icon-btn[aria-pressed="true"]{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+.pomo.run{background:var(--accent-soft); border-color:var(--accent); font-variant-numeric:tabular-nums; font-weight:600}
+.pomo.brk{background:var(--ok-soft); border-color:var(--ok)}
+.only-narrow{display:none}
+
+/* ---------- layout ---------- */
+.shell{max-width:1240px; margin:0 auto; padding:22px 18px 80px; display:grid; grid-template-columns:290px minmax(0,1fr); gap:28px; align-items:start}
+.side{position:sticky; top:84px; max-height:calc(100vh - 100px); overflow:auto; padding-right:4px}
+main{min-width:0; max-width:780px}
+main:focus{outline:none}
+body.focus .side,body.focus .hide-focus{display:none!important}
+body.focus .shell{grid-template-columns:minmax(0,1fr); justify-items:center}
+body.focus main{max-width:720px; width:100%}
+
+/* ---------- trilha (linha de metrô) ---------- */
+.line-title{font-size:.82rem; color:var(--muted); margin:0 0 8px 6px}
+.stations{list-style:none; margin:0; padding:0; position:relative}
+.stations::before{content:""; position:absolute; left:22px; top:18px; bottom:18px; width:4px; border-radius:4px; background:var(--line)}
+.st{position:relative}
+.st button{width:100%; display:grid; grid-template-columns:48px 1fr; align-items:center; gap:4px; background:none; border:0; text-align:left; padding:7px 6px 7px 0; border-radius:12px}
+.st button:hover{background:var(--sunk)}
+.st.cur button{background:var(--surface); box-shadow:0 0 0 1px var(--line)}
+.dot{justify-self:center; width:26px; height:26px; border-radius:50%; background:var(--surface); border:4px solid var(--mc,var(--muted)); display:grid; place-items:center; font-size:.72rem; font-weight:700; position:relative; z-index:1; color:var(--mc)}
+.st.done .dot{background:var(--mc); color:var(--surface)}
+.st.cur .dot{box-shadow:0 0 0 5px color-mix(in srgb, var(--mc) 25%, transparent)}
+.st-name{font-size:.9rem; font-weight:600; line-height:1.25}
+.st-meta{font-size:.76rem; color:var(--muted); display:block; font-weight:400; margin-top:2px}
+.side-links{margin-top:14px; display:grid; gap:6px}
+.side-links button{display:flex; justify-content:space-between; align-items:center; border:1px solid var(--line); background:var(--surface); border-radius:12px; padding:10px 12px; font-size:.88rem; text-align:left}
+.side-links button:hover{border-color:var(--accent)}
+.count{background:var(--bad-soft); color:var(--bad); border-radius:999px; padding:0 8px; font-size:.78rem; font-weight:700}
+
+/* ---------- generic blocks ---------- */
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-l); padding:24px}
+.panel + .panel{margin-top:16px}
+h1,h2,h3{line-height:1.2; letter-spacing:-.01em; margin:0 0 .5em}
+h1{font-size:clamp(1.7rem,4.2vw,2.5rem); font-weight:700}
+h2{font-size:clamp(1.25rem,2.6vw,1.6rem); font-weight:700}
+h3{font-size:1.1rem; font-weight:600}
+p{margin:0 0 .9em} .muted{color:var(--muted)}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; border:1px solid transparent; border-radius:14px; padding:12px 18px; font-weight:600; min-height:46px}
+.btn.primary{background:var(--accent); color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.07)}
+.btn.ghost{background:var(--surface); border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent)}
+.btn.big{font-size:1.05rem; padding:15px 24px}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.row.end{justify-content:flex-end}
+.spacer{flex:1}
+.tag{display:inline-block; font-size:.78rem; border-radius:999px; padding:3px 10px; background:var(--sunk); border:1px solid var(--line); color:var(--muted)}
+.tag.two{background:var(--ufba-soft); color:var(--ufba); border-color:transparent; font-weight:600; border-radius:10px; line-height:1.4; padding:6px 10px}
+.hint{font-size:.92em; color:var(--muted); border-left:3px solid var(--line); padding-left:12px}
+
+/* content blocks */
+.tbl{overflow-x:auto; margin:0 0 1em; border:1px solid var(--line); border-radius:var(--r-m)}
+.tbl table{border-collapse:collapse; width:100%; font-size:.92em; min-width:460px}
+.tbl th,.tbl td{padding:10px 12px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line)}
+.tbl th{background:var(--sunk); font-weight:600}
+.tbl tr:last-child td{border-bottom:0}
+.card-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; margin:0 0 1em}
+.mini{background:var(--sunk); border-radius:var(--r-m); padding:14px 16px}
+.mini b{display:block; margin-bottom:4px}
+.mini p{margin:0; font-size:.94em}
+aside.law,aside.trap,aside.ufba{border-radius:var(--r-m); padding:13px 16px; margin:0 0 1em; font-size:.95em}
+aside.law{background:var(--law-soft); border-left:5px solid var(--law)}
+aside.trap{background:var(--trap-soft); border-left:5px solid var(--trap)}
+aside.ufba{background:var(--ufba-soft); border-left:5px solid var(--ufba)}
+ul.clean{padding-left:1.2em; margin:0 0 1em} ul.clean li{margin:.3em 0}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 1em}
+.chips span{background:var(--sunk); border:1px solid var(--line); border-radius:999px; padding:3px 11px; font-size:.86em}
+ol.phases{counter-reset:ph; list-style:none; padding:0; margin:0 0 1em; display:flex; flex-wrap:wrap; gap:6px}
+ol.phases li{counter-increment:ph; background:var(--sunk); border:1px solid var(--line); border-radius:12px; padding:6px 12px 6px 8px; font-size:.9em}
+ol.phases li::before{content:counter(ph); display:inline-grid; place-items:center; width:22px; height:22px; border-radius:50%; background:var(--c7); color:var(--surface); font-size:.75rem; font-weight:700; margin-right:6px}
+
+/* ---------- home ---------- */
+.hero-count{font-size:clamp(2.6rem,9vw,4.6rem); font-weight:700; line-height:1; letter-spacing:-.03em; margin:0 0 .15em}
+.hero-count span{color:var(--accent)}
+.weights{display:flex; height:40px; border-radius:12px; overflow:hidden; margin:14px 0 8px; border:1px solid var(--line)}
+.weights div{display:flex; align-items:center; justify-content:center; font-size:.76rem; font-weight:600; color:#fff; white-space:nowrap; overflow:hidden; padding:0 4px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:.84rem; color:var(--muted)}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:6px; vertical-align:middle}
+.how{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin-top:6px}
+.how div{background:var(--sunk); border-radius:var(--r-m); padding:14px}
+.how b{display:block}
+.mobile-line{display:none}
+
+/* ---------- mission ---------- */
+.m-head{border-top:6px solid var(--mc); }
+.m-kicker{font-size:.86rem; color:var(--mc); font-weight:600; margin-bottom:6px}
+.steps{display:flex; gap:6px; overflow-x:auto; padding:2px 2px 6px; margin:16px 0 0; scrollbar-width:thin}
+.steps button{flex:none; border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:8px 14px; font-size:.88rem; display:inline-flex; gap:7px; align-items:center}
+.steps button .n{width:22px; height:22px; border-radius:50%; display:grid; place-items:center; background:var(--sunk); font-size:.75rem; font-weight:700}
+.steps button.seen .n{background:var(--mc); color:var(--surface)}
+.steps button[aria-current="step"]{border-color:var(--mc); box-shadow:inset 0 0 0 1px var(--mc); font-weight:600}
+.sum-grid{display:grid; gap:10px}
+.sum{display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; background:var(--sunk); border-radius:var(--r-m); padding:14px 16px}
+.sum .k{font-weight:700; color:var(--mc); min-width:8.5em}
+.sum p{margin:0}
+.acc{border:1px solid var(--line); border-radius:var(--r-m); margin-bottom:10px; background:var(--surface); overflow:hidden}
+.acc > button{width:100%; display:flex; gap:12px; align-items:center; background:none; border:0; padding:14px 16px; text-align:left; font-weight:600}
+.acc > button .chk{width:24px; height:24px; border-radius:50%; border:2px solid var(--line); flex:none; display:grid; place-items:center; font-size:.8rem}
+.acc.read > button .chk{background:var(--mc); border-color:var(--mc); color:var(--surface)}
+.acc > button .mins{margin-left:auto; font-weight:400; color:var(--muted); font-size:.8rem}
+.acc-body{padding:4px 18px 16px}
+.acc.open{border-color:var(--mc)}
+.trap-list{list-style:none; padding:0; margin:0 0 1.2em; display:grid; gap:8px}
+.trap-list li{background:var(--trap-soft); border-radius:var(--r-m); padding:12px 14px 12px 44px; position:relative}
+.trap-list li::before{content:"!"; position:absolute; left:14px; top:12px; width:20px; height:20px; border-radius:50%; background:var(--trap); color:var(--surface); display:grid; place-items:center; font-weight:700; font-size:.8rem}
+.mn{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px}
+.mn div{border:2px dashed color-mix(in srgb, var(--mc) 55%, var(--line)); border-radius:var(--r-m); padding:14px}
+.mn b{display:block; font-size:1.02rem; color:var(--mc)}
+.next-row{margin-top:20px; display:flex; gap:10px; flex-wrap:wrap; justify-content:space-between; align-items:center}
+
+/* flashcards */
+.flash-wrap{perspective:1200px}
+.flash{width:100%; min-height:220px; border:0; background:none; padding:0; position:relative; transform-style:preserve-3d; transition:transform .45s ease}
+.flash.flipped{transform:rotateY(180deg)}
+.face{position:absolute; inset:0; backface-visibility:hidden; border-radius:var(--r-l); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:26px; font-size:1.12em}
+.face.front{background:var(--sunk); border:2px solid var(--line)}
+.face.back{background:var(--surface); border:2px solid var(--mc); transform:rotateY(180deg)}
+.face small{position:absolute; bottom:12px; font-size:.75rem; color:var(--muted)}
+.fc-meta{display:flex; justify-content:space-between; font-size:.86rem; color:var(--muted); margin:10px 2px}
+
+/* quiz */
+.qdots{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px}
+.qdots button{width:30px; height:30px; border-radius:9px; border:1px solid var(--line); background:var(--surface); font-size:.78rem; font-weight:600}
+.qdots button.ok{background:var(--ok-soft); border-color:var(--ok); color:var(--ok)}
+.qdots button.no{background:var(--bad-soft); border-color:var(--bad); color:var(--bad)}
+.qdots button.now{box-shadow:0 0 0 2px var(--mc)}
+.qtext{font-size:1.08em; font-weight:500; margin-bottom:14px}
+.opts{display:grid; gap:9px}
+.opt{display:grid; grid-template-columns:38px 1fr; gap:10px; align-items:start; text-align:left; border:1.5px solid var(--line); background:var(--surface); border-radius:var(--r-m); padding:11px 14px 11px 10px; min-height:52px}
+.opt:hover:not([disabled]){border-color:var(--mc); background:var(--sunk)}
+.opt .L{width:30px; height:30px; border-radius:9px; display:grid; place-items:center; background:var(--sunk); font-weight:700; font-size:.9rem}
+.opt[disabled]{cursor:default}
+.opt.right{border-color:var(--ok); background:var(--ok-soft)} .opt.right .L{background:var(--ok); color:var(--surface)}
+.opt.wrong{border-color:var(--bad); background:var(--bad-soft)} .opt.wrong .L{background:var(--bad); color:var(--surface)}
+.opt.dim{opacity:.6}
+.fb{margin-top:14px; border-radius:var(--r-m); padding:14px 16px}
+.fb.ok{background:var(--ok-soft)} .fb.no{background:var(--bad-soft)}
+.fb b{display:block; margin-bottom:4px}
+.floaty{position:fixed; pointer-events:none; font-weight:700; color:var(--reward); font-size:1.3rem; z-index:90; animation:up .9s ease-out forwards}
+@keyframes up{from{opacity:1; transform:translateY(0)} to{opacity:0; transform:translateY(-46px)}}
+.kbd-hint{font-size:.8rem; color:var(--muted); margin-top:12px}
+kbd{font-family:inherit; font-size:.8em; background:var(--sunk); border:1px solid var(--line); border-bottom-width:2px; border-radius:6px; padding:0 6px}
+.conf{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:12px 0}
+.conf button{border:1.5px solid var(--line); background:var(--surface); border-radius:var(--r-m); padding:12px 8px; font-size:.9rem}
+.conf button[aria-pressed="true"]{border-color:var(--mc); background:var(--sunk); font-weight:600}
+.stat-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin:12px 0}
+.stat{background:var(--sunk); border-radius:var(--r-m); padding:14px}
+.stat b{display:block; font-size:1.5rem; line-height:1.1; font-variant-numeric:tabular-nums}
+.stat span{display:block; margin-top:4px; font-size:.82rem; line-height:1.35; color:var(--muted)}
+
+/* results */
+.score-big{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+.score-big b{font-size:clamp(3rem,11vw,5.5rem); line-height:1; letter-spacing:-.04em; font-variant-numeric:tabular-nums}
+.score-big span{font-size:1.2rem; color:var(--muted)}
+.gauge{position:relative; height:18px; border-radius:999px; background:var(--sunk); border:1px solid var(--line); margin:22px 0 34px}
+.gauge .fill{position:absolute; inset:0 auto 0 0; border-radius:999px; background:var(--accent)}
+.gauge .mk{position:absolute; top:-6px; bottom:-6px; width:2px; background:var(--ink)}
+.gauge .mk span{position:absolute; top:26px; transform:translateX(-50%); font-size:.72rem; white-space:nowrap; color:var(--muted)}
+.bars{display:grid; gap:10px}
+.bar-row{display:grid; grid-template-columns:minmax(120px,1.3fr) 2fr auto; gap:12px; align-items:center; font-size:.9rem}
+.bar{height:12px; background:var(--sunk); border-radius:999px; overflow:hidden}
+.bar i{display:block; height:100%; border-radius:999px}
+.verdict{border-radius:var(--r-m); padding:16px; margin:14px 0; background:var(--sunk); border-left:6px solid var(--accent)}
+
+/* edital */
+.ed-area{margin-bottom:18px}
+.ed-area h3{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
+.ed-area h3 small{font-weight:400; color:var(--muted); font-size:.82rem}
+.ed-item{display:flex; gap:12px; align-items:flex-start; padding:10px 12px; border:1px solid var(--line); border-radius:12px; margin-bottom:6px; background:var(--surface)}
+.ed-item input{width:20px; height:20px; margin-top:3px; accent-color:var(--accent); flex:none}
+.ed-item small{display:block; color:var(--muted); font-size:.82rem}
+
+/* settings / toast / ruler */
+.sheet{position:fixed; inset:0; z-index:80; display:none; background:rgba(8,14,18,.45); padding:16px; padding-top:calc(16px + env(safe-area-inset-top,0px)); padding-bottom:calc(16px + env(safe-area-inset-bottom,0px)); overflow:auto}
+.sheet.open{display:grid; place-items:start center}
+.sheet .panel{width:min(560px,100%); margin-top:40px}
+.set{display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center; padding:12px 0; border-bottom:1px solid var(--line)}
+.set:last-of-type{border-bottom:0}
+.set small{display:block; color:var(--muted); font-size:.82rem}
+.seg{display:inline-flex; border:1px solid var(--line); border-radius:12px; overflow:hidden}
+.seg button{border:0; background:var(--surface); padding:8px 12px; font-size:.86rem}
+.seg button[aria-pressed="true"]{background:var(--accent); color:var(--accent-ink)}
+.toggle{width:52px; height:30px; border-radius:999px; border:1px solid var(--line); background:var(--sunk); position:relative; padding:0}
+.toggle::after{content:""; position:absolute; top:3px; left:3px; width:22px; height:22px; border-radius:50%; background:var(--muted); transition:left .2s}
+.toggle[aria-pressed="true"]{background:var(--accent)} .toggle[aria-pressed="true"]::after{left:25px; background:var(--accent-ink)}
+.toasts{position:fixed; left:50%; transform:translateX(-50%); bottom:calc(18px + env(safe-area-inset-bottom,0px)); z-index:95; display:grid; gap:8px; width:min(520px,calc(100% - 24px))}
+.toast{background:var(--ink); color:var(--bg); border-radius:var(--r-m); padding:14px 16px; box-shadow:0 10px 30px rgba(0,0,0,.25); display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+.toast .row{margin-left:auto}
+.toast button{background:var(--bg); color:var(--ink); border:0; border-radius:10px; padding:7px 12px; font-weight:600; font-size:.86rem}
+#ruler{position:fixed; left:0; right:0; height:2.3em; pointer-events:none; z-index:60; background:color-mix(in srgb, var(--reward) 16%, transparent); border-top:2px solid color-mix(in srgb, var(--reward) 55%, transparent); border-bottom:2px solid color-mix(in srgb, var(--reward) 55%, transparent); display:none; transform:translateY(-50%)}
+body.ruler #ruler{display:block}
+
+/* pausa, boas-vindas, relatório */
+.pausebtn{font-weight:600} .pausebtn[aria-pressed="true"]{background:var(--reward-soft); border-color:var(--reward)}
+.pausebtn b{font-weight:600} .pausebtn:disabled{opacity:.45; cursor:default}
+.pause-ov{position:fixed; inset:0; z-index:85; background:color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter:blur(6px); display:grid; place-items:center; padding:20px; text-align:center}
+.pause-ov[hidden]{display:none}
+.pause-ov .panel{width:min(440px,100%)}
+.linkish{background:none; border:0; color:var(--muted); text-decoration:underline; font-size:.88rem}
+body.gate .side, body.gate #pauseBtn, body.gate #menuBtn, body.gate .pts, body.gate .time-pill{display:none!important}
+body.gate .shell{grid-template-columns:minmax(0,1fr); justify-items:center}
+body.gate main{max-width:640px; width:100%}
+.name-in{flex:1 1 220px; min-height:52px; border:2px solid var(--line); border-radius:14px; padding:10px 14px; background:var(--surface); font-size:1.1rem}
+.name-in:focus{border-color:var(--accent); outline:none}
+.warn{border-left:6px solid var(--reward)}
+.rp-note{margin:4px 0 0; text-align:center; font-size:.66rem; color:#56636f}
+.report{--g:#1f8a4c; --gs:#dff4e7; --y:#a46f00; --ys:#fff1c7; --r:#c0281d; --rs:#fde1dd;
+  background:#fff; color:#15212b; border:1px solid var(--line); border-radius:var(--r-l); padding:12px 12px 10px; max-width:460px; margin:0 auto; font-size:14px; line-height:1.3; letter-spacing:0}
+.rp-head{display:flex; justify-content:space-between; gap:10px; align-items:flex-start}
+.rp-k{display:block; font-size:.78rem; color:#56636f}
+.rp-name{display:block; font-size:1.25rem; line-height:1.15}
+.rp-sub{display:block; font-size:.74rem; color:#56636f; margin-top:2px}
+.rp-score{text-align:right; border-radius:12px; padding:6px 10px; flex:none}
+.rp-score b{display:block; font-size:1.8rem; line-height:1; font-variant-numeric:tabular-nums}
+.rp-score span{font-size:.72rem}
+.rp-verdict{margin:8px 0; border-radius:10px; padding:6px 10px; font-weight:600; font-size:.84rem}
+.rp-stats{display:grid; grid-template-columns:repeat(3,1fr); gap:5px; margin-bottom:6px}
+.rp-stats div{background:#f1f5f5; border-radius:10px; padding:5px 8px}
+.rp-stats b{display:block; font-size:.98rem; font-variant-numeric:tabular-nums}
+.rp-stats span{display:block; font-size:.7rem; color:#56636f}
+.rp-tbl table{width:100%; border-collapse:separate; border-spacing:2px; font-size:.74rem}
+.rp-tbl th{font-weight:600; text-align:left; color:#56636f; font-size:.7rem; padding:0 3px}
+.rp-tbl tbody th{color:#15212b; font-size:.7rem; line-height:1.15; padding:0 2px}
+.rp-tbl td{border-radius:6px; padding:2px 4px; text-align:center; vertical-align:middle}
+.rp-tbl td b{display:block; font-variant-numeric:tabular-nums; font-size:.78rem; line-height:1.2}
+.rp-tbl td small{display:block; font-size:.6rem; line-height:1.1; white-space:nowrap}
+.report .green{background:var(--gs); color:#0f5a32} .report .yellow{background:var(--ys); color:#6b4800} .report .red{background:var(--rs); color:#8e1c14} .report .na{color:#9aa5ad}
+.rp-legend{display:flex; flex-wrap:wrap; gap:2px 10px; font-size:.66rem; color:#56636f; margin:4px 0 6px}
+.rp-legend i{display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:4px; vertical-align:middle}
+.rp-an{list-style:none; padding:0; margin:0; display:grid; gap:3px; font-size:.7rem}
+.rp-an li{border-radius:8px; padding:4px 8px}
+.rp-foot{margin:8px 0 0; text-align:center; font-weight:600; font-size:.82rem; color:#0d6687}
+
+@media (prefers-reduced-motion:reduce){ *{transition:none!important; animation:none!important} }
+:root[data-motion="off"] *{transition:none!important; animation:none!important}
+
+@media (max-width:920px){
+  .shell{grid-template-columns:minmax(0,1fr); padding:16px 14px 90px}
+  .side{position:fixed; inset:0 auto 0 0; width:min(330px,88vw); max-height:none; z-index:70; background:var(--bg); padding:calc(18px + env(safe-area-inset-top,0px)) 12px calc(18px + env(safe-area-inset-bottom,0px)); transform:translateX(-105%); transition:transform .25s; box-shadow:10px 0 40px rgba(0,0,0,.2)}
+  body.drawer .side{transform:none}
+  .scrim{position:fixed; inset:0; z-index:65; background:rgba(8,14,18,.4); display:none}
+  body.drawer .scrim{display:block}
+  .only-narrow{display:inline-flex}
+  .hide-narrow{display:none!important}
+  .mobile-line{display:block}
+  .panel{padding:18px}
+}
+@media (max-width:520px){
+  .brand-txt{display:none}
+  #homeBtn,#focusBtn{display:none}
+  .icon-btn{min-width:38px; padding:0 8px}
+  .top-in{gap:6px; padding:8px 10px}
+  .pill{padding:6px 9px; font-size:.8rem}
+  .pomo:not(.run):not(.brk) #pomoLbl{display:none}
+  .sum{grid-template-columns:1fr; gap:4px}
+  .bar-row{grid-template-columns:1fr auto; }
+  .bar-row .bar{grid-column:1 / -1; grid-row:2}
+  .conf{grid-template-columns:1fr}
+}
+@media print{ .top,.side,.toasts,.next-row,.steps{display:none!important} body{background:#fff} .shell{display:block} }
+
+/* ---------- registro no professor.html atual ---------- */
+.prof-qr-panel{
+  margin-top:16px; padding:16px; border:1px solid var(--line); border-radius:var(--r-m);
+  background:var(--sunk)
+}
+.prof-qr-panel h3{margin-bottom:6px}
+.prof-qr-meta{font-size:.86rem; color:var(--muted); margin-bottom:10px}
+.prof-qr-grid{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; align-items:center}
+.prof-qr{
+  width:190px; min-height:190px; padding:8px; background:#fff; border:1px solid #d7dde2;
+  border-radius:12px; display:grid; place-items:center; overflow:hidden
+}
+.prof-qr img,.prof-qr canvas{max-width:100%!important; height:auto!important}
+.prof-qr-note{font-size:.8rem; color:var(--muted); margin:8px 0 0}
+@media(max-width:600px){
+  .prof-qr-grid{grid-template-columns:1fr}
+  .prof-qr{margin:0 auto}
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+<div id="ruler" aria-hidden="true"></div>
+<header class="top">
+  <div class="top-in">
+    <button class="icon-btn only-narrow" id="menuBtn" aria-label="Abrir trilha de missões">☰</button>
+    <button class="brand" id="homeBtn" aria-label="Ir para o início">
+      <span class="brand-mark" aria-hidden="true">DA</span>
+      <span class="brand-txt"><b>Direito Administrativo</b><small>UFBA 2026 — Assistente em Administração</small></span>
+    </button>
+    <span class="pill pts" id="ptsPill" title="Pontos no padrão da prova: 2 por questão de Conhecimentos Específicos">0 pts</span>
+    <span class="pill time-pill" id="timePill" title="Tempo ativo de estudo">⏱ 00:00</span>
+    <button class="icon-btn pausebtn" id="pauseBtn" aria-pressed="false" title="Pausar ou retomar o tempo">⏸️ <b class="hide-narrow">Pausar</b></button>
+    <button class="icon-btn pomo hide-focus" id="pomoBtn" title="Pomodoro: blocos de foco com pausas">🍅 <span id="pomoLbl">25 min</span></button>
+    <button class="icon-btn" id="focusBtn" aria-pressed="false" title="Modo foco (atalho F)">🎯<span class="hide-narrow">Modo foco</span></button>
+    <button class="icon-btn" id="setBtn" aria-label="Ajustes de leitura e acessibilidade">⚙️</button>
+  </div>
+</header>
+<div class="scrim" id="scrim"></div>
+<div class="shell">
+  <nav class="side" id="side" aria-label="Trilha de missões"></nav>
+  <main id="view" tabindex="-1"></main>
+</div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="setTitle"></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<div class="pause-ov" id="pauseOv" hidden role="dialog" aria-modal="true" aria-labelledby="pauseT">
+  <div class="panel"><p style="font-size:3rem;margin:0">⏸️</p><h2 id="pauseT">Atividade pausada</h2>
+  <p>O tempo está parado. Quando voltar, toque em continuar.</p><p class="muted" id="pauseInfo"></p>
+  <p class="hint">Deixe esta aba aberta para não perder a atividade.</p>
+  <div class="row" style="justify-content:center"><button class="btn primary big" id="resumeBtn">▶️ Continuar</button></div>
+  <p style="margin-top:18px"><button class="linkish" id="resetPause">Recomeçar a atividade do zero</button></p></div>
+</div>
+<script>
+/* ===== Helpers de conteúdo ===== */
+function tbl(head, rows){
+  return `<div class="tbl" tabindex="0"><table><thead><tr>${head.map(h=>`<th scope="col">${h}</th>`).join("")}</tr></thead><tbody>${
+    rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+}
+/* ===== Missões 1–3 ===== */
+const MISSIONS = [];
+
+MISSIONS.push({
+  id: "m1", n: 1, color: "var(--c1)", min: 25,
+  title: "Estado, Governo e Administração Pública",
+  edital: "Item 1: conceitos, elementos, poderes, organização, natureza, fins e princípios.",
+  twoInOne: "Também cai em Administração Pública (Conhecimentos Comuns, item 1): princípios do art. 37.",
+  summary: [
+    ["Estado", "Pessoa jurídica de direito público. Elementos clássicos: <mark>povo, território e governo soberano</mark>."],
+    ["Governo × Administração", "Governo <b>decide o rumo</b> (função política). Administração <b>executa</b> (função técnica, subordinada à lei)."],
+    ["Natureza e fins", "A Administração é um <mark>múnus público</mark>: encargo de cuidar do que é de todos. Fim único: o <b>bem comum</b>."],
+    ["Princípios", "Expressos no art. 37: <mark>LIMPE</mark>. Por trás de todos: supremacia e indisponibilidade do interesse público."]
+  ],
+  sections: [
+    { t: "Estado: elementos, poderes e organização", h: `
+      <p>O Estado é a <b>pessoa jurídica de direito público</b> que organiza a vida coletiva num território. A doutrina clássica aponta três elementos: <mark>povo</mark> (componente humano), <mark>território</mark> (base física) e <mark>governo soberano</mark> (poder que não se subordina a nenhum outro na ordem interna).</p>
+      <p><b>Poderes do Estado</b> (art. 2º da CF): Legislativo, Executivo e Judiciário, <i>independentes e harmônicos entre si</i>. Cada um tem uma função típica, mas também exerce funções atípicas.</p>
+      ${tbl(["Poder","Função típica","Exemplo de função atípica"],[
+        ["Legislativo","Legislar e fiscalizar","Administrar: realizar licitação para comprar computadores"],
+        ["Executivo","Administrar","Legislar: medida provisória; julgar: processo administrativo disciplinar"],
+        ["Judiciário","Julgar","Administrar: conceder férias aos seus servidores"]
+      ])}
+      <p><b>Organização:</b> o Brasil é uma federação. União, Estados, Distrito Federal e Municípios são autônomos (art. 18 da CF): cada um se auto-organiza, se autogoverna e se autoadministra.</p>
+      <aside class="trap"><b>Não confunda:</b> <i>poderes do Estado</i> (Legislativo, Executivo, Judiciário) são estruturas da organização política. <i>Poderes administrativos</i> (hierárquico, disciplinar, regulamentar, de polícia) são ferramentas da Administração — assunto da missão 4.</aside>` },
+    { t: "Governo × Administração", h: `
+      ${tbl(["","Governo","Administração"],[
+        ["O que faz","Fixa diretrizes, metas e políticas públicas","Executa essas decisões de forma concreta"],
+        ["Natureza da atividade","Política, com ampla discricionariedade","Neutra, técnica, normalmente vinculada à lei"],
+        ["Responsabilidade","Constitucional e política","Técnica e legal"],
+        ["Exemplo na UFBA","MEC define a política de expansão de vagas","Setor da UFBA organiza a matrícula dos novos alunos"]
+      ])}
+      <p>Dica de prova: procure o <b>verbo</b>. “Definir, planejar politicamente, escolher prioridades” aponta para Governo. “Executar, prestar, operacionalizar” aponta para Administração.</p>` },
+    { t: "Os dois sentidos de “Administração Pública”", h: `
+      <div class="card-grid">
+        <div class="mini"><b>Sentido subjetivo, formal ou orgânico</b><p><b>Quem</b> administra: pessoas jurídicas, órgãos e agentes públicos. Costuma vir com letra maiúscula: “Administração Pública”.</p></div>
+        <div class="mini"><b>Sentido objetivo, material ou funcional</b><p><b>O que</b> se faz: a própria atividade administrativa — <mark>serviço público, polícia administrativa, fomento e intervenção</mark>.</p></div>
+      </div>
+      <p class="hint">Macete: <b>S</b>ubjetivo = <b>S</b>ujeitos. <b>O</b>bjetivo = <b>O</b>bjeto (a atividade).</p>
+      <p>Há ainda o sentido <b>amplo</b> (inclui órgãos de governo e função política) e o <b>estrito</b> (só órgãos e atividades administrativas).</p>` },
+    { t: "Natureza e fins", h: `
+      <p>Hely Lopes Meirelles ensina que a <b>natureza</b> da Administração é a de um <mark>múnus público</mark> para quem a exerce: um encargo de defesa, conservação e aprimoramento dos bens, serviços e interesses da coletividade. O administrador <b>não é dono</b> do que administra.</p>
+      <p>O <b>fim</b> é um só: o <mark>bem comum da coletividade administrada</mark>. Todo ato que se afasta desse fim é ilegítimo, ainda que pareça legal na forma — é aqui que nasce a ideia de <i>desvio de finalidade</i>.</p>` },
+    { t: "Princípios: expressos e implícitos", h: `
+      ${tbl(["Princípio (art. 37)","Em uma frase","Como a banca cobra"],[
+        ["<b>L</b>egalidade","A Administração só faz o que a lei permite ou autoriza","Particular pode tudo o que a lei não proíbe; a Administração, não"],
+        ["<b>I</b>mpessoalidade","Atuação voltada ao interesse público, sem favoritismo nem promoção pessoal","Art. 37, §1º: publicidade oficial sem nomes, símbolos ou imagens de autoridades"],
+        ["<b>M</b>oralidade","Além de legal, o ato precisa ser ético, leal e de boa-fé","Súmula Vinculante 13 (nepotismo)"],
+        ["<b>P</b>ublicidade","Transparência dos atos, como regra","Admite sigilo previsto em lei (segurança da sociedade e do Estado; intimidade)"],
+        ["<b>E</b>ficiência","Melhor resultado com bom uso dos recursos","Incluído pela <b>EC nº 19/1998</b> — não estava no texto original"]
+      ])}
+      <p><b>Supraprincípios:</b> supremacia do interesse público sobre o privado (justifica prerrogativas) e indisponibilidade do interesse público (justifica limites: o gestor não pode abrir mão do que é público).</p>
+      <p><b>Implícitos ou legais</b> (a Lei 9.784/1999, art. 2º, lista vários): finalidade, motivação, razoabilidade, proporcionalidade, ampla defesa, contraditório, segurança jurídica e interesse público. Também: <mark>autotutela</mark> (Súmula 473 do STF), continuidade do serviço público e presunção de legitimidade.</p>
+      <aside class="law"><b>Súmula 473 do STF:</b> a administração pode anular seus próprios atos, quando eivados de vícios que os tornam ilegais, porque deles não se originam direitos; ou revogá-los, por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos, e ressalvada, em todos os casos, a apreciação judicial.</aside>
+      <aside class="ufba"><b>Na UFBA:</b> por ser autarquia federal, a universidade obedece a todos esses princípios. Um edital de concurso publicado no DOU e no site da banca é aplicação direta do princípio da publicidade.</aside>` }
+  ],
+  traps: [
+    "“Estado, Governo e Administração são sinônimos.” <b>Errado.</b> Estado é a pessoa jurídica; Governo decide; Administração executa.",
+    "“A legalidade administrativa permite fazer tudo que a lei não proíbe.” <b>Errado.</b> Isso é a legalidade para o particular.",
+    "“A eficiência consta no texto original de 1988.” <b>Errado.</b> Entrou com a EC nº 19/1998.",
+    "“Publicidade é absoluta.” <b>Errado.</b> A própria Constituição admite sigilo em hipóteses legais.",
+    "“Administração em sentido objetivo = conjunto de órgãos.” <b>Errado.</b> Órgãos são o sentido subjetivo; o objetivo é a atividade."
+  ],
+  mnemonics: [
+    ["LIMPE", "Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência."],
+    ["S de Sujeito", "Sentido Subjetivo = quem. Sentido objetivo = o que (atividade)."],
+    ["Múnus = encargo", "Quem administra cuida do que é dos outros. Por isso não pode dispor do interesse público."]
+  ],
+  flash: [
+    ["Quais são os elementos clássicos do Estado?", "Povo, território e governo soberano."],
+    ["Governo ou Administração: “definir as metas da política educacional”?", "Governo (função política)."],
+    ["O que é o sentido objetivo de Administração Pública?", "A atividade administrativa: serviço público, polícia administrativa, fomento e intervenção."],
+    ["Qual é a natureza da Administração, segundo Hely?", "Múnus público: encargo de defesa e conservação dos interesses da coletividade."],
+    ["Qual emenda inseriu a eficiência no art. 37?", "EC nº 19/1998."],
+    ["O que diz a Súmula 473 do STF?", "A Administração anula atos ilegais e revoga atos inconvenientes, respeitados direitos adquiridos, ressalvada a apreciação judicial."]
+  ],
+  quiz: [
+    { id: "m1q1", q: "Segundo a doutrina clássica, são elementos constitutivos do Estado:",
+      o: ["povo, território e governo soberano.", "União, Estados, Distrito Federal e Municípios.", "Poder Legislativo, Poder Executivo e Poder Judiciário.", "legalidade, impessoalidade e moralidade.", "órgãos, entidades e agentes públicos."], a: 0,
+      e: "Os elementos são povo, território e governo soberano. As demais alternativas trazem, na ordem: os entes da federação (organização), os Poderes (funções), princípios e o sentido subjetivo da Administração." },
+    { id: "m1q2", q: "A Administração Pública em sentido objetivo (material ou funcional) corresponde:",
+      o: ["ao conjunto de órgãos e entidades que integram a estrutura do Estado.", "às atividades administrativas, como serviço público, polícia administrativa, fomento e intervenção.", "aos agentes políticos que fixam as diretrizes do governo.", "exclusivamente ao Poder Executivo federal.", "à função legislativa exercida de forma atípica pelo Executivo."], a: 1,
+      e: "Sentido objetivo = o que se faz (a atividade). Órgãos, entidades e agentes correspondem ao sentido subjetivo, formal ou orgânico." },
+    { id: "m1q3", q: "Para Hely Lopes Meirelles, a natureza e o fim da Administração Pública são, respectivamente:",
+      o: ["poder soberano e arrecadação de tributos.", "função política e governabilidade.", "múnus público e bem comum da coletividade administrada.", "direito subjetivo do administrador e eficiência.", "atividade empresarial e lucro social."], a: 2,
+      e: "Natureza: múnus público (encargo de quem administra bens alheios). Fim: o bem comum da coletividade. Qualquer finalidade diferente caracteriza desvio." },
+    { id: "m1q4", q: "Sobre o princípio da eficiência, é correto afirmar que:",
+      o: ["consta no caput do art. 37 desde o texto original da Constituição de 1988.", "foi incluído expressamente no caput do art. 37 pela Emenda Constitucional nº 19/1998.", "aplica-se apenas às empresas estatais que exploram atividade econômica.", "autoriza o agente a agir sem previsão legal quando o resultado for melhor.", "substituiu o princípio da legalidade a partir da reforma administrativa."], a: 1,
+      e: "A eficiência entrou no art. 37 com a EC 19/1998 (reforma administrativa). Ela convive com a legalidade — nunca autoriza agir fora da lei." },
+    { id: "m1q5", q: "Um setor administrativo percebe que um ato que ele mesmo praticou é ilegal. Nos termos da Súmula 473 do STF, a Administração:",
+      o: ["precisa de autorização judicial para desfazer o ato.", "só pode revogar o ato, nunca anulá-lo.", "deve aguardar provocação do interessado para agir.", "pode anular o ato ilegal com base na autotutela, e pode revogar atos válidos por conveniência e oportunidade, respeitados os direitos adquiridos.", "deve encaminhar o caso ao Poder Legislativo, único competente para anular atos administrativos."], a: 3,
+      e: "É o princípio da autotutela: a Administração revê seus próprios atos de ofício. Anula o ilegal; revoga o inconveniente; sempre ressalvada a apreciação judicial." },
+    { id: "m1q6", q: "A placa de inauguração de um prédio de universidade federal traz nome e foto do reitor como “responsável pela conquista”. A conduta viola, principalmente, o princípio da:",
+      o: ["impessoalidade.", "eficiência.", "continuidade do serviço público.", "hierarquia.", "especialidade."], a: 0,
+      e: "O art. 37, §1º, proíbe na publicidade oficial nomes, símbolos ou imagens que caracterizem promoção pessoal de autoridades — expressão típica da impessoalidade (há também reflexo na moralidade)." }
+  ]
+});
+
+MISSIONS.push({
+  id: "m2", n: 2, color: "var(--c2)", min: 30,
+  title: "Organização administrativa da União",
+  edital: "Item 2: administração direta e indireta.",
+  twoInOne: "Também cai em Administração Pública (Comuns, item 2): direta, autárquica, fundacional, descentralização e desconcentração.",
+  summary: [
+    ["Direta", "Os entes políticos e seus <b>órgãos</b>. Na União: Presidência da República e Ministérios."],
+    ["Indireta", "<mark>Autarquias, fundações públicas, empresas públicas e sociedades de economia mista</mark> — todas com personalidade própria."],
+    ["Desconcentração × descentralização", "Desconcentrar = dividir <b>dentro</b> da mesma pessoa (cria órgãos). Descentralizar = passar para <b>outra</b> pessoa."],
+    ["A sua futura casa", "A <b>UFBA é uma autarquia</b> federal vinculada ao MEC: integra a Administração Indireta."]
+  ],
+  sections: [
+    { t: "Administração direta e órgãos públicos", h: `
+      <p>A Administração direta é formada pelos próprios entes políticos (União, Estados, DF, Municípios) atuando por meio de seus <b>órgãos</b>. No plano federal, o Decreto-Lei 200/1967 (art. 4º, I) aponta a Presidência da República e os Ministérios.</p>
+      <p><b>Órgão público</b> é um centro de competências <mark>sem personalidade jurídica</mark>. Pela <b>teoria do órgão</b> (ou da imputação, de Otto Gierke), o que o agente faz no órgão é atribuído à pessoa jurídica a que ele pertence.</p>
+      ${tbl(["Critério","Classificação","Exemplo"],[
+        ["Posição estatal","Independentes, autônomos, superiores e subordinados","Presidência (independente); Ministério (autônomo)"],
+        ["Estrutura","Simples ou compostos","Ministério com várias secretarias = composto"],
+        ["Atuação funcional","Singulares (um titular) ou colegiados","Conselho Universitário da UFBA = colegiado"]
+      ])}` },
+    { t: "Desconcentração × descentralização", h: `
+      ${tbl(["","Desconcentração","Descentralização"],[
+        ["Onde ocorre","Dentro da mesma pessoa jurídica","De uma pessoa para outra"],
+        ["O que surge","Órgãos","Entidades (ou atuação de particulares delegados)"],
+        ["Vínculo","Hierarquia","Controle finalístico (tutela), sem hierarquia"],
+        ["Exemplo","Ministério cria departamentos regionais","União cria uma autarquia; Estado concede serviço a empresa"]
+      ])}
+      <div class="card-grid">
+        <div class="mini"><b>Por outorga (serviços, técnica ou funcional)</b><p>A <b>lei</b> cria a entidade e transfere <mark>titularidade e execução</mark> do serviço. Destina-se à Administração indireta.</p></div>
+        <div class="mini"><b>Por delegação (colaboração)</b><p>Por <b>contrato ou ato</b>, transfere-se só a <mark>execução</mark>, por prazo. Ex.: concessionárias e permissionárias.</p></div>
+      </div>` },
+    { t: "As quatro entidades da indireta", h: `
+      <aside class="law"><b>CF, art. 37, XIX:</b> somente por lei específica poderá ser criada autarquia e autorizada a instituição de empresa pública, de sociedade de economia mista e de fundação, cabendo à lei complementar, neste último caso, definir as áreas de sua atuação.</aside>
+      ${tbl(["Entidade","Personalidade","Nasce por","Pessoal","Exemplos"],[
+        ["Autarquia","Direito público","Lei específica <b>cria</b>","Estatutário (Lei 8.112)","UFBA, INSS, Banco Central"],
+        ["Fundação pública","Direito público (fundação autárquica) ou privado","Lei cria ou autoriza; LC define áreas","Varia com o regime","IBGE, Funai"],
+        ["Empresa pública","Direito privado","Lei <b>autoriza</b> + registro","CLT (com concurso)","Caixa, Correios, Ebserh"],
+        ["Sociedade de economia mista","Direito privado","Lei <b>autoriza</b> + registro","CLT (com concurso)","Banco do Brasil, Petrobras"]
+      ])}
+      <div class="card-grid">
+        <div class="mini"><b>Empresa pública</b><p>Capital <mark>100% público</mark> (pode ser de vários entes). Admite <b>qualquer forma societária</b>.</p></div>
+        <div class="mini"><b>Sociedade de economia mista</b><p>Sempre <mark>sociedade anônima</mark>. A maioria das ações com direito a voto pertence ao Poder Público; há capital privado.</p></div>
+      </div>
+      <aside class="ufba"><b>Na UFBA:</b> a universidade é autarquia (seu estatuto a define assim). Os hospitais universitários, como o Complexo HUPES, são geridos pela Ebserh, que é empresa pública. Duas entidades diferentes da indireta trabalhando lado a lado.</aside>` },
+    { t: "Figuras especiais e controle", h: `
+      <p><b>Agências reguladoras:</b> autarquias em regime especial (Lei 13.848/2019), com dirigentes com mandato fixo e maior autonomia. Ex.: Anatel, Aneel.</p>
+      <p><b>Agências executivas:</b> não são uma nova entidade, e sim uma <i>qualificação</i> dada a autarquia ou fundação que tenha plano estratégico e celebre contrato de gestão.</p>
+      <p><b>Consórcios públicos</b> (Lei 11.107/2005): quando constituídos como associação pública, têm personalidade de direito público e integram a indireta de todos os entes consorciados.</p>
+      <p><b>Controle:</b> entre a direta e a indireta não há hierarquia, e sim <mark>tutela ou supervisão ministerial</mark> — um controle de finalidade, nos limites da lei. A entidade é <b>vinculada</b>, não subordinada.</p>` }
+  ],
+  traps: [
+    "“Na desconcentração surge nova pessoa jurídica.” <b>Errado.</b> Surgem órgãos; pessoa nova só na descentralização.",
+    "“A autarquia é autorizada por lei.” <b>Errado.</b> A autarquia é <b>criada</b> pela lei; as demais são autorizadas.",
+    "“A autarquia é subordinada ao ministério.” <b>Errado.</b> É vinculada; o controle é finalístico.",
+    "“Concessionária de serviço público integra a Administração indireta.” <b>Errado.</b> Ela colabora por delegação, mas é particular.",
+    "“Empresa pública precisa ser sociedade anônima.” <b>Errado.</b> Isso vale para a sociedade de economia mista."
+  ],
+  mnemonics: [
+    ["Des-CON-centração = CONtinua na mesma pessoa", "Divide tarefas dentro de casa, com hierarquia."],
+    ["CRIA a autarquia, AUTORIZA o resto", "Lei específica cria autarquia; autoriza EP, SEM e fundação."],
+    ["Outorga = Outra pessoa recebe tudo", "Titularidade + execução, por lei. Delegação = só execução, por contrato ou ato."]
+  ],
+  flash: [
+    ["Órgão público tem personalidade jurídica?", "Não. É centro de competência; sua atuação é imputada à pessoa jurídica."],
+    ["Quais são as quatro entidades da indireta?", "Autarquias, fundações públicas, empresas públicas e sociedades de economia mista."],
+    ["Qual a forma societária da sociedade de economia mista?", "Sociedade anônima, com maioria do capital votante do Poder Público."],
+    ["Entre ministério e autarquia há hierarquia?", "Não. Há vinculação e tutela (controle finalístico)."],
+    ["Qual a natureza jurídica da UFBA?", "Autarquia federal vinculada ao MEC (Administração indireta)."],
+    ["Descentralização por outorga transfere o quê?", "Titularidade e execução do serviço, por meio de lei."]
+  ],
+  quiz: [
+    { id: "m2q1", q: "Um Ministério redistribui internamente suas competências entre secretarias e departamentos, sem criar nova pessoa jurídica. O fenômeno descrito é a:",
+      o: ["descentralização por outorga.", "desconcentração.", "delegação de serviço público.", "privatização.", "descentralização territorial."], a: 1,
+      e: "Distribuição de competências dentro da mesma pessoa jurídica, gerando órgãos e mantendo a hierarquia, é desconcentração." },
+    { id: "m2q2", q: "Sobre as autarquias, é correto afirmar que:",
+      o: ["são pessoas jurídicas de direito privado prestadoras de serviço público.", "dependem apenas de autorização legal e registro dos atos constitutivos em cartório.", "são criadas diretamente por lei específica e têm personalidade jurídica de direito público.", "subordinam-se hierarquicamente ao ministério ao qual estão vinculadas.", "não integram a Administração Pública, por terem autonomia."], a: 2,
+      e: "Art. 37, XIX: a lei específica cria a autarquia. Ela é pessoa de direito público, integra a indireta e sofre tutela, não hierarquia." },
+    { id: "m2q3", q: "A Universidade Federal da Bahia tem natureza jurídica de autarquia vinculada ao Ministério da Educação. Assim, a UFBA:",
+      o: ["integra a Administração direta da União.", "é órgão do MEC, sem personalidade jurídica própria.", "integra a Administração indireta e se submete a controle finalístico do MEC, sem subordinação hierárquica.", "é empresa pública, pois presta serviço de educação.", "é concessionária do serviço público de educação superior."], a: 2,
+      e: "Autarquia = entidade da indireta com personalidade própria. O MEC exerce supervisão ministerial (tutela), que não se confunde com hierarquia." },
+    { id: "m2q4", q: "Assinale a diferença correta entre empresa pública e sociedade de economia mista:",
+      o: ["A sociedade de economia mista admite qualquer forma societária; a empresa pública deve ser sociedade anônima.", "A empresa pública tem capital integralmente público e admite qualquer forma societária; a sociedade de economia mista é sociedade anônima com maioria do capital votante do Poder Público.", "Ambas são criadas diretamente por lei específica, sem necessidade de registro.", "A empresa pública é pessoa jurídica de direito público.", "A sociedade de economia mista não admite participação de capital privado."], a: 1,
+      e: "Capital e forma societária são o critério clássico: EP = 100% público, qualquer forma; SEM = S.A., capital misto com controle público." },
+    { id: "m2q5", q: "Quanto aos órgãos públicos, é correto afirmar que:",
+      o: ["possuem personalidade jurídica própria e patrimônio próprio.", "são centros de competência sem personalidade jurídica, cuja atuação é imputada à pessoa jurídica a que pertencem.", "existem apenas na Administração indireta.", "são sempre singulares, isto é, com um único titular.", "celebram contratos em nome próprio, independentemente da entidade a que pertencem."], a: 1,
+      e: "Teoria do órgão: o órgão não tem personalidade; a vontade expressa pelo agente é atribuída à pessoa jurídica (União, Estado, autarquia...)." },
+    { id: "m2q6", q: "Quando a lei cria uma entidade e lhe transfere a titularidade e a execução de determinado serviço público, ocorre:",
+      o: ["desconcentração administrativa.", "descentralização por delegação (colaboração).", "descentralização por outorga (por serviços).", "avocação de competência.", "concentração administrativa."], a: 2,
+      e: "Outorga: por lei, transfere titularidade + execução a entidade da indireta. Delegação: por contrato ou ato, só a execução." }
+  ]
+});
+
+MISSIONS.push({
+  id: "m3", n: 3, color: "var(--c3)", min: 30,
+  title: "Agentes públicos",
+  edital: "Item 3: espécies e classificação; poderes, deveres e prerrogativas; cargo, emprego e função pública.",
+  twoInOne: "Também cai em Administração Pública (Comuns, item 3): conceito, espécies, investidura e deveres funcionais.",
+  summary: [
+    ["Gênero amplo", "<b>Agente público</b> é qualquer pessoa que exerce função estatal, ainda que transitoriamente e sem remuneração."],
+    ["Espécies", "Políticos, servidores (estatutários, empregados, temporários), militares e <mark>particulares em colaboração</mark>."],
+    ["Cargo × emprego × função", "Cargo = estatutário, criado por lei. Emprego = CLT. Função = atribuições sem cargo próprio."],
+    ["Regras de ouro", "Concurso (art. 37, II); validade até 2 anos + 1 prorrogação; estabilidade após 3 anos + avaliação especial."]
+  ],
+  sections: [
+    { t: "Classificação dos agentes", h: `
+      <p>As classificações são <b>doutrinárias</b>, por isso variam. As duas mais cobradas:</p>
+      ${tbl(["Espécie (Di Pietro)","Quem são","Exemplos"],[
+        ["Agentes políticos","Ocupam o topo do Estado e formam a vontade política","Presidente, governadores, prefeitos, ministros, parlamentares"],
+        ["Servidores públicos","Vínculo profissional com o Estado","Estatutários (UFBA), empregados públicos (CLT), temporários (art. 37, IX)"],
+        ["Militares","Forças Armadas, PM e bombeiros","Regime jurídico próprio"],
+        ["Particulares em colaboração","Não perdem a condição de particular","Mesário e jurado (requisitados), tabelião (delegado), médico conveniado ao SUS (credenciado)"]
+      ])}
+      <p><b>Hely Lopes Meirelles</b> usa outra lista: <mark>políticos, administrativos, honoríficos, delegados e credenciados</mark>. Mesário, nessa classificação, é agente <b>honorífico</b>.</p>` },
+    { t: "Cargo, emprego e função", h: `
+      ${tbl(["","Cargo","Emprego","Função"],[
+        ["Conceito","Conjunto de atribuições e responsabilidades criado por lei, com denominação própria (Lei 8.112, art. 3º)","Núcleo de atribuições com vínculo contratual","Conjunto de atribuições sem um cargo próprio"],
+        ["Regime","Estatutário","Celetista (CLT)","Depende do caso"],
+        ["Onde","Direta, autarquias, fundações de direito público","Empresas públicas e SEM (em regra)","Temporários; funções de confiança"]
+      ])}
+      <aside class="law"><b>CF, art. 37, V:</b> as funções de confiança, exercidas <mark>exclusivamente por servidores ocupantes de cargo efetivo</mark>, e os cargos em comissão, a serem preenchidos por servidores de carreira nos casos, condições e percentuais mínimos previstos em lei, destinam-se apenas às atribuições de <b>direção, chefia e assessoramento</b>.</aside>` },
+    { t: "Regras constitucionais que despencam em prova", h: `
+      ${tbl(["Regra","O que diz","Base"],[
+        ["Acesso","Brasileiros e estrangeiros, na forma da lei","Art. 37, I"],
+        ["Concurso","Obrigatório para cargo e emprego efetivos; exceção: cargo em comissão","Art. 37, II"],
+        ["Validade","<b>Até 2 anos</b>, prorrogável <b>uma vez</b> por igual período","Art. 37, III"],
+        ["Temporários","Contratação por tempo determinado para necessidade temporária de excepcional interesse público","Art. 37, IX"],
+        ["Acumulação","Proibida, salvo: 2 de professor; 1 de professor + 1 técnico/científico; 2 de saúde regulamentados — sempre com compatibilidade de horários","Art. 37, XVI"],
+        ["Estabilidade","Após <b>3 anos</b> de efetivo exercício + avaliação especial de desempenho por comissão","Art. 41"],
+        ["Perda do cargo do estável","Sentença transitada em julgado; processo administrativo com ampla defesa; avaliação periódica de desempenho; excesso de despesa (art. 169, §4º)","Arts. 41 e 169"]
+      ])}
+      <aside class="ufba"><b>No seu edital:</b> a validade do concurso é de 1 ano, prorrogável por igual período — dentro do limite de “até 2 anos” do art. 37, III. O vínculo será estatutário (Lei 8.112/1990), ou seja, você ocupará um <b>cargo</b>.</aside>
+      <p class="hint">Estágio probatório: a Lei 8.112 fala em 24 meses, mas prevalece o entendimento de que ele acompanha os 3 anos da estabilidade. Se a questão pedir a “letra da lei”, siga o texto que ela citar.</p>` },
+    { t: "Poderes, deveres e prerrogativas", h: `
+      <p>Os poderes do agente são <b>instrumentais</b>: existem para atingir o interesse público, por isso são <mark>poderes-deveres</mark> (não se pode deixar de exercê-los).</p>
+      <div class="card-grid">
+        <div class="mini"><b>Poder-dever de agir</b><p>Omissão injustificada pode configurar abuso de poder.</p></div>
+        <div class="mini"><b>Dever de eficiência</b><p>Rapidez, perfeição e rendimento no trabalho.</p></div>
+        <div class="mini"><b>Dever de probidade</b><p>Honestidade e lealdade; a violação pode gerar improbidade (Lei 8.429/1992).</p></div>
+        <div class="mini"><b>Dever de prestar contas</b><p>Quem gere dinheiro ou bens públicos presta contas (art. 70, parágrafo único, CF).</p></div>
+      </div>
+      <p><b>Prerrogativas</b> são vantagens funcionais, não pessoais: presunção de legitimidade dos atos, autoridade para dar ordens nos limites legais, entre outras.</p>` }
+  ],
+  traps: [
+    "“Agente público e servidor público são sinônimos.” <b>Errado.</b> Agente é gênero; servidor é espécie.",
+    "“Função de confiança pode ser dada a pessoa sem vínculo.” <b>Errado.</b> Só servidores efetivos. Cargo em comissão, sim, admite pessoa de fora (respeitados percentuais mínimos).",
+    "“O concurso vale até 2 anos e pode ser prorrogado várias vezes.” <b>Errado.</b> Uma única prorrogação, por igual período.",
+    "“Empregado público não faz concurso.” <b>Errado.</b> O art. 37, II, exige concurso para cargo e emprego.",
+    "“Acumulação lícita dispensa compatibilidade de horários.” <b>Errado.</b> A compatibilidade é sempre exigida."
+  ],
+  mnemonics: [
+    ["Acumulação: PP · PT · SS", "Professor+Professor; Professor+Técnico/científico; Saúde+Saúde."],
+    ["Confiança é da Casa", "Função de confiança só para quem já é efetivo."],
+    ["2 + 1 vez", "Validade de até 2 anos, prorrogável 1 vez por igual período."]
+  ],
+  flash: [
+    ["Mesário é que tipo de agente?", "Particular em colaboração (requisitado); honorífico, para Hely."],
+    ["A quem se destinam cargos em comissão e funções de confiança?", "Apenas a direção, chefia e assessoramento."],
+    ["Prazo de validade de concurso na CF?", "Até 2 anos, prorrogável uma vez por igual período."],
+    ["Quando o servidor efetivo adquire estabilidade?", "Após 3 anos de efetivo exercício e aprovação em avaliação especial de desempenho."],
+    ["Quais acumulações são permitidas?", "Dois de professor; professor + técnico/científico; dois de saúde regulamentados; com compatibilidade de horários."],
+    ["Por que se fala em “poder-dever”?", "Porque o agente não pode renunciar ao exercício do poder quando o interesse público o exige."]
+  ],
+  quiz: [
+    { id: "m3q1", q: "Cidadão convocado pela Justiça Eleitoral para atuar como mesário no dia da eleição é classificado como:",
+      o: ["servidor público estatutário.", "empregado público.", "agente político.", "particular em colaboração com o Poder Público (agente honorífico).", "agente delegado, como os concessionários."], a: 3,
+      e: "Mesários e jurados são requisitados: continuam particulares, mas exercem função pública transitória. Hely os chama de agentes honoríficos." },
+    { id: "m3q2", q: "Nos termos do art. 37, V, da Constituição, as funções de confiança:",
+      o: ["podem ser ocupadas por qualquer pessoa, a critério da autoridade.", "são exercidas exclusivamente por servidores ocupantes de cargo efetivo e destinam-se a direção, chefia e assessoramento.", "exigem concurso público específico.", "destinam-se a atividades técnicas e operacionais.", "garantem estabilidade imediata a quem as exerce."], a: 1,
+      e: "Função de confiança = só efetivos. Cargo em comissão admite pessoas de fora, respeitado percentual mínimo para servidores de carreira. Ambos: direção, chefia e assessoramento." },
+    { id: "m3q3", q: "Havendo compatibilidade de horários, a Constituição permite a acumulação remunerada de:",
+      o: ["dois cargos técnicos de nível médio.", "um cargo de professor com outro técnico ou científico.", "três cargos privativos de profissionais de saúde.", "quaisquer cargos, desde que a soma não ultrapasse o teto.", "cargo administrativo com emprego em sociedade de economia mista, em qualquer hipótese."], a: 1,
+      e: "Art. 37, XVI: dois de professor; um de professor com outro técnico ou científico; dois de profissionais de saúde com profissão regulamentada. Sempre com compatibilidade de horários." },
+    { id: "m3q4", q: "O Edital nº 7/2026 da UFBA fixou validade de 1 ano, prorrogável por igual período. Essa previsão é:",
+      o: ["inconstitucional, pois a validade deve ser exatamente de 2 anos.", "compatível com a Constituição, que admite validade de até 2 anos, prorrogável uma vez por igual período.", "válida apenas se autorizada por lei específica.", "irregular, pois a prorrogação deveria ser ilimitada.", "irregular, pois a Constituição proíbe a prorrogação."], a: 1,
+      e: "Art. 37, III: “até dois anos”, prorrogável uma vez por igual período. 1 + 1 ano está dentro do limite." },
+    { id: "m3q5", q: "Quanto à estabilidade do servidor público, é correto afirmar:",
+      o: ["É adquirida após 2 anos de efetivo exercício.", "É adquirida após 3 anos de efetivo exercício, com avaliação especial de desempenho por comissão instituída para essa finalidade.", "É adquirida no ato da posse.", "Estende-se aos ocupantes de cargo em comissão.", "Alcança automaticamente os empregados de empresas públicas."], a: 1,
+      e: "Art. 41 da CF (redação da EC 19/1998): três anos de efetivo exercício + avaliação especial obrigatória." },
+    { id: "m3q6", q: "Sobre o emprego público, assinale a alternativa correta:",
+      o: ["Existe exclusivamente nas autarquias.", "Corresponde a vínculo contratual regido, em regra, pela CLT, e seu provimento exige concurso público.", "Dispensa concurso por ser regido pela legislação trabalhista.", "É sinônimo de cargo público.", "Destina-se apenas a contratações temporárias."], a: 1,
+      e: "Emprego = vínculo celetista, típico de empresas públicas e sociedades de economia mista. O art. 37, II, exige concurso também para empregos." }
+  ]
+});
+/* ===== Missões 4–6 ===== */
+MISSIONS.push({
+  id: "m4", n: 4, color: "var(--c4)", min: 35,
+  title: "Poderes administrativos",
+  edital: "Item 4: poder hierárquico, disciplinar, regulamentar, de polícia; uso e abuso do poder.",
+  twoInOne: null,
+  summary: [
+    ["Hierárquico", "Organizar a casa: <b>ordenar, fiscalizar, rever, delegar e avocar</b>."],
+    ["Disciplinar", "Punir quem tem <mark>vínculo especial</mark> com a Administração: servidores e contratados."],
+    ["Regulamentar", "Editar decretos para a <b>fiel execução da lei</b> (art. 84, IV). Não inova, em regra."],
+    ["Polícia", "Limitar direitos individuais em favor do coletivo. Atributos: <mark>DAC</mark>. Abuso: excesso ou desvio."]
+  ],
+  sections: [
+    { t: "Poder hierárquico e a Lei 9.784/1999", h: `
+      <p>Organiza a estrutura interna: distribui competências, dá ordens, fiscaliza, revê atos de subordinados, <b>delega</b> e <b>avoca</b>. Só existe <mark>dentro da mesma pessoa jurídica</mark>.</p>
+      ${tbl(["","Delegação","Avocação"],[
+        ["O que é","Transferir parte da competência a outro órgão ou agente","Chamar para si competência de órgão hierarquicamente inferior"],
+        ["Exige hierarquia?","Não necessariamente (art. 12)","Sim"],
+        ["Características","Parcial, revogável a qualquer tempo, publicada no meio oficial","Temporária, excepcional, por motivos relevantes devidamente justificados"],
+        ["Base","Arts. 11 a 14","Art. 15"]
+      ])}
+      <aside class="law"><b>Lei 9.784/1999, art. 13:</b> não podem ser objeto de delegação: I – a edição de atos de caráter normativo; II – a decisão de recursos administrativos; III – as matérias de competência exclusiva do órgão ou autoridade.</aside>
+      <p class="hint">Macete <b>CE-NO-RA</b>: Competência Exclusiva, atos NOrmativos, Recursos Administrativos.</p>` },
+    { t: "Poder disciplinar", h: `
+      <p>Permite apurar infrações e aplicar penalidades aos <b>servidores</b> e às demais pessoas sujeitas à disciplina administrativa por um <mark>vínculo específico</mark> — por exemplo, empresas contratadas e estudantes de instituição pública.</p>
+      <ul class="clean"><li>Há discricionariedade limitada na <b>escolha e gradação</b> da pena, mas apurar a falta é dever.</li><li>A decisão precisa ser <b>motivada</b> e precedida de processo com contraditório e ampla defesa.</li><li>Multa aplicada a um particular comum, sem vínculo especial, é <b>poder de polícia</b>, não disciplinar.</li></ul>` },
+    { t: "Poder regulamentar (normativo)", h: `
+      ${tbl(["","Decreto regulamentar (executivo)","Decreto autônomo"],[
+        ["Base","CF, art. 84, IV","CF, art. 84, VI"],
+        ["Função","Detalhar a lei para sua fiel execução","Tratar diretamente de duas matérias"],
+        ["Pode inovar?","Não","Sim, só nas hipóteses constitucionais"],
+        ["Delegável?","Não","Sim: a Ministros, ao PGR e ao AGU"]
+      ])}
+      <p>Matérias do decreto autônomo: a) organização e funcionamento da administração federal, <b>sem aumento de despesa nem criação ou extinção de órgãos</b>; b) <mark>extinção de funções ou cargos públicos, quando vagos</mark>.</p>
+      <p>Se o Executivo exorbitar do poder regulamentar, o Congresso Nacional pode <b>sustar</b> o ato (art. 49, V).</p>` },
+    { t: "Poder de polícia", h: `
+      <p>O art. 78 do CTN define: atividade que limita ou disciplina direito, interesse ou liberdade, regulando a prática de ato ou abstenção de fato, em razão de interesse público (segurança, higiene, ordem, costumes, mercado, tranquilidade, propriedade...).</p>
+      ${tbl(["","Polícia administrativa","Polícia judiciária"],[
+        ["Recai sobre","Bens, direitos e atividades","Pessoas"],
+        ["Foco","Ilícito administrativo, em geral preventivo","Ilícito penal, repressivo"],
+        ["Quem exerce","Diversos órgãos (Vigilância Sanitária, Procon, fiscalização de obras)","Polícia Civil e Polícia Federal"]
+      ])}
+      <div class="card-grid">
+        <div class="mini"><b>Ciclo de polícia</b><p><mark>Ordem → Consentimento → Fiscalização → Sanção</mark>. Consentimento: licença (vinculada) ou autorização (discricionária).</p></div>
+        <div class="mini"><b>Atributos (DAC)</b><p><b>D</b>iscricionariedade (em regra), <b>A</b>utoexecutoriedade (agir sem ordem judicial, em alguns casos), <b>C</b>oercibilidade (impor à força).</p></div>
+      </div>
+      <aside class="law"><b>STF, Tema 532 (RE 633.782):</b> é constitucional a delegação do poder de polícia, por meio de lei, a pessoas jurídicas de direito privado integrantes da Administração indireta de capital majoritariamente público que prestem exclusivamente serviço público próprio do Estado e em regime não concorrencial — nas fases de <b>consentimento, fiscalização e sanção</b>. A fase de <b>ordem</b> (legislação) não se delega.</aside>
+      <p>Na esfera federal, a ação punitiva decorrente do poder de polícia prescreve em <b>5 anos</b> (Lei 9.873/1999).</p>` },
+    { t: "Uso e abuso do poder", h: `
+      ${tbl(["Forma de abuso","Qual elemento é violado","Exemplo"],[
+        ["Excesso de poder","Competência: o agente vai além do que pode","Chefe aplica demissão, pena que só a autoridade superior pode aplicar"],
+        ["Desvio de poder (de finalidade)","Finalidade: age dentro da competência, mas para outro fim","Remover servidor para outra cidade como castigo pessoal"],
+        ["Omissão","Dever de agir","Deixar de fiscalizar quando a lei exige"]
+      ])}
+      <p>Todo ato praticado com abuso de poder é inválido e pode ser anulado pela própria Administração ou pelo Judiciário.</p>` }
+  ],
+  traps: [
+    "“O poder disciplinar alcança qualquer particular.” <b>Errado.</b> Só quem tem vínculo especial. Particular comum = poder de polícia.",
+    "“Há hierarquia entre a União e suas autarquias.” <b>Errado.</b> Há tutela (vinculação).",
+    "“Todo ato de polícia é autoexecutório.” <b>Errado.</b> A cobrança forçada de multa, por exemplo, depende de execução judicial.",
+    "“Licença é ato discricionário.” <b>Errado.</b> Licença é vinculada; autorização é discricionária.",
+    "“É possível delegar a decisão de recurso administrativo.” <b>Errado.</b> CE-NO-RA."
+  ],
+  mnemonics: [
+    ["CE-NO-RA", "Não se delega: Competência Exclusiva, atos NOrmativos, Recursos Administrativos."],
+    ["DAC", "Atributos do poder de polícia: Discricionariedade, Autoexecutoriedade, Coercibilidade."],
+    ["O Cachorro Fica Sentado", "Ciclo de polícia: Ordem, Consentimento, Fiscalização, Sanção."],
+    ["EXcesso = EXtrapola; DEsvio = DEstino errado", "Excesso fere a competência; desvio fere a finalidade."]
+  ],
+  flash: [
+    ["O que não pode ser delegado segundo a Lei 9.784?", "Atos normativos, decisão de recursos administrativos e matérias de competência exclusiva."],
+    ["Quais as características da avocação?", "Temporária, excepcional, motivada, de competência de órgão inferior."],
+    ["Quais os atributos do poder de polícia?", "Discricionariedade, autoexecutoriedade e coercibilidade."],
+    ["Quais fases do ciclo de polícia podem ser delegadas a estatal de direito privado (Tema 532)?", "Consentimento, fiscalização e sanção. A ordem, não."],
+    ["O que o decreto autônomo pode fazer?", "Organizar a administração federal sem aumentar despesa nem criar/extinguir órgãos; extinguir cargos ou funções vagos."],
+    ["Excesso ou desvio: agente competente age por vingança pessoal?", "Desvio de finalidade."]
+  ],
+  quiz: [
+    { id: "m4q1", q: "Um agente tem competência para praticar determinado ato, mas o utiliza para perseguir um desafeto, finalidade estranha ao interesse público previsto em lei. A situação caracteriza:",
+      o: ["regular exercício do poder hierárquico.", "excesso de poder.", "desvio de finalidade.", "delegação de competência.", "avocação."], a: 2,
+      e: "Competência existia; o fim é que estava errado. Excesso seria atuar além da competência." },
+    { id: "m4q2", q: "De acordo com a Lei 9.784/1999, NÃO podem ser objeto de delegação:",
+      o: ["os atos de mero expediente e rotina.", "a edição de atos de caráter normativo, a decisão de recursos administrativos e as matérias de competência exclusiva.", "a assinatura de ofícios e memorandos.", "os atos de instrução do processo.", "quaisquer atos, pois a delegação foi vedada pela lei."], a: 1,
+      e: "Art. 13 da Lei 9.784: CE-NO-RA. Fora dessas hipóteses, a delegação é a regra, de forma parcial e revogável." },
+    { id: "m4q3", q: "A vigilância sanitária interdita um restaurante com alimentos estragados, sem prévia autorização judicial. Esse agir direto se apoia no atributo da:",
+      o: ["autoexecutoriedade.", "hierarquia.", "tipicidade penal.", "supremacia do poder disciplinar.", "delegabilidade do poder regulamentar."], a: 0,
+      e: "Autoexecutoriedade: a Administração executa diretamente suas decisões de polícia, sem precisar do Judiciário, quando a lei autoriza ou há urgência." },
+    { id: "m4q4", q: "Segundo o STF (Tema 532), é constitucional a delegação, por lei, do poder de polícia a pessoa jurídica de direito privado da Administração indireta, de capital majoritariamente público, prestadora exclusiva de serviço público próprio do Estado em regime não concorrencial, nas fases de:",
+      o: ["ordem, consentimento e fiscalização.", "consentimento, fiscalização e sanção.", "ordem, apenas.", "todas as fases do ciclo de polícia.", "nenhuma fase, pois o poder de polícia é indelegável."], a: 1,
+      e: "A ordem de polícia (legislar) é indelegável. Consentimento, fiscalização e sanção podem ser delegados nas condições fixadas pelo STF." },
+    { id: "m4q5", q: "Com base no art. 84, VI, da Constituição, o Presidente da República pode, mediante decreto:",
+      o: ["criar um novo órgão público.", "extinguir cargo público vago.", "extinguir cargo público ocupado por servidor estável.", "reorganizar a administração com aumento de despesa.", "instituir tributo para custear serviço público."], a: 1,
+      e: "Decreto autônomo: extinção de cargos ou funções vagos e organização da administração sem aumento de despesa e sem criar ou extinguir órgãos." },
+    { id: "m4q6", q: "Uma universidade federal aplica advertência a empresa terceirizada que descumpriu o contrato. No mesmo dia, a prefeitura multa um bar por som acima do permitido. Os poderes exercidos são, respectivamente:",
+      o: ["disciplinar e de polícia.", "de polícia e disciplinar.", "hierárquico e regulamentar.", "regulamentar e disciplinar.", "hierárquico e de polícia."], a: 0,
+      e: "A contratada tem vínculo especial com a Administração: poder disciplinar. O bar é particular sem vínculo: poder de polícia." },
+    { id: "m4q7", q: "A licença para construir, concedida pelo município após o proprietário atender a todos os requisitos legais, é classificada como ato:",
+      o: ["discricionário e precário.", "vinculado: preenchidos os requisitos, a Administração deve concedê-la.", "revogável a qualquer tempo por conveniência.", "decorrente do poder disciplinar.", "delegável a qualquer particular, sem lei."], a: 1,
+      e: "Licença = consentimento vinculado. Autorização = consentimento discricionário e precário." }
+  ]
+});
+
+MISSIONS.push({
+  id: "m5", n: 5, color: "var(--c5)", min: 30,
+  title: "Serviços públicos",
+  edital: "Item 5: conceito, classificação, regulamentação e controle; forma, meios e requisitos; delegação (concessão, permissão e autorização).",
+  twoInOne: "Direitos do usuário e Carta de Serviços também caem em Administração Pública (Comuns, item 16).",
+  summary: [
+    ["Titularidade", "Art. 175 da CF: o Poder Público presta <b>diretamente</b> ou por <b>concessão/permissão</b>, <mark>sempre mediante licitação</mark>."],
+    ["Serviço adequado", "Regularidade, continuidade, eficiência, segurança, atualidade, generalidade, cortesia e modicidade das tarifas."],
+    ["Concessão × permissão", "Concessão: contrato, PJ ou consórcio, prazo determinado. Permissão: contrato de adesão, precária, <b>PF ou PJ</b>."],
+    ["Fim da concessão", "Encampação = interesse público. <mark>Caducidade = culpa da concessionária</mark>."]
+  ],
+  sections: [
+    { t: "Conceito e elementos", h: `
+      <p>Serviço público é toda atividade material que a lei atribui ao Estado para que a exerça diretamente ou por meio de delegados, com o objetivo de satisfazer necessidades coletivas, sob regime jurídico total ou parcialmente público (conceito de Di Pietro).</p>
+      <div class="card-grid">
+        <div class="mini"><b>Subjetivo</b><p>O Estado é o titular, ainda que outro execute.</p></div>
+        <div class="mini"><b>Material</b><p>Atende necessidades coletivas.</p></div>
+        <div class="mini"><b>Formal</b><p>Submete-se a regime de direito público.</p></div>
+      </div>
+      <aside class="law"><b>CF, art. 175:</b> incumbe ao Poder Público, na forma da lei, diretamente ou sob regime de concessão ou permissão, sempre através de licitação, a prestação de serviços públicos.</aside>` },
+    { t: "Classificações", h: `
+      ${tbl(["Critério","Tipos","Exemplo"],[
+        ["Destinatários","<b>Uti universi</b> (gerais, indivisíveis) × <b>uti singuli</b> (individuais, mensuráveis)","Iluminação e segurança pública × água, energia, telefone"],
+        ["Essencialidade (Hely)","Próprios (só o Estado presta) × impróprios (podem ser delegados)","Defesa nacional × transporte coletivo"],
+        ["Objeto","Administrativos, comerciais/industriais e sociais","Imprensa oficial; energia; educação e saúde"],
+        ["Exclusividade","Exclusivos do Estado × não exclusivos","Serviço postal × educação (particulares também prestam)"]
+      ])}
+      <p>Uti universi costuma ser custeado por impostos; uti singuli, por taxa ou tarifa.</p>` },
+    { t: "Formas, meios e requisitos", h: `
+      <p><b>Forma de prestação:</b> centralizada (pelo próprio ente), descentralizada (outorga à indireta ou delegação a particulares) e desconcentrada (distribuída entre órgãos). <b>Execução</b> pode ser direta (pelos próprios meios) ou indireta (contratando terceiros).</p>
+      <p><b>Requisitos do serviço adequado</b> (Lei 8.987/1995, art. 6º, §1º). Pense num ônibus bom:</p>
+      ${tbl(["Requisito","No ônibus"],[
+        ["Regularidade","Passa no horário"],["Continuidade","Não para de circular"],["Eficiência","Chega bem e rápido"],["Segurança","Não expõe o passageiro a risco"],
+        ["Atualidade","Frota e técnicas modernas"],["Generalidade","Atende todos, sem discriminação"],["Cortesia","Motorista e cobrador educados"],["Modicidade das tarifas","Passagem justa"]
+      ])}
+      <aside class="law"><b>Lei 8.987/1995, art. 6º, §3º e §4º:</b> não caracteriza descontinuidade a interrupção em situação de emergência ou após prévio aviso, motivada por razões de ordem técnica ou de segurança, ou por inadimplemento do usuário, considerado o interesse da coletividade. A interrupção por inadimplemento <b>não pode começar na sexta, no sábado, no domingo, em feriado ou no dia anterior a feriado</b>.</aside>` },
+    { t: "Delegação: concessão, permissão e autorização", h: `
+      ${tbl(["","Concessão","Permissão","Autorização"],[
+        ["Natureza","Contrato administrativo","Contrato de adesão (art. 40)","Ato unilateral, discricionário e precário"],
+        ["Licitação","Sim: <b>concorrência ou diálogo competitivo</b>","Sim (qualquer modalidade cabível)","Em regra, não"],
+        ["Quem recebe","PJ ou consórcio de empresas","Pessoa física ou jurídica","Particular"],
+        ["Prazo","Determinado","Precária, revogável unilateralmente","Precária"]
+      ])}
+      <p><b>PPP</b> (Lei 11.079/2004) é uma concessão especial: <i>patrocinada</i> (tarifa + contraprestação pública) ou <i>administrativa</i> (a Administração é a usuária). Valor mínimo de R$ 10 milhões e prazo de 5 a 35 anos.</p>` },
+    { t: "Regulamentação, controle e extinção", h: `
+      <p>O poder concedente <b>regulamenta e fiscaliza</b> permanentemente o serviço (muitas vezes por agências reguladoras), pode alterar cláusulas regulamentares e até <b>intervir</b> na concessão (art. 32 da Lei 8.987). O usuário tem direitos garantidos também pela Lei 13.460/2017, que criou a Carta de Serviços ao Usuário.</p>
+      ${tbl(["Forma de extinção","Motivo","Detalhe cobrado"],[
+        ["Advento do termo","Fim do prazo","Forma normal"],
+        ["Encampação","Interesse público","Exige <b>lei autorizativa específica</b> e <b>prévio pagamento</b> da indenização"],
+        ["Caducidade","Inexecução pela concessionária","Precedida de processo administrativo; declarada por decreto"],
+        ["Rescisão","Descumprimento pelo poder concedente","Iniciativa da concessionária, por <b>ação judicial</b>; o serviço não pode parar até o trânsito em julgado"],
+        ["Anulação","Ilegalidade","Efeitos retroativos"],
+        ["Falência ou extinção da empresa","Fato da concessionária","Também falecimento/incapacidade do titular de empresa individual"]
+      ])}
+      <p>Ao fim da concessão ocorre a <b>reversão</b> dos bens vinculados ao serviço ao poder concedente.</p>` }
+  ],
+  traps: [
+    "“Continuidade proíbe qualquer interrupção.” <b>Errado.</b> Admite interrupção por emergência, razões técnicas/segurança e inadimplemento com aviso prévio.",
+    "“Concessão pode ser dada a pessoa física.” <b>Errado.</b> Só PJ ou consórcio. Permissão aceita PF.",
+    "“Encampação decorre de falta da concessionária.” <b>Errado.</b> Isso é caducidade.",
+    "“A concessionária pode rescindir o contrato por ato próprio.” <b>Errado.</b> Precisa de ação judicial.",
+    "“Concessão comum admite pregão.” <b>Errado.</b> Concorrência ou diálogo competitivo."
+  ],
+  mnemonics: [
+    ["Encampação = Estado quer", "Interesse público + lei autorizativa + indenização prévia."],
+    ["Caducidade = Concessionária Culpada", "Inexecução, processo administrativo e decreto."],
+    ["Permissão = Pessoa física Pode", "Única das duas que aceita pessoa física."],
+    ["O ônibus bom", "Regular, contínuo, eficiente, seguro, atual, geral, cortês e com tarifa módica."]
+  ],
+  flash: [
+    ["Modalidades de licitação para concessão comum?", "Concorrência ou diálogo competitivo."],
+    ["Permissão é formalizada por qual instrumento?", "Contrato de adesão, com precariedade e revogabilidade unilateral."],
+    ["Encampação exige o quê?", "Interesse público, lei autorizativa específica e prévio pagamento da indenização."],
+    ["O que é caducidade?", "Extinção por inexecução da concessionária, após processo administrativo, declarada por decreto."],
+    ["Quando a interrupção por inadimplemento não pode começar?", "Sexta, sábado, domingo, feriado ou véspera de feriado."],
+    ["Uti universi ou uti singuli: fornecimento de água?", "Uti singuli (individual e mensurável)."]
+  ],
+  quiz: [
+    { id: "m5q1", q: "Segundo a Lei 8.987/1995, a permissão de serviço público é:",
+      o: ["sempre feita sem licitação e somente a pessoa jurídica.", "a delegação, a título precário, mediante licitação, a pessoa física ou jurídica que demonstre capacidade para seu desempenho.", "idêntica à concessão em todos os aspectos.", "dispensada de qualquer instrumento contratual.", "exclusiva de consórcios de empresas, por prazo indeterminado."], a: 1,
+      e: "Art. 2º, IV: precária, mediante licitação, a PF ou PJ. O art. 40 manda formalizá-la por contrato de adesão." },
+    { id: "m5q2", q: "A concessão de serviço público, nos termos da Lei 8.987/1995, é feita:",
+      o: ["a pessoa física ou jurídica, sem prazo determinado.", "mediante licitação na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas, por sua conta e risco e por prazo determinado.", "mediante pregão eletrônico, por ser serviço comum.", "sem licitação, quando houver interesse público relevante.", "exclusivamente a empresas estatais."], a: 1,
+      e: "Art. 2º, II, com a redação dada pela Lei 14.133/2021, que incluiu o diálogo competitivo." },
+    { id: "m5q3", q: "Durante o prazo contratual, o poder concedente retoma o serviço por motivo de interesse público, mediante lei autorizativa específica e após prévio pagamento de indenização. Trata-se de:",
+      o: ["caducidade.", "encampação.", "rescisão.", "reversão.", "anulação."], a: 1,
+      e: "Encampação (art. 37 da Lei 8.987). Caducidade pressupõe falta da concessionária; rescisão é pedida pela concessionária em juízo." },
+    { id: "m5q4", q: "A interrupção do fornecimento de energia por inadimplemento do usuário:",
+      o: ["pode ocorrer a qualquer momento, sem aviso.", "exige aviso prévio e não pode iniciar-se na sexta-feira, no sábado, no domingo, em feriado ou no dia anterior a feriado.", "é sempre proibida, pelo princípio da continuidade.", "depende de ordem judicial.", "só pode ocorrer em dias úteis, antes do meio-dia."], a: 1,
+      e: "Art. 6º, §§3º e 4º, da Lei 8.987 (o §4º veio da Lei 14.015/2020)." },
+    { id: "m5q5", q: "Iluminação pública e segurança pública são exemplos de serviços:",
+      o: ["uti singuli, pois cada usuário pode ser identificado.", "uti universi, prestados à coletividade de forma geral e indivisível.", "comerciais e industriais.", "impróprios, delegáveis por autorização.", "obrigatoriamente prestados por concessionárias."], a: 1,
+      e: "Serviços gerais, sem usuário determinado e sem medição individual = uti universi." },
+    { id: "m5q6", q: "NÃO é requisito do serviço adequado previsto na Lei 8.987/1995:",
+      o: ["regularidade.", "atualidade.", "modicidade das tarifas.", "gratuidade universal.", "cortesia na prestação."], a: 3,
+      e: "A lei fala em modicidade (tarifa justa), não em gratuidade. Os oito requisitos: regularidade, continuidade, eficiência, segurança, atualidade, generalidade, cortesia e modicidade." }
+  ]
+});
+
+MISSIONS.push({
+  id: "m6", n: 6, color: "var(--c6)", min: 35,
+  title: "Controle e responsabilidade civil do Estado",
+  edital: "Item 6: controle administrativo, judicial e legislativo; responsabilidade civil do Estado.",
+  twoInOne: "Também cai em Administração Pública (Comuns, item 11): controles internos e responsabilização.",
+  summary: [
+    ["Administrativo", "A própria Administração revê seus atos: <mark>autotutela</mark>. Anula o ilegal, revoga o inconveniente."],
+    ["Legislativo", "Congresso fiscaliza, com auxílio do <b>TCU</b> (órgão autônomo, não subordinado)."],
+    ["Judicial", "Examina <b>legalidade</b>, não o mérito. Pode anular, <b>nunca revogar</b> ato de outro Poder."],
+    ["Responsabilidade", "Objetiva, pelo <mark>risco administrativo</mark> (art. 37, §6º). Regresso contra o agente só com dolo ou culpa."]
+  ],
+  sections: [
+    { t: "Classificações do controle", h: `
+      ${tbl(["Critério","Tipos"],[
+        ["Quem controla","Administrativo, legislativo e judicial"],
+        ["Posição do controlador","Interno (dentro do mesmo Poder) e externo (outro Poder); também o controle social/popular"],
+        ["Momento","Prévio, concomitante e posterior"],
+        ["Aspecto","De legalidade (qualquer controlador) e de mérito (só a própria Administração)"],
+        ["Iniciativa","De ofício ou provocado"]
+      ])}` },
+    { t: "Controle administrativo", h: `
+      ${tbl(["","Anulação","Revogação"],[
+        ["Motivo","Ilegalidade","Conveniência e oportunidade"],
+        ["Quem faz","Administração ou Judiciário","Só a Administração que praticou o ato"],
+        ["Efeitos","<b>Ex tunc</b> (retroage)","<b>Ex nunc</b> (daqui para frente)"],
+        ["Limite","Decadência de 5 anos para atos favoráveis, salvo má-fé (Lei 9.784, art. 54)","Respeita direitos adquiridos; atos vinculados não são revogáveis"]
+      ])}
+      <p><b>Recursos administrativos:</b> hierárquico <i>próprio</i> (à autoridade superior no mesmo órgão/pessoa) e hierárquico <i>impróprio</i> (a autoridade de outra pessoa jurídica, só quando a lei prevê). Somam-se a supervisão ministerial sobre a indireta e o sistema de controle interno.</p>` },
+    { t: "Controle legislativo", h: `
+      <div class="card-grid">
+        <div class="mini"><b>Político</b><p>Sustar atos normativos do Executivo que exorbitem do poder regulamentar (art. 49, V); fiscalizar atos do Executivo (art. 49, X); convocar ministros (art. 50); CPIs com poderes de investigação próprios das autoridades judiciais (art. 58, §3º).</p></div>
+        <div class="mini"><b>Financeiro</b><p>Fiscalização contábil, financeira, orçamentária, operacional e patrimonial (art. 70), com auxílio do Tribunal de Contas da União (art. 71).</p></div>
+      </div>
+      ${tbl(["O TCU...","Sim ou não?"],[
+        ["Julga as contas dos administradores e responsáveis por dinheiro público","Sim (art. 71, II)"],
+        ["Julga as contas anuais do Presidente","Não: emite parecer prévio; quem julga é o Congresso (art. 71, I; art. 49, IX)"],
+        ["Aprecia a legalidade de admissões e aposentadorias","Sim (art. 71, III)"],
+        ["É subordinado ao Congresso","Não: é órgão autônomo que auxilia o controle externo"]
+      ])}` },
+    { t: "Controle judicial", h: `
+      <p>O Brasil adota a jurisdição una: nenhuma lesão ou ameaça a direito escapa do Judiciário (art. 5º, XXXV). O juiz analisa <mark>legalidade e legitimidade</mark> — inclusive razoabilidade e proporcionalidade —, mas não substitui a escolha legítima do administrador (mérito).</p>
+      <p>Instrumentos típicos: mandado de segurança, ação popular, ação civil pública, habeas data e mandado de injunção.</p>` },
+    { t: "Responsabilidade civil do Estado", h: `
+      <aside class="law"><b>CF, art. 37, §6º:</b> as pessoas jurídicas de direito público e as de direito privado prestadoras de serviços públicos responderão pelos danos que seus agentes, nessa qualidade, causarem a terceiros, assegurado o direito de regresso contra o responsável nos casos de dolo ou culpa.</aside>
+      ${tbl(["Teoria","Ideia central"],[
+        ["Irresponsabilidade","“O rei não erra”: o Estado nunca indenizava"],
+        ["Civilista","Separava atos de império e de gestão; exigia culpa"],
+        ["Culpa administrativa (falta do serviço)","Indeniza se o serviço não funcionou, funcionou mal ou atrasou — culpa anônima"],
+        ["<b>Risco administrativo</b> (regra da CF)","Objetiva: basta conduta, dano e nexo. Admite excludentes"],
+        ["Risco integral (exceção)","Não admite excludentes. Ex.: dano nuclear, dano ambiental"]
+      ])}
+      <div class="card-grid">
+        <div class="mini"><b>Excludentes</b><p>Culpa exclusiva da vítima, caso fortuito ou força maior, fato exclusivo de terceiro. Culpa concorrente apenas <b>reduz</b> a indenização.</p></div>
+        <div class="mini"><b>Omissão</b><p>Regra: responsabilidade subjetiva (falta do serviço). Omissão específica, com dever de custódia (ex.: morte de detento), o STF trata como objetiva.</p></div>
+        <div class="mini"><b>Dupla garantia (Tema 940)</b><p>A vítima processa o Estado ou a prestadora; o agente responde depois, em regresso. A ação direta contra o agente é incabível.</p></div>
+        <div class="mini"><b>Concessionárias (Tema 130)</b><p>Respondem objetivamente também perante <b>terceiros não usuários</b> do serviço.</p></div>
+      </div>
+      <p>Prazo para a vítima cobrar a Fazenda Pública: <b>5 anos</b> (Decreto 20.910/1932).</p>` }
+  ],
+  traps: [
+    "“O Judiciário pode revogar ato administrativo do Executivo.” <b>Errado.</b> Só anula. Revogar ato de outro Poder, nunca.",
+    "“O TCU julga as contas do Presidente.” <b>Errado.</b> Emite parecer prévio; quem julga é o Congresso.",
+    "“Responsabilidade objetiva dispensa nexo causal.” <b>Errado.</b> Dispensa culpa, não dano e nexo.",
+    "“A vítima pode escolher processar diretamente o servidor.” <b>Errado</b> para o STF (Tema 940).",
+    "“A revogação retroage.” <b>Errado.</b> Revogação é ex nunc; anulação é ex tunc."
+  ],
+  mnemonics: [
+    ["ANULA = ilegAL, volta no tempo", "Ex tunc. REVOGA = conveniência, daqui pra frente (ex nunc)."],
+    ["Juiz não revoga", "Judiciário controla legalidade; mérito fica com o administrador."],
+    ["CDN", "Responsabilidade objetiva exige Conduta, Dano e Nexo — só dispensa culpa."]
+  ],
+  flash: [
+    ["Anulação tem efeitos ex tunc ou ex nunc?", "Ex tunc (retroage). Revogação: ex nunc."],
+    ["Prazo para a Administração federal anular ato favorável?", "5 anos, contados da prática, salvo comprovada má-fé (Lei 9.784, art. 54)."],
+    ["Quem julga as contas anuais do Presidente?", "O Congresso Nacional, após parecer prévio do TCU."],
+    ["Teoria adotada como regra pela CF para a responsabilidade do Estado?", "Risco administrativo (objetiva, com excludentes)."],
+    ["O que diz a tese da dupla garantia (Tema 940)?", "A ação é contra o Estado ou a prestadora; o agente só responde em regresso."],
+    ["Concessionária responde objetivamente perante não usuário?", "Sim (STF, Tema 130)."]
+  ],
+  quiz: [
+    { id: "m6q1", q: "Nos termos do art. 37, §6º, da Constituição, o direito de regresso contra o agente público que causou o dano:",
+      o: ["existe sempre, mesmo sem dolo ou culpa.", "existe somente quando o fato também constituir crime.", "só é exercido se a vítima não for indenizada.", "é assegurado nos casos de dolo ou culpa do agente.", "é vedado, pois a responsabilidade é exclusiva do Estado."], a: 3,
+      e: "Estado → responde objetivamente perante a vítima. Agente → responde subjetivamente (dolo ou culpa) perante o Estado, em ação regressiva." },
+    { id: "m6q2", q: "Quanto ao controle judicial dos atos administrativos, é correto afirmar que:",
+      o: ["alcança o mérito, permitindo ao juiz substituir a escolha do administrador.", "restringe-se à legalidade e à legitimidade, podendo o Judiciário anular, mas não revogar, atos de outro Poder.", "depende sempre do prévio esgotamento da via administrativa.", "só pode ser provocado pelo Ministério Público.", "é exercido pelo Tribunal de Contas da União."], a: 1,
+      e: "Jurisdição una e inafastável, mas limitada à legalidade/legitimidade. Revogação é privativa da Administração que editou o ato." },
+    { id: "m6q3", q: "Sobre o Tribunal de Contas da União, assinale a correta:",
+      o: ["É órgão subordinado hierarquicamente ao Congresso Nacional.", "Auxilia o Congresso no controle externo, com autonomia, e julga as contas dos administradores e demais responsáveis por dinheiro público.", "Julga as contas anuais prestadas pelo Presidente da República.", "Integra o Poder Judiciário.", "Exerce o controle interno do Poder Executivo federal."], a: 1,
+      e: "Art. 71: o TCU auxilia o Congresso, sem subordinação. Contas do Presidente: parecer prévio do TCU, julgamento pelo Congresso." },
+    { id: "m6q4", q: "A teoria do risco administrativo, adotada como regra pela Constituição:",
+      o: ["obriga o Estado a indenizar mesmo com culpa exclusiva da vítima.", "estabelece responsabilidade objetiva, admitindo excludentes como culpa exclusiva da vítima, caso fortuito ou força maior e fato exclusivo de terceiro.", "exige que a vítima prove a culpa do agente.", "aplica-se só às pessoas jurídicas de direito público.", "é a teoria aplicada aos danos nucleares."], a: 1,
+      e: "Risco administrativo: objetiva, com excludentes. Risco integral (sem excludentes) é exceção, como no dano nuclear." },
+    { id: "m6q5", q: "Um servidor da UFBA, dirigindo carro oficial em serviço, atropela um pedestre. Segundo o STF (Tema 940), o pedestre deve:",
+      o: ["processar apenas o servidor, que causou o dano.", "ajuizar a ação contra a UFBA, que poderá agir regressivamente contra o servidor em caso de dolo ou culpa.", "processar obrigatoriamente o servidor e a UFBA em conjunto.", "processar o Ministério da Educação, por ser a UFBA um órgão.", "apresentar pedido ao TCU, único competente para fixar indenização."], a: 1,
+      e: "A UFBA é autarquia, com personalidade própria: responde objetivamente. O servidor só responde em regresso (dupla garantia)." },
+    { id: "m6q6", q: "Ônibus de concessionária de transporte coletivo atinge um ciclista que não era passageiro. A responsabilidade da concessionária é:",
+      o: ["subjetiva, pois o ciclista não era usuário.", "objetiva, também em relação a terceiros não usuários do serviço.", "primeiro do Estado, e só depois da concessionária.", "inexistente, por não haver contrato com o ciclista.", "objetiva apenas se o ciclista fosse usuário de outra linha."], a: 1,
+      e: "STF, Tema 130 (RE 591.874): a responsabilidade objetiva da prestadora alcança usuários e não usuários." },
+    { id: "m6q7", q: "Segundo a Lei 9.784/1999, o direito da Administração federal de anular atos dos quais decorram efeitos favoráveis aos destinatários decai em:",
+      o: ["2 anos.", "5 anos, contados da data em que foram praticados, salvo comprovada má-fé.", "10 anos, em qualquer caso.", "nunca, pois ato ilegal não convalesce.", "1 ano, contado da ciência do vício."], a: 1,
+      e: "Art. 54 da Lei 9.784. Com má-fé comprovada, não se aplica o prazo decadencial." }
+  ]
+});
+/* ===== Missão 7 + simulado + edital ===== */
+MISSIONS.push({
+  id: "m7", n: 7, color: "var(--c7)", min: 50,
+  title: "Licitações — Lei 14.133/2021",
+  edital: "Item 7 e 7.1: conceito, objeto, finalidades, princípios, obrigatoriedade, dispensa, inexigibilidade, vedação, modalidades, procedimentos, fases, revogação, invalidação, desistência e controle.",
+  twoInOne: "Cai duas vezes: Específicos (item 7) e Administração Pública (Comuns, item 10: critérios de julgamento, gestão e fiscalização, infrações e sanções).",
+  summary: [
+    ["Modalidades", "<mark>Pregão, concorrência, concurso, leilão e diálogo competitivo</mark>. Convite e tomada de preços acabaram."],
+    ["Contratação direta", "<b>Dispensa</b>: competir seria possível, mas a lei libera. <b>Inexigibilidade</b>: competir é inviável."],
+    ["Fases", "Preparatória → edital → propostas e lances → <b>julgamento → habilitação</b> → recursal → homologação."],
+    ["Valores 2026", "Dispensa por valor: < <b>R$ 130.984,20</b> (obras e engenharia) e < <b>R$ 65.492,11</b> (compras e serviços) — Decreto 12.807/2025."]
+  ],
+  sections: [
+    { t: "Conceito, objeto, finalidades e obrigatoriedade", h: `
+      <p>Licitação é o <b>procedimento administrativo</b> pelo qual a Administração seleciona a proposta apta a gerar o resultado de contratação mais vantajoso, com tratamento isonômico. Objeto: obras, serviços, compras, alienações, locações e concessões de uso.</p>
+      <p><b>Objetivos (art. 11):</b> I – selecionar a proposta mais vantajosa, inclusive considerando o <mark>ciclo de vida do objeto</mark>; II – assegurar tratamento isonômico e justa competição; III – evitar sobrepreço, preços inexequíveis e superfaturamento; IV – incentivar a inovação e o desenvolvimento nacional sustentável.</p>
+      <p><b>Obrigatoriedade:</b> a CF (art. 37, XXI) manda licitar obras, serviços, compras e alienações, ressalvados os casos previstos em lei. A Lei 14.133 alcança administrações diretas, autárquicas e fundacionais de todos os entes, inclusive Legislativo e Judiciário na função administrativa. <mark>Empresas públicas e sociedades de economia mista seguem a Lei 13.303/2016</mark> (exceto quanto aos crimes do art. 178).</p>
+      <aside class="ufba"><b>Na UFBA:</b> como autarquia, a universidade licita pela Lei 14.133. A própria contratação da banca deste concurso foi publicada no PNCP como contratação direta.</aside>` },
+    { t: "Princípios (art. 5º)", h: `
+      <div class="chips">${["legalidade","impessoalidade","moralidade","publicidade","eficiência","interesse público","probidade administrativa","igualdade","planejamento","transparência","eficácia","segregação de funções","motivação","vinculação ao edital","julgamento objetivo","segurança jurídica","razoabilidade","competitividade","proporcionalidade","celeridade","economicidade","desenvolvimento nacional sustentável"].map(p=>`<span>${p}</span>`).join("")}</div>
+      <p>Além deles, aplicam-se as disposições da LINDB. Novidades frequentes em prova: <b>planejamento</b>, <b>transparência</b>, <b>segregação de funções</b> (quem pede não julga e não fiscaliza) e <b>eficácia</b>.</p>
+      <p><b>Quem conduz:</b> o <mark>agente de contratação</mark>, designado entre servidores efetivos ou empregados dos quadros permanentes (art. 8º). No pregão, ele se chama <b>pregoeiro</b>. Para bens ou serviços especiais, pode haver comissão de contratação com, no mínimo, 3 membros.</p>` },
+    { t: "Modalidades e critérios de julgamento", h: `
+      ${tbl(["Modalidade","Para quê","Critérios de julgamento"],[
+        ["<b>Pregão</b>","Obrigatório para <b>bens e serviços comuns</b> (inclui serviços comuns de engenharia)","Menor preço ou maior desconto"],
+        ["<b>Concorrência</b>","Bens e serviços especiais; obras e serviços comuns e especiais de engenharia","Menor preço, melhor técnica ou conteúdo artístico, técnica e preço, maior retorno econômico, maior desconto"],
+        ["<b>Concurso</b>","Escolha de trabalho técnico, científico ou artístico, com prêmio ou remuneração","Melhor técnica ou conteúdo artístico"],
+        ["<b>Leilão</b>","Alienação de imóveis ou de móveis inservíveis ou legalmente apreendidos","Maior lance"],
+        ["<b>Diálogo competitivo</b>","Soluções inovadoras ou complexas: a Administração dialoga com licitantes pré-selecionados, que depois apresentam proposta final","Definido no edital"]
+      ])}
+      <p>É <b>vedada</b> a criação de outras modalidades ou a combinação delas (art. 28, §2º). O pregão <b>não</b> se aplica a serviços técnicos especializados de natureza predominantemente intelectual nem a obras e serviços especiais de engenharia.</p>
+      <p><b>Procedimentos auxiliares (art. 78):</b> credenciamento, pré-qualificação, procedimento de manifestação de interesse (PMI), sistema de registro de preços (SRP) e registro cadastral. <i>Não são modalidades.</i></p>` },
+    { t: "Fases e prazos", h: `
+      <ol class="phases"><li>Preparatória</li><li>Divulgação do edital</li><li>Apresentação de propostas e lances</li><li>Julgamento</li><li>Habilitação</li><li>Recursal</li><li>Homologação</li></ol>
+      <p>A habilitação pode vir antes (inversão), por <b>ato motivado</b> e com <b>previsão expressa no edital</b> (art. 17, §1º). A licitação é <mark>preferencialmente eletrônica</mark>; a presencial precisa ser motivada, com sessão registrada em ata e gravada em áudio e vídeo (art. 17, §2º).</p>
+      ${tbl(["Prazos mínimos de publicidade (art. 55, em dias úteis)","Prazo"],[
+        ["Bens — menor preço ou maior desconto","8"],["Bens — demais casos","15"],
+        ["Serviços comuns e obras/serviços comuns de engenharia — menor preço ou maior desconto","10"],
+        ["Serviços especiais e obras/serviços especiais de engenharia — menor preço ou maior desconto","25"],
+        ["Maior lance (leilão)","15"],["Técnica e preço ou melhor técnica/conteúdo artístico","35"],
+        ["Contratação integrada","60"],["Contratação semi-integrada e demais casos de serviços e obras","35"]
+      ])}
+      ${tbl(["Impugnação e recursos","Regra"],[
+        ["Impugnar o edital (art. 164)","<b>Qualquer pessoa</b>, até 3 dias úteis antes da abertura; resposta em até 3 dias úteis"],
+        ["Recurso (art. 165, I)","3 dias úteis da intimação ou da ata; intenção de recorrer manifestada imediatamente"],
+        ["Pedido de reconsideração (art. 165, II)","3 dias úteis, quando não couber recurso hierárquico"]
+      ])}` },
+    { t: "Contratação direta: dispensa e inexigibilidade", h: `
+      ${tbl(["","Licitação dispensável (art. 75)","Licitação dispensada (art. 76)","Inexigibilidade (art. 74)"],[
+        ["Ideia","Competição possível, mas a lei <b>faculta</b> não licitar","A lei já <b>determina</b> não licitar","Competição <b>inviável</b>"],
+        ["Rol","Taxativo","Taxativo","<b>Exemplificativo</b> (“em especial”)"],
+        ["Exemplos","Valor baixo; licitação deserta ou fracassada há menos de 1 ano; emergência ou calamidade","Alienação de bens em casos específicos (ex.: doação, permuta)","Fornecedor exclusivo; artista consagrado via empresário exclusivo; serviço técnico com notória especialização; credenciamento; imóvel singular"]
+      ])}
+      <div class="card-grid">
+        <div class="mini"><b>Dispensa por valor em 2026</b><p>Obras, engenharia e manutenção de veículos: abaixo de <b>R$ 130.984,20</b>. Outros serviços e compras: abaixo de <b>R$ 65.492,11</b>. Texto original da lei: R$ 100 mil e R$ 50 mil, corrigidos anualmente pelo IPCA-E (art. 182).</p></div>
+        <div class="mini"><b>Emergência (art. 75, VIII)</b><p>Contrato de no máximo <mark>1 ano</mark>, vedadas a prorrogação e a recontratação da mesma empresa com base nessa hipótese.</p></div>
+      </div>
+      <p>Toda contratação direta precisa ser instruída (art. 72): documento de formalização da demanda, estimativa de despesa, pareceres, razão da escolha do contratado e justificativa de preço. A inexigibilidade para serviços técnicos é <b>vedada para publicidade e divulgação</b>.</p>
+      <p class="hint">Em prova, se o enunciado citar o texto da lei (R$ 100 mil / R$ 50 mil), responda pelo texto. Se falar em valores vigentes, use os atualizados.</p>` },
+    { t: "Vedações: quem não pode disputar (art. 14)", h: `
+      <ul class="clean">
+        <li>Autor do anteprojeto, projeto básico ou executivo (e a empresa responsável por eles), quando a licitação for da obra ou serviço relacionado.</li>
+        <li>Quem estiver impedido por <b>sanção</b> que lhe foi imposta.</li>
+        <li>Quem tiver vínculo técnico, comercial, econômico, financeiro, trabalhista ou civil com dirigente do órgão ou com agente que atue na licitação ou no contrato — ou seja cônjuge, companheiro ou parente dele até o <b>3º grau</b>.</li>
+        <li>Empresas controladoras, controladas ou coligadas concorrendo entre si.</li>
+        <li>Quem, nos 5 anos anteriores ao edital, tenha sido condenado em definitivo por trabalho infantil, trabalho análogo ao de escravo ou contratação de adolescentes em casos vedados.</li>
+      </ul>` },
+    { t: "Revogação, invalidação e desistência", h: `
+      <p>Terminado o julgamento, a habilitação e os recursos, a <b>autoridade superior</b> pode (art. 71): I – devolver para <b>saneamento</b>; II – <b>revogar</b> por conveniência e oportunidade; III – <b>anular</b> de ofício ou por provocação, diante de ilegalidade insanável; IV – <b>adjudicar e homologar</b>.</p>
+      ${tbl(["","Revogação","Anulação (invalidação)"],[
+        ["Motivo","Conveniência e oportunidade, por <mark>fato superveniente devidamente comprovado</mark>","Ilegalidade insanável"],
+        ["Garantia","Prévia manifestação dos interessados","Prévia manifestação dos interessados"],
+        ["Efeito no contrato","—","A nulidade do contrato opera retroativamente (art. 148), com análise prévia do interesse público"]
+      ])}
+      <p><b>Desistência:</b> a proposta vincula o licitante. <b>Não mantê-la</b> sem fato superveniente justificado é infração (art. 155, V), assim como recusar-se a assinar o contrato no prazo de validade da proposta (art. 155, VI). Se houve garantia de proposta (até 1% do valor estimado), ela é executada na recusa (art. 58). A Administração pode então convocar os remanescentes (art. 90).</p>` },
+    { t: "Sanções, fiscalização e controle", h: `
+      ${tbl(["Sanção (art. 156)","Alcance e prazo"],[
+        ["Advertência","Infração leve (inexecução parcial sem gravidade)"],
+        ["Multa","Entre <b>0,5% e 30%</b> do valor do contrato ou da licitação"],
+        ["Impedimento de licitar e contratar","Até <b>3 anos</b>, no âmbito do ente federativo que aplicou"],
+        ["Declaração de inidoneidade","De <b>3 a 6 anos</b>, com todos os entes federativos"]
+      ])}
+      <p>Recurso contra advertência, multa e impedimento: 15 dias úteis. Contra a inidoneidade cabe só pedido de reconsideração, também em 15 dias úteis.</p>
+      <p><b>Gestão e fiscalização (art. 117):</b> a execução é acompanhada por fiscal(is) designado(s), que anotam ocorrências em registro próprio e comunicam aos superiores o que exceder sua competência.</p>
+      <p><b>Controle (art. 169):</b> gestão de riscos e controle preventivo, controle social e três linhas de defesa:</p>
+      ${tbl(["Linha","Quem"],[
+        ["1ª","Servidores, agentes de licitação e autoridades da governança do órgão"],
+        ["2ª","Assessoramento jurídico e controle interno <b>do próprio órgão</b>"],
+        ["3ª","Órgão central de controle interno (na União, a CGU) e tribunal de contas"]
+      ])}` }
+  ],
+  traps: [
+    "“Tomada de preços e convite continuam valendo para compras pequenas.” <b>Errado.</b> Foram extintas.",
+    "“O rol de inexigibilidade é taxativo.” <b>Errado.</b> É exemplificativo; o de dispensa é que é taxativo.",
+    "“Contrato emergencial pode ser prorrogado se a emergência continuar.” <b>Errado.</b> Máximo de 1 ano, sem prorrogação.",
+    "“A regra é habilitar antes de julgar.” <b>Errado.</b> A regra é julgar e depois habilitar; a inversão é exceção motivada.",
+    "“Revoga-se a licitação por qualquer motivo de conveniência.” <b>Errado.</b> Exige fato superveniente comprovado e prévia manifestação dos interessados.",
+    "“Só licitantes podem impugnar o edital.” <b>Errado.</b> Qualquer pessoa pode."
+  ],
+  mnemonics: [
+    ["Pra Comprar Com Lei, Dialogue", "Pregão, Concorrência, Concurso, Leilão, Diálogo competitivo."],
+    ["Pedro Deu Presente, Joana Hesitou, Rindo Horrores", "Preparatória, Divulgação, Propostas, Julgamento, Habilitação, Recursal, Homologação."],
+    ["DISpensa = DISponível competir", "Competição possível, lei libera. INexigível = INviável."],
+    ["Inidôneo: 3 a 6, todo mundo", "Inidoneidade vale para todos os entes; impedimento: até 3 anos, só no ente."]
+  ],
+  flash: [
+    ["Quais são as cinco modalidades da Lei 14.133?", "Pregão, concorrência, concurso, leilão e diálogo competitivo."],
+    ["Qual a ordem das fases da licitação?", "Preparatória, divulgação do edital, propostas e lances, julgamento, habilitação, recursal e homologação."],
+    ["Limites de dispensa por valor em 2026?", "Abaixo de R$ 130.984,20 (obras/engenharia) e R$ 65.492,11 (compras/serviços)."],
+    ["Prazo máximo do contrato emergencial?", "1 ano, vedadas prorrogação e recontratação da mesma empresa."],
+    ["Quem compõe a 2ª linha de defesa?", "Assessoramento jurídico e controle interno do próprio órgão."],
+    ["Revogação da licitação exige o quê?", "Fato superveniente devidamente comprovado e prévia manifestação dos interessados."],
+    ["Prazo e alcance da declaração de inidoneidade?", "3 a 6 anos, impedindo licitar e contratar com todos os entes."],
+    ["Até quando se impugna o edital?", "Até 3 dias úteis antes da abertura do certame; qualquer pessoa."]
+  ],
+  quiz: [
+    { id: "m7q1", q: "NÃO é modalidade de licitação prevista na Lei 14.133/2021:",
+      o: ["pregão.", "concorrência.", "tomada de preços.", "leilão.", "diálogo competitivo."], a: 2,
+      e: "Tomada de preços e convite eram da Lei 8.666/1993 e não existem na nova lei." },
+    { id: "m7q2", q: "O pregão:",
+      o: ["é a modalidade para obras de grande vulto.", "é obrigatório para aquisição de bens e serviços comuns, com critério de julgamento de menor preço ou maior desconto.", "é indicado para serviços técnicos especializados de natureza predominantemente intelectual.", "é a modalidade para alienar bens inservíveis.", "utiliza o critério técnica e preço."], a: 1,
+      e: "Art. 6º, XLI. Serviços intelectuais e obras/serviços especiais de engenharia ficam fora do pregão." },
+    { id: "m7q3", q: "A UFBA pretende contratar, para um evento, artista consagrado pela crítica especializada, por meio de seu empresário exclusivo. A contratação direta enquadra-se em:",
+      o: ["dispensa em razão do valor.", "inexigibilidade de licitação.", "modalidade concurso.", "licitação dispensada.", "leilão."], a: 1,
+      e: "Art. 74, II: competição inviável porque o artista é único. Inexigibilidade." },
+    { id: "m7q4", q: "Diante de situação emergencial que ameaça a segurança de pessoas, a Administração pode contratar diretamente por:",
+      o: ["inexigibilidade, por prazo indeterminado.", "dispensa, com contrato de no máximo 1 ano, vedadas a prorrogação e a recontratação da mesma empresa com base nessa hipótese.", "dispensa, com prorrogações enquanto durar a emergência.", "pregão, obrigatoriamente.", "concurso, com prêmio ao vencedor."], a: 1,
+      e: "Art. 75, VIII: emergência ou calamidade — prazo máximo de 1 ano contado da ocorrência, sem prorrogação." },
+    { id: "m7q5", q: "Como regra, as fases do processo licitatório seguem a ordem:",
+      o: ["preparatória, divulgação do edital, habilitação, propostas e lances, julgamento, recursal e homologação.", "preparatória, divulgação do edital, apresentação de propostas e lances, julgamento, habilitação, recursal e homologação.", "divulgação do edital, preparatória, julgamento, habilitação, homologação e recursal.", "preparatória, julgamento, divulgação do edital, habilitação, recursal e homologação.", "habilitação, preparatória, propostas, julgamento, homologação e recursal."], a: 1,
+      e: "Art. 17. Julgar antes de habilitar é a regra; a inversão exige ato motivado e previsão no edital." },
+    { id: "m7q6", q: "Quanto à revogação da licitação, é correto afirmar:",
+      o: ["Decorre de ilegalidade insanável.", "Ocorre por conveniência e oportunidade, com motivo resultante de fato superveniente devidamente comprovado, assegurada a prévia manifestação dos interessados.", "Pode ocorrer por qualquer motivo, sem ouvir os interessados.", "É competência exclusiva do Tribunal de Contas.", "Só pode ocorrer antes da publicação do edital."], a: 1,
+      e: "Art. 71, II e §§2º e 3º. Ilegalidade leva à anulação, não à revogação." },
+    { id: "m7q7", q: "Pelo art. 169 da Lei 14.133/2021, as unidades de assessoramento jurídico e de controle interno do próprio órgão integram a:",
+      o: ["primeira linha de defesa.", "segunda linha de defesa.", "terceira linha de defesa.", "instância de controle social.", "instância de controle judicial."], a: 1,
+      e: "1ª: agentes e autoridades da governança. 2ª: jurídico e controle interno do próprio órgão. 3ª: órgão central de controle interno e tribunal de contas." },
+    { id: "m7q8", q: "Em 2026, a UFBA estima gastar R$ 60.000,00 com a compra de material de expediente. Considerando os valores atualizados pelo Decreto 12.807/2025, a contratação:",
+      o: ["é inexigível, por haver vários fornecedores.", "pode ser feita por dispensa em razão do valor, pois fica abaixo do limite de R$ 65.492,11 para compras e outros serviços.", "exige concorrência, por se tratar de compra.", "deve ser feita por leilão.", "só é possível por diálogo competitivo."], a: 1,
+      e: "Art. 75, II, com valor corrigido: compras e outros serviços abaixo de R$ 65.492,11. Havendo vários fornecedores, a competição é possível — por isso não é inexigibilidade." },
+    { id: "m7q9", q: "A sanção de declaração de inidoneidade para licitar ou contratar:",
+      o: ["tem prazo de até 3 anos e vale só no ente que a aplicou.", "tem prazo mínimo de 3 e máximo de 6 anos e impede licitar e contratar com todos os entes federativos.", "corresponde a multa entre 0,5% e 30%.", "é a sanção mais leve prevista na lei.", "tem caráter perpétuo."], a: 1,
+      e: "Art. 156, §5º. O impedimento (até 3 anos) é que se limita ao ente sancionador." },
+    { id: "m7q10", q: "O licitante vencedor deixa de manter sua proposta, sem qualquer fato superveniente que o justifique. Essa conduta:",
+      o: ["é livre, pois a proposta não vincula o licitante.", "configura infração administrativa, sujeitando-o a sanções, e pode levar à execução da garantia de proposta.", "provoca a revogação automática da licitação.", "gera ao licitante direito a indenização.", "só tem consequência na esfera penal."], a: 1,
+      e: "Art. 155, V (não manter a proposta) e art. 58 (garantia de proposta). A Administração pode convocar os remanescentes (art. 90)." },
+    { id: "m7q11", q: "Sobre a impugnação do edital de licitação, é correto afirmar que:",
+      o: ["só licitantes cadastrados podem impugnar.", "qualquer pessoa é parte legítima para impugnar, devendo protocolar o pedido até 3 dias úteis antes da data de abertura do certame.", "o prazo é de até 10 dias corridos antes da abertura.", "apenas o Ministério Público pode impugnar editais.", "a impugnação só é cabível após a homologação."], a: 1,
+      e: "Art. 164: qualquer pessoa; até 3 dias úteis antes; resposta em até 3 dias úteis, limitada ao último dia útil anterior à abertura." }
+  ]
+});
+
+const SIMULADO = {
+  id: "sim", title: "Simulado final", min: 25,
+  quiz: [
+    { id: "s1", q: "A atividade de fixar diretrizes, metas e prioridades políticas do Estado corresponde, tecnicamente, à noção de:",
+      o: ["Administração Pública em sentido objetivo.", "Governo.", "poder de polícia.", "desconcentração.", "serviço público uti universi."], a: 1,
+      e: "Governo é a função política de direção. A Administração executa essas escolhas." },
+    { id: "s2", q: "De acordo com o art. 37, XIX, da Constituição, cabe à lei complementar:",
+      o: ["criar as autarquias.", "autorizar a criação de empresas públicas.", "definir as áreas de atuação das fundações.", "extinguir sociedades de economia mista.", "fixar o capital das empresas públicas."], a: 2,
+      e: "Lei específica cria autarquia e autoriza EP, SEM e fundação; lei complementar define as áreas de atuação das fundações." },
+    { id: "s3", q: "O superior que, excepcional e temporariamente, chama para si competência atribuída a órgão hierarquicamente inferior, por motivos relevantes justificados, pratica:",
+      o: ["delegação.", "avocação.", "desconcentração.", "revogação.", "outorga."], a: 1,
+      e: "Art. 15 da Lei 9.784/1999." },
+    { id: "s4", q: "Na doutrina majoritária, a autorização de serviço público é:",
+      o: ["contrato administrativo por prazo determinado.", "contrato de adesão precedido de concorrência.", "ato administrativo unilateral, discricionário e precário.", "ato vinculado e definitivo.", "modalidade de licitação."], a: 2,
+      e: "Concessão = contrato; permissão = contrato de adesão; autorização = ato unilateral, discricionário e precário." },
+    { id: "s5", q: "Em regra, nos danos decorrentes de omissão genérica do Estado, a doutrina e a jurisprudência aplicam a responsabilidade:",
+      o: ["objetiva, pela teoria do risco integral.", "subjetiva, com base na culpa anônima ou falta do serviço.", "inexistente, pois o Estado não responde por omissão.", "exclusiva do agente público omisso.", "objetiva, sem admitir qualquer excludente."], a: 1,
+      e: "Omissão genérica: subjetiva (o serviço não funcionou, funcionou mal ou tardiamente). Omissão específica com dever de custódia tem sido tratada como objetiva pelo STF." },
+    { id: "s6", q: "Para escolher o melhor projeto arquitetônico de um novo pavilhão, com prêmio ao vencedor, a modalidade adequada é:",
+      o: ["pregão.", "leilão.", "concurso.", "diálogo competitivo.", "credenciamento."], a: 2,
+      e: "Concurso: trabalho técnico, científico ou artístico, julgado por melhor técnica ou conteúdo artístico, com prêmio ou remuneração." },
+    { id: "s7", q: "Para vender veículos inservíveis de seu patrimônio, a UFBA deve utilizar, em regra, a modalidade:",
+      o: ["concorrência, pelo menor preço.", "leilão, pelo critério de maior lance.", "pregão, pelo maior desconto.", "concurso.", "diálogo competitivo."], a: 1,
+      e: "Leilão: alienação de imóveis ou de móveis inservíveis ou legalmente apreendidos, a quem oferecer o maior lance." },
+    { id: "s8", q: "No diálogo competitivo, a Administração:",
+      o: ["negocia livremente com qualquer interessado, sem critérios.", "realiza diálogos com licitantes previamente selecionados por critérios objetivos, para desenvolver alternativas; depois, os licitantes apresentam proposta final.", "aliena bens pelo maior lance.", "adquire bens comuns pelo menor preço.", "contrata diretamente, sem licitação."], a: 1,
+      e: "Art. 6º, XLII: modalidade para objetos inovadores ou complexos." },
+    { id: "s9", q: "Contra o ato de habilitação ou inabilitação de licitante, cabe recurso no prazo de:",
+      o: ["24 horas.", "3 dias úteis.", "5 dias corridos.", "10 dias úteis.", "15 dias úteis."], a: 1,
+      e: "Art. 165, I, “c”. O prazo de 15 dias úteis é para recurso contra sanções." },
+    { id: "s10", q: "As comissões parlamentares de inquérito:",
+      o: ["têm poderes de investigação próprios das autoridades judiciais.", "podem condenar os investigados à prisão.", "substituem o Ministério Público na ação penal.", "são órgãos do Tribunal de Contas.", "só podem ser criadas pelo Senado."], a: 0,
+      e: "Art. 58, §3º. Suas conclusões, se for o caso, são enviadas ao Ministério Público." },
+    { id: "s11", q: "Empresas públicas e sociedades de economia mista realizam suas licitações e contratos, em regra, com base na:",
+      o: ["Lei 14.133/2021, integralmente.", "Lei 13.303/2016.", "Lei 8.666/1993, ainda vigente para estatais.", "Lei 8.987/1995.", "Lei 9.784/1999."], a: 1,
+      e: "A Lei 14.133 exclui as estatais (art. 1º, §1º), ressalvado o art. 178 (crimes)." },
+    { id: "s12", q: "Sobre anulação e revogação de atos administrativos, assinale a correta:",
+      o: ["O Judiciário pode revogar atos do Executivo por inconveniência.", "A revogação produz efeitos retroativos.", "A anulação decorre de ilegalidade e tem, em regra, efeitos retroativos; a revogação decorre de conveniência e oportunidade e não retroage.", "Atos vinculados podem ser revogados livremente.", "A anulação só pode ser feita pelo Judiciário."], a: 2,
+      e: "Anulação: ilegalidade, ex tunc, Administração ou Judiciário. Revogação: mérito, ex nunc, só a Administração." }
+  ]
+};
+
+/* Mapa do edital — Cargo 201 (Edital nº 7/2026, Tabela 10.1) */
+const EDITAL = [
+  { area: "Conhecimentos Específicos", weight: "30 questões × 2 pts = 60 pts", items: [
+    ["esp-da", "Noções de Direito Administrativo (este módulo)", "Itens 1 a 7.1 — coberto aqui"],
+    ["esp-adm", "Noções de Administração Pública", "Estruturas, departamentalização, processo organizacional, processos, qualidade, projetos"],
+    ["esp-gp", "Noções de Gestão de Pessoas", "Função do órgão de GP, sistemas de informação, motivação, liderança"],
+    ["esp-rm", "Noções de Administração de Recursos Materiais", "Classificação, estoques, compras, fornecedores, recebimento e armazenagem"],
+    ["esp-arq", "Noções de Arquivologia", "Gestão de documentos, protocolo, três idades, avaliação, microfilmagem, preservação"],
+    ["esp-at", "Noções de Atendimento ao Público", "Qualidade no atendimento, trabalho em equipe, postura, comunicação"]
+  ]},
+  { area: "Administração Pública (comum)", weight: "12 questões × 1 pt = 12 pts", items: [
+    ["ap-cf", "CF/88, Título III, Cap. VII + estrutura federal", "Muito coberto pelas missões 1 a 3"],
+    ["ap-8112", "Lei 8.112/1990", "Provimento, vacância, direitos, deveres, PAD"],
+    ["ap-etica", "Ética: Decretos 1.171/1994 e 6.029/2007", ""],
+    ["ap-impro", "Improbidade: Lei 8.429/1992", ""],
+    ["ap-9784", "Processo administrativo: Lei 9.784/1999", "Parcialmente coberto (delegação, avocação, anulação)"],
+    ["ap-lai", "LAI e LGPD", "Leis 12.527/2011 e 13.709/2018"],
+    ["ap-14133", "Licitações e contratos (Lei 14.133)", "Coberto pela missão 7"],
+    ["ap-outros", "Governança, governo digital, gestão documental, A3P, Carta de Serviços, UFBA", "Inclui Estatuto e Regimento Geral da UFBA"]
+  ]},
+  { area: "Língua Portuguesa", weight: "12 questões × 1 pt = 12 pts", items: [
+    ["lp-texto", "Interpretação, tipologia e gêneros", ""],
+    ["lp-gram", "Gramática aplicada e reescrita", ""],
+    ["lp-ro", "Redação Oficial (Manual da Presidência, 3ª ed.)", ""]
+  ]},
+  { area: "Noções de Informática", weight: "6 questões × 1 pt = 6 pts", items: [
+    ["inf-so", "Windows e Office", ""],
+    ["inf-net", "Internet, e-mail, nuvem e segurança", ""]
+  ]},
+  { area: "Redação (2ª fase)", weight: "60 pts — vale o mesmo que todos os Específicos", items: [
+    ["red-treino", "Treino semanal de redação", "Confira no item 13 do edital o tipo de texto e os critérios"]
+  ]}
+];
+/* ===== Motor ===== */
+(() => {
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const LETTERS = ["A","B","C","D","E"];
+const PTS = 2;                       // Conhecimentos Específicos: 2 pontos por questão (Edital 7/2026, Tabela 10.1)
+const EXAM_DATE = new Date(2026, 11, 20);
+const KEY = "ufba26_dirADM_v2";
+const IDLE_LIMIT = 240;              // s sem interação = pausa automática do cronômetro
+
+const ALL = [...MISSIONS, Object.assign({ n: "S", color: "var(--csim)" }, SIMULADO)];
+const byId = id => ALL.find(m => m.id === id);
+const STEPS = [["resumo","Resumo"],["entenda","Entenda"],["pegadinhas","Pegadinhas e macetes"],["flash","Flashcards"],["quiz","Questões"]];
+/* Redistribui a posição da alternativa correta de forma equilibrada (A–E) e determinística */
+(function balance(){ let seed = 20261220; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647; let bag = [];
+  ALL.forEach(m => m.quiz.forEach(q => {
+    if (!bag.length){ bag = [0,1,2,3,4]; for (let i = 4; i > 0; i--){ const j = Math.floor(rnd() * (i + 1)); [bag[i], bag[j]] = [bag[j], bag[i]]; } }
+    const t = bag.pop(), right = q.o[q.a], others = q.o.filter((_, i) => i !== q.a);
+    others.splice(t, 0, right); q.o = others; q.a = t; })); })();
+const QMAP = {}; ALL.forEach(m => m.quiz.forEach(q => QMAP[q.id] = Object.assign({ mid: m.id }, q)));
+const TOTAL_Q = Object.keys(QMAP).length;
+
+/* ---------- estado persistente (com try/catch: storage pode faltar) ---------- */
+const def = () => ({ v: 2, started: null, finishedAt: null, active: 0, msec: {}, ans: {}, practice: {}, done: {}, read: {}, steps: {}, flash: {}, edital: { "esp-da": false }, streak: 0, best: 0, name: "", ssec: {}, paused: false, pausedSec: 0, pauses: 0, leaves: 0, qrAttempts: {},
+  prefs: { theme: "auto", font: "lexend", size: 1, spacing: "normal", ruler: false, motion: "on", sound: false, idle: true, pomo: 25 } });
+function load(){ try { const raw = localStorage.getItem(KEY); return raw ? JSON.parse(raw) : null; } catch (e) { return null; } }
+let S = Object.assign(def(), load() || {});
+S.prefs = Object.assign(def().prefs, S.prefs || {});
+S.qrAttempts = Object.assign({}, S.qrAttempts || {});
+let dirty = false;
+function save(){ dirty = false; try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+function touch(){ dirty = true; }
+setInterval(() => { if (dirty) save(); }, 4000);
+window.addEventListener("pagehide", save);
+
+/* ---------- vista atual ---------- */
+let V = { name: "home", mid: null, step: "resumo", qi: 0, fi: 0, flipped: false, openSec: 0, practiceIds: null, pi: 0 };
+
+/* ---------- utilidades ---------- */
+const fmt = s => { s = Math.max(0, Math.floor(s)); const h = Math.floor(s/3600), m = Math.floor(s%3600/60), x = s%60;
+  return (h ? h + "h " : "") + String(m).padStart(2,"0") + "min " + String(x).padStart(2,"0") + "s"; };
+const clock = s => { s = Math.floor(s); const h = Math.floor(s/3600), m = Math.floor(s%3600/60), x = s%60;
+  return (h ? h + ":" + String(m).padStart(2,"0") : String(m).padStart(2,"0")) + ":" + String(x).padStart(2,"0"); };
+const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+function mStats(m){ let a = 0, c = 0; m.quiz.forEach(q => { const r = S.ans[q.id]; if (r){ a++; if (r.c) c++; } }); return { a, c, t: m.quiz.length }; }
+function totals(){ let a = 0, c = 0; Object.values(S.ans).forEach(r => { a++; if (r.c) c++; }); return { a, c, t: TOTAL_Q }; }
+function wrongIds(){ return Object.keys(S.ans).filter(id => !S.ans[id].c && QMAP[id]); }
+
+function base64UrlEncode(str){
+  const bytes = new TextEncoder().encode(str); let bin = "";
+  bytes.forEach(b => bin += String.fromCharCode(b));
+  return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/g,"");
+}
+function professorAttemptId(key){
+  S.qrAttempts = S.qrAttempts || {};
+  if (S.qrAttempts[key]) return S.qrAttempts[key];
+  const tag = String(key).toUpperCase().replace(/[^A-Z0-9]+/g,"-");
+  S.qrAttempts[key] = `UFBA-DA-${tag}-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2,7).toUpperCase()}`;
+  touch(); save();
+  return S.qrAttempts[key];
+}
+function professorFinishISO(m){
+  const ts = m.quiz.map(q => S.ans[q.id]?.t || 0).filter(Boolean);
+  const t = ts.length ? Math.max(...ts) : (S.finishedAt || Date.now());
+  return new Date(t).toISOString();
+}
+function professorMissionRecord(m){
+  const s = mStats(m), isSim = m.id === "sim";
+  return {
+    a: professorAttemptId(m.id),
+    n: S.name,
+    g: "7º ano",
+    t: "A",
+    d: Math.max(0, Math.round(S.msec[m.id] || 0)),
+    p: s.c * PTS,
+    x: s.t * PTS,
+    s: [-1,-1,-1,-1,-1,-1],
+    f: professorFinishISO(m),
+    m: `ufba-da-${m.id}`,
+    mt: isSim ? "UFBA • Direito Administrativo — Simulado final" : `UFBA • Direito Administrativo — Missão ${m.n}`,
+    ct: "Probabilidade",
+    q: "Matemática",
+    u: "matematica"
+  };
+}
+function professorFinalRecord(){
+  const t = totals();
+  return {
+    a: professorAttemptId("final"),
+    n: S.name,
+    g: "7º ano",
+    t: "A",
+    d: Math.max(0, Math.round(S.active || 0)),
+    p: t.c * PTS,
+    x: t.t * PTS,
+    s: [-1,-1,-1,-1,-1,-1],
+    f: new Date(S.finishedAt || Date.now()).toISOString(),
+    m: "ufba-da-final",
+    mt: "UFBA • Direito Administrativo — Resultado Final",
+    ct: "Probabilidade",
+    q: "Matemática",
+    u: "matematica"
+  };
+}
+function professorQrText(record){
+  const payload = base64UrlEncode(JSON.stringify(record));
+  const hosted = location.protocol === "https:" || location.protocol === "http:";
+  return hosted ? `${location.origin}${location.pathname}#r=${payload}` : payload;
+}
+function professorQrBlock(record, heading, detail){
+  const raw = professorQrText(record), encoded = encodeURIComponent(raw);
+  const pct = record.x ? Math.round(record.p * 100 / record.x) : 0;
+  return `<div class="prof-qr-panel">
+    <h3>📷 ${heading}</h3>
+    <div class="prof-qr-grid">
+      <div>
+        <p style="margin-bottom:6px"><b>${record.p}/${record.x} pontos (${pct}%)</b> · tempo ${clock(record.d)}</p>
+        <p class="prof-qr-meta">${detail}</p>
+        <p class="prof-qr-meta"><b>Destino fixo:</b> 7º ano • Turma A • Matemática. Para o seu professor.html atual reconhecer o registro sem nenhuma alteração, o campo técnico de conteúdo continua como <b>Probabilidade</b>; o título do registro identifica claramente <b>UFBA • Direito Administrativo</b>.</p>
+        <button class="btn ghost" data-copy-pqr="${encoded}">📋 Copiar conteúdo do QR</button>
+        <p class="prof-qr-note">No Painel do Professor: Escanear QR → ler este código → confirmar e salvar.</p>
+      </div>
+      <div class="prof-qr" data-prof-qr="${encoded}" aria-label="QR Code para o Painel do Professor"></div>
+    </div>
+  </div>`;
+}
+function professorMissionQr(m){
+  const s = mStats(m);
+  if (s.a !== s.t) return "";
+  const rec = professorMissionRecord(m);
+  return professorQrBlock(
+    rec,
+    m.id === "sim" ? "Registrar o simulado no Painel do Professor" : `Registrar a missão ${m.n} no Painel do Professor`,
+    m.id === "sim" ? "Este QR gera uma tentativa separada do simulado." : `Este QR gera uma tentativa separada da missão ${m.n}, permitindo registrar o estudo em dias diferentes.`
+  );
+}
+function professorFinalQr(){
+  const t = totals();
+  if (!S.finishedAt || t.a !== t.t) return "";
+  return professorQrBlock(
+    professorFinalRecord(),
+    "Registrar o resultado global no Painel do Professor",
+    "Este é o registro global, separado dos QRs individuais das missões e do simulado."
+  );
+}
+function drawProfessorQrs(){
+  $$(".prof-qr[data-prof-qr]").forEach(box => {
+    if (box.dataset.drawn) return;
+    const raw = decodeURIComponent(box.dataset.profQr || "");
+    box.innerHTML = "";
+    try{
+      if (window.QRCode){
+        new QRCode(box, { text: raw, width: 174, height: 174, correctLevel: QRCode.CorrectLevel.L });
+        box.dataset.drawn = "1";
+      }else{
+        box.innerHTML = '<span class="muted" style="text-align:center;font-size:.8rem">O gerador de QR não carregou. Use “Copiar conteúdo do QR”.</span>';
+      }
+    }catch(err){
+      box.innerHTML = '<span class="muted" style="text-align:center;font-size:.8rem">Não foi possível desenhar o QR. Use “Copiar conteúdo do QR”.</span>';
+    }
+  });
+}
+
+function daysLeft(){ const t = new Date(); t.setHours(0,0,0,0); return Math.round((EXAM_DATE - t) / 864e5); }
+function seen(mid, step){ S.steps[mid] = S.steps[mid] || []; if (!S.steps[mid].includes(step)){ S.steps[mid].push(step); touch(); } }
+function startClock(){ if (!S.started){ S.started = Date.now(); touch(); } }
+
+/* ---------- preferências ---------- */
+function applyPrefs(){
+  const r = document.documentElement, p = S.prefs;
+  if (p.theme === "auto") r.removeAttribute("data-theme"); else r.setAttribute("data-theme", p.theme);
+  r.setAttribute("data-font", p.font); r.setAttribute("data-size", p.size); r.setAttribute("data-spacing", p.spacing);
+  r.setAttribute("data-motion", p.motion);
+  document.body.classList.toggle("ruler", !!p.ruler);
+}
+
+/* ---------- cronômetro de estudo ativo ---------- */
+let lastInput = Date.now(), idle = false;
+["pointerdown","keydown","scroll","touchstart","wheel","pointermove"].forEach(ev =>
+  window.addEventListener(ev, () => { lastInput = Date.now(); if (idle){ idle = false; paintTop(); } }, { passive: true }));
+setInterval(() => {
+  if (!S.started || S.finishedAt) return;
+  if (S.paused){ S.pausedSec++; touch(); paintPause(); return; }
+  if (document.visibilityState !== "visible") return;
+  if (S.prefs.idle && (Date.now() - lastInput) / 1000 > IDLE_LIMIT){ if (!idle){ idle = true; paintTop(); } return; }
+  S.active++;
+  const cur = (V.name === "mission") ? V.mid : null;
+  if (cur){ S.msec[cur] = (S.msec[cur] || 0) + 1; S.ssec[cur] = S.ssec[cur] || {}; S.ssec[cur][V.step] = (S.ssec[cur][V.step] || 0) + 1; }
+  touch(); paintTop();
+}, 1000);
+
+function paintTop(){
+  const t = totals();
+  $("#ptsPill").textContent = (t.c * PTS) + " pts" + (S.streak >= 3 ? "  🔥" + S.streak : "");
+  const tp = $("#timePill");
+  tp.textContent = "⏱ " + clock(S.active) + (idle ? " · pausado" : "");
+  tp.classList.toggle("paused", idle || !S.started);
+  const pb = $("#pauseBtn"); if (pb){ pb.disabled = !S.started || !!S.finishedAt; pb.querySelector("b").textContent = S.paused ? "Continuar" : "Pausar"; pb.firstChild.textContent = S.paused ? "▶️ " : "⏸️ "; pb.setAttribute("aria-pressed", S.paused); }
+  tp.title = idle ? "Cronômetro pausado por inatividade. Mexa o mouse ou toque na tela para retomar." : "Tempo ativo de estudo";
+}
+
+/* ---------- pomodoro ---------- */
+let P = { mode: "off", end: 0 };
+function beep(){ if (!S.prefs.sound) return; try { const a = new (window.AudioContext || window.webkitAudioContext)(); const o = a.createOscillator(), g = a.createGain();
+  o.type = "sine"; o.frequency.value = 660; g.gain.setValueAtTime(.0001, a.currentTime); g.gain.exponentialRampToValueAtTime(.15, a.currentTime + .05); g.gain.exponentialRampToValueAtTime(.0001, a.currentTime + .9);
+  o.connect(g); g.connect(a.destination); o.start(); o.stop(a.currentTime + 1); } catch (e) {} }
+function pomoStart(mode){ const min = mode === "focus" ? S.prefs.pomo : 5; P = { mode, end: Date.now() + min * 60000 }; paintPomo(); }
+function paintPomo(){
+  const b = $("#pomoBtn"), l = $("#pomoLbl");
+  b.classList.toggle("run", P.mode === "focus"); b.classList.toggle("brk", P.mode === "break");
+  if (P.mode === "off"){ l.textContent = S.prefs.pomo + " min"; b.title = "Iniciar bloco de foco de " + S.prefs.pomo + " minutos"; return; }
+  const left = Math.max(0, (P.end - Date.now()) / 1000);
+  l.textContent = (P.mode === "break" ? "Pausa " : "") + clock(left);
+  b.title = "Clique para encerrar o bloco";
+}
+setInterval(() => {
+  if (P.mode === "off") return;
+  if (S.paused){ P.end += 1000; return; }
+  if (Date.now() >= P.end){
+    const was = P.mode; P = { mode: "off", end: 0 }; paintPomo(); beep();
+    if (was === "focus") toast("Bloco de foco concluído. Levante, beba água, olhe para longe.", [["Pausa de 5 min", () => pomoStart("break")], ["Seguir estudando", () => {}]], 0, true);
+    else toast("Pausa encerrada. Retome de onde parou.", [["Novo bloco", () => pomoStart("focus")]], 12000, true);
+  } else paintPomo();
+}, 1000);
+
+/* ---------- toasts ---------- */
+function toast(msg, actions = [], ms = 5000, keep = false){
+  const t = document.createElement("div"); t.className = "toast"; t.innerHTML = `<span>${msg}</span>`; if (keep) t.dataset.keep = "1";
+  if (actions.length){ const r = document.createElement("div"); r.className = "row";
+    actions.forEach(([lab, fn]) => { const b = document.createElement("button"); b.textContent = lab; b.onclick = () => { t.remove(); fn(); }; r.appendChild(b); }); t.appendChild(r); }
+  $("#toasts").appendChild(t); if (ms) setTimeout(() => t.remove(), ms);
+}
+function floaty(el, txt){ if (S.prefs.motion === "off") return; const r = el.getBoundingClientRect(); const f = document.createElement("div");
+  f.className = "floaty"; f.textContent = txt; f.style.left = (r.right - 60) + "px"; f.style.top = (r.top) + "px"; document.body.appendChild(f); setTimeout(() => f.remove(), 950); }
+
+/* ---------- pausa ---------- */
+function setPause(on){
+  if (!S.started || S.finishedAt) return;
+  S.paused = on; if (on){ S.pauses++; pauseStartAt = Date.now(); } else { lastInput = Date.now(); idle = false; }
+  touch(); save(); paintPause(); paintTop();
+  if (!on) toast("Tempo retomado. Bons estudos!");
+}
+function paintPause(){
+  const ov = $("#pauseOv"); if (!ov) return;
+  ov.hidden = !S.paused;
+  if (S.paused){ $("#pauseInfo").textContent = `Tempo de estudo até agora: ${clock(S.active)}. Pausado há ${clock(pauseRun())}.`; }
+}
+let pauseStartAt = null;
+function pauseRun(){ if (!S.paused){ pauseStartAt = null; return 0; } if (!pauseStartAt) pauseStartAt = Date.now(); return (Date.now() - pauseStartAt) / 1000; }
+
+/* ---------- análise de tempos ---------- */
+const SHORT = { m1: "Estado e Governo", m2: "Organização", m3: "Agentes", m4: "Poderes", m5: "Serviços", m6: "Controle e resp.", m7: "Licitações", sim: "Simulado" };
+const WPM = 110, FLASH_S = 25, Q_S = 120;   // leitura atenta de texto jurídico ≈ 110 palavras/min
+const words = h => String(h).replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+function readWords(m){ if (!m.sections) return 0;
+  return words(m.summary.map(x => x.join(" ")).join(" ")) + words(m.sections.map(x => x.t + " " + x.h).join(" ")) + words(m.traps.join(" ") + " " + m.mnemonics.map(x => x.join(" ")).join(" ")); }
+function stepTimes(m){ const t = S.ssec[m.id] || {};
+  return { leitura: (t.resumo || 0) + (t.entenda || 0) + (t.pegadinhas || 0), flash: t.flash || 0, quiz: t.quiz || 0 }; }
+function expected(m){ return { leitura: m.sections ? readWords(m) / WPM * 60 : 0, flash: m.flash ? m.flash.length * FLASH_S : 0, quiz: m.quiz.length * Q_S }; }
+function band(act, exp){
+  if (!exp) return { k: "na", t: "—" };
+  if (act < 5) return { k: "red", t: "não feito" };
+  const r = act / exp;
+  if (r < .35) return { k: "red", t: "muito rápido" };
+  if (r < .55) return { k: "yellow", t: "rápido" };
+  if (r <= 2) return { k: "green", t: "ok" };
+  if (r <= 3) return { k: "yellow", t: "demorou" };
+  return { k: "red", t: "muito lento" };
+}
+const mins = s => s < 60 ? Math.round(s) + "s" : "~" + Math.round(s / 60) + " min";
+function analysis(){
+  let w = 0, ls = 0, qn = 0, qs = 0, flags = [];
+  ALL.forEach(m => { const t = stepTimes(m), e = expected(m);
+    if (m.sections && t.leitura > 5){ w += readWords(m); ls += t.leitura; }
+    qn += mStats(m).a; qs += t.quiz;
+    [["leitura","leitura"],["flash","flashcards"],["quiz","questões"]].forEach(([k,l]) => { const b = band(t[k], e[k]);
+      if (b.k === "red") flags.push(`${SHORT[m.id]}: ${l} ${b.t} (${clock(t[k])}; esperado ${mins(e[k])})`); }); });
+  const wpm = ls ? Math.round(w / (ls / 60)) : 0;
+  let rd;
+  if (!wpm) rd = ["red", "Sem tempo de leitura registrado."];
+  else if (wpm > 300) rd = ["red", `Leitura muito rápida (${wpm} palavras/min): provável leitura por cima, pulando blocos.`];
+  else if (wpm > 200) rd = ["yellow", `Leitura rápida (${wpm} palavras/min): pode ter passado por cima de partes.`];
+  else if (wpm >= 55) rd = ["green", `Leitura em ritmo de estudo (${wpm} palavras/min).`];
+  else rd = ["yellow", `Leitura lenta (${wpm} palavras/min): pode indicar distração ou dificuldade.`];
+  const per = qn ? qs / qn : 0;
+  let qd;
+  if (!qn) qd = ["red", "Nenhuma questão respondida."];
+  else if (per < 30) qd = ["red", `Média de ${clock(per)} por questão: rápido demais, sinal de chute.`];
+  else if (per < 60) qd = ["yellow", `Média de ${clock(per)} por questão: rápido; vale ler os comentários com calma.`];
+  else if (per <= 240) qd = ["green", `Média de ${clock(per)} por questão: bom ritmo (na prova, cerca de 3 min por questão).`];
+  else qd = ["yellow", `Média de ${clock(per)} por questão: lento para o ritmo da prova.`];
+  const readBlocks = Object.values(S.read).reduce((a, r) => a + r.length, 0), totBlocks = MISSIONS.reduce((a, m) => a + m.sections.length, 0);
+  return { rd, qd, flags, readBlocks, totBlocks };
+}
+function vReport(){
+  const t = totals(), pts = t.c * PTS, max = t.t * PTS, pct = Math.round(t.c / t.t * 100);
+  const lvl = pct >= 85 ? ["green","Excelente"] : pct >= 70 ? ["green","Competitivo"] : pct >= 50 ? ["yellow","Passa do mínimo, precisa melhorar"] : ["red","Abaixo do mínimo da prova (50%)"];
+  const A = analysis(), now = new Date(S.finishedAt || Date.now());
+  const cell = (m, k) => { const tt = stepTimes(m)[k], e = expected(m)[k]; const b = band(tt, e);
+    if (b.k === "na") return `<td class="na">—</td>`;
+    return `<td class="${b.k}"><b>${clock(tt)}</b><small>${b.t}</small></td>`; };
+  const rows = ALL.map(m => { const s = mStats(m), p = s.t ? s.c / s.t : 0;
+    const k = !s.a ? "red" : p >= .7 ? "green" : p >= .5 ? "yellow" : "red";
+    return `<tr><th scope="row">${SHORT[m.id]}</th>${cell(m,"leitura")}${cell(m,"flash")}${cell(m,"quiz")}<td class="${k}"><b>${s.c}/${s.t}</b></td></tr>`; }).join("");
+  return `<section class="report" id="report">
+    <div class="rp-head"><div><span class="rp-k">Relatório de estudo</span><b class="rp-name">${esc(S.name || "Estudante")}</b>
+      <span class="rp-sub">Direito Administrativo · UFBA 2026 · ${now.toLocaleDateString("pt-BR")} ${now.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })}</span></div>
+      <div class="rp-score ${lvl[0]}"><b>${pts}</b><span>de ${max} pts</span></div></div>
+    <div class="rp-verdict ${lvl[0]}">${pct}% de acertos (${t.c}/${t.t}) · ${lvl[1]}</div>
+    <div class="rp-stats"><div><b>${clock(S.active)}</b><span>estudando</span></div><div><b>${S.pauses}</b><span>pausas (${clock(S.pausedSec)})</span></div><div class="${S.leaves > 3 ? "red" : S.leaves ? "yellow" : ""}"><b>${S.leaves}</b><span>saídas da aba</span></div></div>
+    <div class="rp-tbl"><table><thead><tr><th>Etapa</th><th>Leitura</th><th>Cartões</th><th>Questões</th><th>Acertos</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <div class="rp-legend"><span><i class="green"></i>ok, no esperado</span><span><i class="yellow"></i>atenção</span><span><i class="red"></i>rápido ou lento demais</span></div>
+    <ul class="rp-an"><li class="${A.rd[0]}">${A.rd[1]} Blocos marcados como lidos: ${A.readBlocks}/${A.totBlocks}.</li><li class="${A.qd[0]}">${A.qd[1]}</li>
+      ${A.flags.slice(0, 2).map(f => `<li class="red">${f}</li>`).join("")}${A.flags.length > 2 ? `<li class="red">+${A.flags.length - 2} outros pontos em vermelho na tabela.</li>` : ""}</ul>
+    <p class="rp-foot">📸 Tire um print desta tela e envie para o seu pai.</p>
+    <p class="rp-note">Esperado: leitura ~110 palavras/min · cartões ~25 s cada · questões ~2 min cada.</p>
+  </section>
+  <div class="row" style="justify-content:center;margin:12px 0 18px"><button class="btn primary" id="copyRep">Copiar relatório em texto</button></div>
+  ${professorFinalQr()}`;
+}
+function reportText(){
+  const t = totals(), A = analysis();
+  const lines = ALL.map(m => { const tt = stepTimes(m), e = expected(m), s = mStats(m);
+    const part = (k, l) => e[k] ? ` ${l} ${clock(tt[k])} (${band(tt[k], e[k]).t})` : "";
+    return `• ${SHORT[m.id]}:${part("leitura","leitura")}${part("flash","cartões")}${part("quiz","questões")} — ${s.c}/${s.t}`; });
+  return `Relatório de ${S.name} — Direito Administrativo UFBA 2026\nPontuação: ${t.c * PTS}/${t.t * PTS} (${Math.round(t.c / t.t * 100)}%)\nTempo estudando: ${clock(S.active)} · Pausas: ${S.pauses} (${clock(S.pausedSec)}) · Saídas da aba: ${S.leaves}\n${lines.join("\n")}\n${A.rd[1]}\n${A.qd[1]}`;
+}
+
+/* ---------- boas-vindas (nome) ---------- */
+function vWelcome(){
+  return `<section class="panel welcome">
+    <h1>Olá! Qual é o seu nome?</h1>
+    <p class="muted">Ele aparece no relatório final, que você vai enviar para o seu pai.</p>
+    <form id="nameForm" class="row" autocomplete="off"><label class="sr" for="nameIn">Seu nome</label>
+      <input id="nameIn" class="name-in" maxlength="40" placeholder="Digite seu nome" required>
+      <button class="btn primary big" type="submit">Começar atividade</button></form>
+  </section>
+  <section class="panel warn">
+    <h2>📱 Antes de começar</h2>
+    <ul class="clean">
+      <li><b>Deixe esta aba aberta até o fim.</b> No celular, se você trocar de aplicativo ou fechar o navegador, a página pode recarregar e você pode perder a atividade.</li>
+      <li><b>Precisa parar?</b> Toque em <b>⏸️ Pausar</b> no topo. O tempo fica congelado até você tocar em <b>▶️ Continuar</b>.</li>
+      <li>O tempo também para sozinho se você ficar 4 minutos sem mexer na tela, e quando sai da aba — mas as saídas aparecem no relatório.</li>
+      <li>No final, aparece um <b>relatório</b> com tempos e pontuação. Tire um print e envie para o seu pai.</li>
+    </ul>
+  </section>`;
+}
+
+/* ---------- navegação ---------- */
+function go(name, extra = {}){
+  if (!S.name) name = "welcome";
+  V = Object.assign(V, { name }, extra);
+  if (name === "mission"){ startClock(); seen(V.mid, V.step); }
+  document.body.classList.remove("drawer");
+  $$("#toasts .toast:not([data-keep])").forEach(t => t.remove());
+  render(); window.scrollTo({ top: 0 }); const vw = $("#view"); vw.focus({ preventScroll: true });
+}
+function nextStepFor(m){
+  if (m.id === "sim") return "quiz";
+  const s = S.steps[m.id] || [];
+  const firstUnseen = STEPS.find(([k]) => !s.includes(k));
+  return firstUnseen ? firstUnseen[0] : "quiz";
+}
+function nextTarget(){
+  const m = ALL.find(x => !S.done[x.id] && (x.id !== "sim" || MISSIONS.every(mm => S.done[mm.id])))
+         || ALL.find(x => !S.done[x.id]);
+  if (!m) return { label: "Ver meu resultado final", fn: () => go("result") };
+  const st = nextStepFor(m);
+  const any = (S.steps[m.id] || []).length > 0 || mStats(m).a > 0;
+  const lab = m.id === "sim" ? "Fazer o simulado final" : (any ? "Continuar missão " + m.n : "Começar missão " + m.n);
+  return { label: lab, sub: m.title, fn: () => go("mission", { mid: m.id, step: st, qi: firstOpenQ(m), fi: 0, flipped: false, openSec: firstUnread(m) }) };
+}
+function firstOpenQ(m){ const i = m.quiz.findIndex(q => !S.ans[q.id]); return i < 0 ? m.quiz.length : i; }
+function firstUnread(m){ if (!m.sections) return 0; const r = S.read[m.id] || []; const i = m.sections.findIndex((_, k) => !r.includes(k)); return i < 0 ? -1 : i; }
+
+/* ---------- barra lateral (linha de metrô) ---------- */
+function renderSide(){
+  const cur = V.name === "mission" ? V.mid : V.name;
+  const t = totals();
+  const st = ALL.map(m => {
+    const s = mStats(m), done = !!S.done[m.id];
+    const meta = s.a ? `${s.c}/${s.t} acertos` : `${s.t} questões · ~${m.min} min`;
+    return `<li class="st ${done ? "done" : ""} ${cur === m.id ? "cur" : ""}" style="--mc:${m.color}">
+      <button data-mid="${m.id}" ${cur === m.id ? 'aria-current="page"' : ""}><span class="dot">${done ? "✓" : m.n}</span>
+      <span class="st-name">${m.id === "sim" ? "Simulado final" : esc(m.title)}<span class="st-meta">${meta}</span></span></button></li>`;
+  }).join("");
+  const finished = !!S.finishedAt;
+  $("#side").innerHTML = `
+    <p class="line-title">Sua trilha</p>
+    <ul class="stations">
+      <li class="st ${cur === "home" ? "cur" : ""}" style="--mc:var(--accent)"><button data-go="home"><span class="dot">⌂</span><span class="st-name">Início<span class="st-meta">Prova em ${daysLeft()} dias</span></span></button></li>
+      ${st}
+      <li class="st ${finished ? "done" : ""} ${cur === "result" ? "cur" : ""}" style="--mc:var(--reward)"><button data-go="result"><span class="dot">★</span><span class="st-name">Relatório final<span class="st-meta">${finished ? "Concluído" : t.a + "/" + t.t + " respondidas"}</span></span></button></li>
+    </ul>
+    <div class="side-links">
+      <button data-go="errors"><span>Caderno de erros</span><span class="count">${wrongIds().length}</span></button>
+      <button data-go="edital"><span>Mapa do edital (cargo 201)</span><span aria-hidden="true">📋</span></button>
+    </div>`;
+  $$("#side [data-mid]").forEach(b => b.onclick = () => { const m = byId(b.dataset.mid); go("mission", { mid: m.id, step: nextStepFor(m), qi: firstOpenQ(m), fi: 0, flipped: false, openSec: firstUnread(m) }); });
+}
+
+/* ---------- início ---------- */
+function vHome(){
+  const nt = nextTarget(), d = daysLeft(), t = totals();
+  const W = [["Específicos",60,"var(--c7)"],["Adm. Pública",12,"var(--c2)"],["Português",12,"var(--c3)"],["Informática",6,"var(--c5)"],["Redação",60,"var(--c4)"]];
+  const mob = `<div class="panel mobile-line"><h3>Missões</h3><div class="row">${ALL.map(m => `<button class="btn ghost" data-mid="${m.id}" style="border-left:5px solid ${m.color}">${m.id === "sim" ? "Simulado" : "Missão " + m.n}${S.done[m.id] ? " ✓" : ""}</button>`).join("")}</div></div>`;
+  return `
+  <section class="panel">
+    <p class="hero-count">${d > 0 ? `Faltam <span>${d}</span> dias.` : d === 0 ? `A prova é <span>hoje</span>.` : `Prova realizada.`}</p>
+    <p class="muted">Prova objetiva e redação da UFBA em 20 de dezembro de 2026, pela manhã, para o nível médio. Este módulo cobre os 7 itens de Direito Administrativo do cargo 201.</p>
+    <div class="row" style="margin-top:14px">
+      <button class="btn primary big" id="goNext">${nt.label}</button>
+      ${t.a ? `<span class="muted">${t.c * PTS} pts · ${t.a} de ${t.t} questões respondidas</span>` : ""}
+    </div>
+    ${nt.sub ? `<p class="muted" style="margin:.6em 0 0">${esc(nt.sub)}</p>` : ""}
+  </section>
+  ${mob}
+  <section class="panel">
+    <h2>Onde estão os pontos</h2>
+    <p class="muted">150 pontos no total: 90 na objetiva (60 questões, 5 alternativas cada) e 60 na redação. Quem fizer menos de 50% da objetiva ou zerar alguma área é eliminado.</p>
+    <div class="weights" role="img" aria-label="Distribuição dos 150 pontos: Conhecimentos Específicos 60, Administração Pública 12, Português 12, Informática 6, Redação 60">
+      ${W.map(([n,v,c]) => `<div style="flex:${v};background:${c}" title="${n}: ${v} pontos">${v >= 12 ? v : ""}</div>`).join("")}
+    </div>
+    <div class="legend">${W.map(([n,v,c]) => `<span><i style="background:${c}"></i>${n} ${v}</span>`).join("")}</div>
+    <p class="hint" style="margin-top:14px">Cada questão de Conhecimentos Específicos vale 2 pontos — o dobro das comuns. Por isso, aqui, cada acerto soma 2 pontos no placar.</p>
+  </section>
+  <section class="panel">
+    <h2>Como estudar aqui</h2>
+    <div class="how">
+      <div><b>Uma missão por vez</b>Cada missão leva de 25 a 50 minutos. Faça uma e pare.</div>
+      <div><b>Cinco etapas curtas</b>Resumo, Entenda, Pegadinhas, Flashcards e Questões.</div>
+      <div><b>O primeiro clique conta</b>Como na prova. Errou? A questão vai para o caderno de erros.</div>
+      <div><b>Tempo real</b>O cronômetro pausa sozinho se você se afastar por 4 minutos.</div>
+    </div>
+    <p class="kbd-hint">Atalhos: <kbd>A</kbd>–<kbd>E</kbd> respondem, <kbd>Enter</kbd> avança, <kbd>Espaço</kbd> vira o flashcard, <kbd>F</kbd> liga o modo foco.</p>
+  </section>`;
+}
+
+/* ---------- missão ---------- */
+function vMission(){
+  const m = byId(V.mid); const isSim = m.id === "sim";
+  const steps = isSim ? [["quiz","Questões"]] : STEPS;
+  const seenS = S.steps[m.id] || [];
+  const head = `
+  <section class="panel m-head" style="--mc:${m.color}">
+    <div class="m-kicker">${isSim ? "Simulado final" : "Missão " + m.n + " de 7"} · ~${m.min} min</div>
+    <h1>${esc(m.title)}</h1>
+    ${m.edital ? `<p class="muted" style="margin:0 0 .5em">${m.edital}</p>` : `<p class="muted">12 questões inéditas misturando todas as missões. Ritmo de prova: cerca de 3 minutos por questão.</p>`}
+    ${m.twoInOne ? `<span class="tag two">2 em 1 · ${m.twoInOne}</span>` : ""}
+    <nav class="steps" aria-label="Etapas da missão">${steps.map(([k,l],i) => `<button data-step="${k}" class="${seenS.includes(k) ? "seen" : ""}" ${V.step === k ? 'aria-current="step"' : ""}><span class="n">${seenS.includes(k) ? "✓" : i+1}</span>${l}</button>`).join("")}</nav>
+  </section>`;
+  let body = "";
+  if (V.step === "resumo") body = stResumo(m);
+  else if (V.step === "entenda") body = stEntenda(m);
+  else if (V.step === "pegadinhas") body = stTraps(m);
+  else if (V.step === "flash") body = stFlash(m);
+  else body = stQuiz(m);
+  return head + `<section class="panel" style="--mc:${m.color}">${body}</section>`;
+}
+function nextBtn(m, cur){
+  const i = STEPS.findIndex(([k]) => k === cur); const n = STEPS[i+1];
+  return n ? `<div class="next-row"><span class="muted">Próxima etapa: ${n[1]}</span><button class="btn primary" data-step="${n[0]}">Ir para ${n[1].toLowerCase()}</button></div>` : "";
+}
+function stResumo(m){
+  return `<h2>Em 30 segundos</h2><p class="muted">Leia os quatro cartões. Depois tente repetir em voz alta, sem olhar.</p>
+    <div class="sum-grid">${m.summary.map(([k,v]) => `<div class="sum"><span class="k">${k}</span><p>${v}</p></div>`).join("")}</div>${nextBtn(m,"resumo")}`;
+}
+function stEntenda(m){
+  const r = S.read[m.id] || [];
+  const tot = m.sections.length;
+  return `<h2>Entenda, um bloco de cada vez</h2><p class="muted">${r.length} de ${tot} blocos lidos. Abra um, leia e marque “Entendi” para seguir ao próximo.</p>
+  ${m.sections.map((s,i) => {
+    const open = V.openSec === i;
+    return `<div class="acc ${open ? "open" : ""} ${r.includes(i) ? "read" : ""}">
+      <button data-acc="${i}" aria-expanded="${open}"><span class="chk" aria-hidden="true">${r.includes(i) ? "✓" : i+1}</span>${s.t}<span class="mins">~${Math.max(2, Math.round(s.h.replace(/<[^>]+>/g,"").split(/\s+/).length / 150))} min</span></button>
+      ${open ? `<div class="acc-body">${s.h}<div class="row end"><button class="btn primary" data-read="${i}">${i < tot-1 ? "Entendi, próximo bloco" : "Entendi, terminei"}</button></div></div>` : ""}
+    </div>`; }).join("")}
+  ${nextBtn(m,"entenda")}`;
+}
+function stTraps(m){
+  return `<h2>Pegadinhas que a banca adora</h2><p class="muted">Cada frase abaixo parece certa e está errada. Leia a correção em negrito.</p>
+    <ul class="trap-list">${m.traps.map(t => `<li>${t}</li>`).join("")}</ul>
+    <h2>Macetes</h2><div class="mn">${m.mnemonics.map(([a,b]) => `<div><b>${a}</b>${b}</div>`).join("")}</div>${nextBtn(m,"pegadinhas")}`;
+}
+function deckOrder(m){ // cartões ainda não sabidos primeiro
+  return m.flash.map((c,i) => i).sort((a,b) => ((S.flash[m.id+":"+a] === "sei") - (S.flash[m.id+":"+b] === "sei")));
+}
+function stFlash(m){
+  if (!V.deck || V.deckMid !== m.id){ V.deck = deckOrder(m); V.deckMid = m.id; V.fi = 0; }
+  const order = V.deck; if (V.fi >= order.length) V.fi = 0;
+  const idx = order[V.fi], c = m.flash[idx];
+  const known = m.flash.filter((_,i) => S.flash[m.id+":"+i] === "sei").length;
+  return `<h2>Flashcards</h2><p class="muted">Tente responder de cabeça antes de virar. Recuperar da memória fixa mais do que reler.</p>
+    <div class="fc-meta"><span>Cartão ${V.fi+1} de ${order.length}</span><span>${known} de ${m.flash.length} já sabidos</span></div>
+    <div class="flash-wrap"><button class="flash ${V.flipped ? "flipped" : ""}" id="card" aria-label="${V.flipped ? "Resposta: " + esc(c[1]) : "Pergunta: " + esc(c[0]) + ". Clique para ver a resposta."}">
+      <span class="face front">${c[0]}<small>Toque ou Espaço para virar</small></span>
+      <span class="face back">${c[1]}<small>Você sabia?</small></span></button></div>
+    <div class="row" style="justify-content:center;margin-top:14px">
+      <button class="btn ghost" data-fc="rever" ${V.flipped ? "" : "disabled"}>Ainda não (2)</button>
+      <button class="btn primary" data-fc="sei" ${V.flipped ? "" : "disabled"}>Eu sabia (1)</button>
+    </div>${nextBtn(m,"flash")}`;
+}
+function stQuiz(m){
+  const qs = m.quiz;
+  const dots = `<div class="qdots" aria-label="Questões">${qs.map((q,i) => { const r = S.ans[q.id];
+    return `<button data-qi="${i}" class="${r ? (r.c ? "ok" : "no") : ""} ${V.qi === i ? "now" : ""}" aria-label="Questão ${i+1}${r ? (r.c ? ", acertou" : ", errou") : ""}">${i+1}</button>`; }).join("")}</div>`;
+  if (V.qi >= qs.length) return dots + quizSummary(m);
+  const q = qs[V.qi], r = S.ans[q.id];
+  const opts = q.o.map((o,i) => {
+    let cls = ""; if (r){ if (i === q.a) cls = "right"; else if (i === r.pick) cls = "wrong"; else cls = "dim"; }
+    return `<button class="opt ${cls}" data-opt="${i}" ${r ? "disabled" : ""}><span class="L">${LETTERS[i]}</span><span>${o}</span></button>`; }).join("");
+  const fb = r ? `<div class="fb ${r.c ? "ok" : "no"}" role="status"><b>${r.c ? "Certo! +" + PTS + " pontos." : "Resposta correta: " + LETTERS[q.a] + "."}</b>${q.e}</div>
+    <div class="next-row"><span class="muted">${V.qi+1} de ${qs.length}</span><button class="btn primary" id="qNext">${V.qi < qs.length-1 ? "Próxima questão" : "Ver fechamento"}</button></div>` : "";
+  return dots + `<p class="muted" style="margin-bottom:6px">Questão ${V.qi+1} de ${qs.length} · vale ${PTS} pontos</p>
+    <p class="qtext">${q.q}</p><div class="opts" role="group" aria-label="Alternativas">${opts}</div>${fb}
+    ${r ? "" : `<p class="kbd-hint">Responda com <kbd>A</kbd>–<kbd>E</kbd> ou <kbd>1</kbd>–<kbd>5</kbd>.</p>`}`;
+}
+function quizSummary(m){
+  const s = mStats(m), all = s.a === s.t, pct = s.t ? Math.round(s.c / s.t * 100) : 0, isSim = m.id === "sim";
+  if (!all) return `<h2>Faltam ${s.t - s.a} questões</h2><p>Use os números acima para voltar às questões em aberto.</p>`;
+  const conf = S.done[m.id] || "";
+  const nextM = ALL[ALL.indexOf(m) + 1];
+  return `<h2>${isSim ? "Simulado concluído" : "Fechamento da missão " + m.n}</h2>
+    <div class="stat-row">
+      <div class="stat"><b>${s.c}/${s.t}</b><span>acertos (${pct}%)</span></div>
+      <div class="stat"><b>${s.c * PTS}</b><span>pontos de ${s.t * PTS}</span></div>
+      <div class="stat"><b>${clock(S.msec[m.id] || 0)}</b><span>tempo nesta ${isSim ? "etapa" : "missão"}</span></div>
+    </div>
+    ${isSim ? "" : `<p><b>Quão seguro você se sente neste assunto?</b> Sua resposta ajuda a decidir o que revisar primeiro.</p>
+    <div class="conf" role="group" aria-label="Confiança">${[["baixa","Preciso rever"],["media","Quase lá"],["alta","Domino"]].map(([k,l]) => `<button data-conf="${k}" aria-pressed="${conf === k}">${l}</button>`).join("")}</div>`}
+    ${professorMissionQr(m)}
+    <div class="next-row">${s.c < s.t ? `<button class="btn ghost" data-go="errors">Revisar erros</button>` : "<span></span>"}
+      ${isSim || !nextM ? `<button class="btn primary" data-go="result">Ver relatório final</button>`
+        : `<button class="btn primary" id="toNext" ${conf ? "" : "disabled"}>${conf ? "Ir para a " + (nextM.id === "sim" ? "etapa final: simulado" : "missão " + nextM.n) : "Escolha sua confiança acima"}</button>`}</div>`;
+}
+
+/* ---------- caderno de erros ---------- */
+function vErrors(){
+  const ids = wrongIds();
+  if (V.practiceIds){
+    const list = V.practiceIds; if (V.pi >= list.length) return `<section class="panel"><h1>Revisão concluída</h1>
+      <p>Você recuperou ${list.filter(id => S.practice[id]).length} de ${list.length} questões. A nota original não muda: o placar mede o primeiro contato, como na prova.</p>
+      <div class="row"><button class="btn primary" id="endPractice">Voltar ao caderno</button></div></section>`;
+    const q = QMAP[list[V.pi]], pk = V.ppick;
+    const opts = q.o.map((o,i) => { let cls = ""; if (pk != null){ if (i === q.a) cls = "right"; else if (i === pk) cls = "wrong"; else cls = "dim"; }
+      return `<button class="opt ${cls}" data-popt="${i}" ${pk != null ? "disabled" : ""}><span class="L">${LETTERS[i]}</span><span>${o}</span></button>`; }).join("");
+    const m = byId(q.mid);
+    return `<section class="panel" style="--mc:${m.color}"><p class="muted">Revisão ${V.pi+1} de ${list.length} · ${m.id === "sim" ? "Simulado" : "Missão " + m.n}</p>
+      <p class="qtext">${q.q}</p><div class="opts">${opts}</div>
+      ${pk != null ? `<div class="fb ${pk === q.a ? "ok" : "no"}"><b>${pk === q.a ? "Recuperou!" : "Resposta correta: " + LETTERS[q.a] + "."}</b>${q.e}</div>
+      <div class="next-row"><span></span><button class="btn primary" id="pNext">Próxima</button></div>` : ""}</section>`;
+  }
+  return `<section class="panel"><h1>Caderno de erros</h1>
+    <p class="muted">Errar aqui é bom: mostra o que revisar antes de 20 de dezembro. Refazer não altera sua nota original.</p>
+    ${ids.length ? `<div class="row" style="margin:12px 0 18px"><button class="btn primary" id="doPractice">Refazer as ${ids.length} questões</button></div>
+      ${ids.map(id => { const q = QMAP[id], m = byId(q.mid);
+        return `<div class="acc" style="--mc:${m.color}"><div class="acc-body" style="padding-top:14px"><span class="tag">${m.id === "sim" ? "Simulado" : "Missão " + m.n}</span> ${S.practice[id] ? '<span class="tag two">recuperada</span>' : ""}
+          <p style="margin:.6em 0 .3em"><b>${q.q}</b></p><p class="muted" style="margin:0">Correta: ${LETTERS[q.a]}) ${q.o[q.a]}</p></div></div>`; }).join("")}`
+      : `<p>Nenhum erro registrado. Responda questões nas missões para alimentar o caderno.</p>`}
+  </section>`;
+}
+
+/* ---------- mapa do edital ---------- */
+function vEdital(){
+  return `<section class="panel"><h1>Mapa do edital — cargo 201</h1>
+    <p class="muted">Edital nº 7/2026, Tabela 10.1. Marque o que você já estudou; a lista fica salva neste navegador.</p>
+    ${EDITAL.map(a => `<div class="ed-area"><h3>${a.area}<small>${a.weight}</small></h3>
+      ${a.items.map(([id,t,n]) => `<label class="ed-item"><input type="checkbox" data-ed="${id}" ${S.edital[id] ? "checked" : ""}><span>${t}${n ? `<small>${n}</small>` : ""}</span></label>`).join("")}</div>`).join("")}
+    <p class="hint">Missões marcadas como “2 em 1” adiantam parte de Administração Pública (Conhecimentos Comuns).</p></section>`;
+}
+
+/* ---------- resultado ---------- */
+function vResult(){
+  const t = totals(), max = t.t * PTS, pts = t.c * PTS;
+  const pctAll = Math.round(t.c / t.t * 100), pctAns = t.a ? Math.round(t.c / t.a * 100) : 0;
+  const finished = !!S.finishedAt;
+  const wall = S.started ? ((S.finishedAt || Date.now()) - S.started) / 1000 : 0;
+  const ref = finished ? pctAll : pctAns;
+  let verdict;
+  if (!t.a) verdict = ["Ainda sem questões respondidas.", "Comece pela missão 1 para ver seu desempenho aqui."];
+  else if (ref < 50) verdict = ["Zona de risco.", "Abaixo de 50% é a linha de eliminação da objetiva. Revise o caderno de erros e refaça as missões mais fracas."];
+  else if (ref < 70) verdict = ["Passaria do corte mínimo, mas ainda não é competitivo.", "Com 94 vagas e muita concorrência, mire acima de 70% nos treinos. Foque nas missões com barra mais curta."];
+  else if (ref < 85) verdict = ["Competitivo.", "Bom nível. Refaça os erros daqui a 3 dias e daqui a 1 semana para consolidar."];
+  else verdict = ["Excelente.", "Domínio forte. Mantenha com revisões curtas e avance para os próximos blocos do edital."];
+  const proj = Math.round(ref / 100 * 60);
+  const rows = ALL.map(m => { const s = mStats(m), p = s.t ? Math.round(s.c / s.t * 100) : 0;
+    return `<div class="bar-row"><span>${m.id === "sim" ? "Simulado" : m.n + ". " + esc(m.title)}</span><div class="bar"><i style="width:${s.a ? p : 0}%;background:${m.color}"></i></div>
+      <span class="muted" style="font-variant-numeric:tabular-nums">${s.a ? s.c + "/" + s.t : "—"} · ${clock(S.msec[m.id] || 0)}</span></div>`; }).join("");
+  return vReport() + `<h2 style="margin:8px 0 12px">Detalhes</h2><section class="panel">
+    <p class="m-kicker" style="--mc:var(--reward)">${finished ? "Módulo concluído em " + new Date(S.finishedAt).toLocaleDateString("pt-BR") : "Resultado parcial"}</p>
+    <div class="score-big"><b>${pts}</b><span>de ${max} pontos</span></div>
+    <p class="muted">${t.c} acertos em ${t.t} questões (${pctAll}% do total${finished ? "" : ` · ${pctAns}% das ${t.a} respondidas`}). Cada acerto vale 2 pontos, como nos Conhecimentos Específicos.</p>
+    <div class="gauge" role="img" aria-label="Aproveitamento de ${ref}%. Linha de eliminação em 50%, meta de treino em 70%.">
+      <div class="fill" style="width:${ref}%"></div>
+      <div class="mk" style="left:50%"><span>50% eliminação</span></div><div class="mk" style="left:70%"><span>70% meta</span></div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><b>${clock(S.active)}</b><span>tempo ativo de estudo</span></div>
+      <div class="stat"><b>${S.started ? fmtDur(wall) : "—"}</b><span>do início ${finished ? "à conclusão" : "até agora"}</span></div>
+      <div class="stat"><b>${S.best}</b><span>maior sequência de acertos</span></div>
+      <div class="stat"><b>~${proj}/60</b><span>projeção nos Específicos com esse ritmo</span></div>
+    </div>
+    <div class="verdict"><b>${verdict[0]}</b> ${verdict[1]}</div>
+  </section>
+  <section class="panel"><h2>Por missão</h2><p class="muted">Acertos e tempo gasto. A barra mais curta é a próxima revisão.</p><div class="bars">${rows}</div></section>
+  <section class="panel"><h2>Próximos passos</h2>
+    <div class="row"><button class="btn primary" data-go="errors">Refazer o que errei (${wrongIds().length})</button>
+    <button class="btn ghost" id="copyRes">Copiar resumo</button>
+    <button class="btn ghost" id="resetAll">Recomeçar do zero</button></div>
+    <p class="hint" style="margin-top:14px">O tempo ativo pausa quando a aba fica oculta ou quando você passa 4 minutos sem interagir; o outro tempo conta o calendário, do primeiro clique até a última questão.</p>
+  </section>`;
+}
+function fmtDur(s){ const d = Math.floor(s/86400); return d >= 1 ? d + (d === 1 ? " dia " : " dias ") + Math.floor(s%86400/3600) + "h" : clock(s); }
+
+/* ---------- ajustes ---------- */
+function openSettings(){
+  const p = S.prefs;
+  const seg = (key, opts) => `<div class="seg" role="group">${opts.map(([v,l]) => `<button data-pref="${key}" data-val="${v}" aria-pressed="${String(p[key]) === String(v)}">${l}</button>`).join("")}</div>`;
+  const tog = (key, on) => `<button class="toggle" data-tog="${key}" aria-pressed="${on}" aria-label="Alternar"></button>`;
+  $("#sheet").innerHTML = `<div class="panel"><div class="row"><h2 id="setTitle" style="margin:0">Ajustes de leitura</h2><span class="spacer"></span><button class="icon-btn" id="closeSet" aria-label="Fechar">✕</button></div>
+    <div class="set"><span>Tema</span>${seg("theme",[["auto","Auto"],["light","Claro"],["dark","Escuro"]])}</div>
+    <div class="set"><span>Fonte<small>Lexend e Atkinson foram desenhadas para leitura fácil</small></span>${seg("font",[["lexend","Lexend"],["atkinson","Atkinson"],["system","Sistema"]])}</div>
+    <div class="set"><span>Tamanho do texto</span>${seg("size",[[0,"A−"],[1,"A"],[2,"A+"],[3,"A++"]])}</div>
+    <div class="set"><span>Espaçamento</span>${seg("spacing",[["normal","Normal"],["wide","Amplo"]])}</div>
+    <div class="set"><span>Régua de leitura<small>Faixa que acompanha o cursor e ajuda a não perder a linha</small></span>${tog("ruler", !!p.ruler)}</div>
+    <div class="set"><span>Animações</span>${seg("motion",[["on","Ligadas"],["off","Desligadas"]])}</div>
+    <div class="set"><span>Duração do bloco de foco</span>${seg("pomo",[[15,"15 min"],[25,"25 min"],[40,"40 min"]])}</div>
+    <div class="set"><span>Som no fim do bloco</span>${tog("sound", !!p.sound)}</div>
+    <div class="set"><span>Pausar cronômetro quando inativo<small>Depois de 4 minutos sem interação</small></span>${tog("idle", !!p.idle)}</div>
+    <div class="set"><span>Progresso salvo<small>Fica só neste navegador</small></span><button class="btn ghost" id="resetAll2">Apagar tudo</button></div></div>`;
+  $("#sheet").classList.add("open"); $("#closeSet").focus();
+}
+function closeSettings(){ $("#sheet").classList.remove("open"); $("#setBtn").focus(); }
+function resetAll(){ if (!confirm("Apagar todo o progresso, pontos e tempo deste módulo neste navegador?")) return;
+  const keep = S.prefs; S = def(); S.prefs = keep; save(); pauseStartAt = null; V.name = "welcome"; P = { mode:"off", end:0 }; paintPomo(); closeSettings(); render(); toast("Tudo apagado. Digite o nome para recomeçar."); }
+
+/* ---------- render ---------- */
+function render(){
+  document.body.classList.toggle("gate", !S.name);
+  if (!S.name) V.name = "welcome";
+  renderSide(); paintTop(); paintPause();
+  const vw = $("#view");
+  vw.innerHTML = V.name === "welcome" ? vWelcome() : V.name === "home" ? vHome() : V.name === "mission" ? vMission() : V.name === "errors" ? vErrors() : V.name === "edital" ? vEdital() : vResult();
+  setTimeout(drawProfessorQrs, 0);
+  $("#focusBtn").setAttribute("aria-pressed", document.body.classList.contains("focus"));
+  if (V.name === "welcome"){ const f = $("#nameForm"); f.onsubmit = ev => { ev.preventDefault(); const n = $("#nameIn").value.trim(); if (!n) return;
+    S.name = n; startClock(); save(); toast(`Bem-vinda, ${esc(n)}! O tempo começou a contar.`); nextTarget().fn(); }; setTimeout(() => $("#nameIn").focus(), 50); }
+}
+
+/* ---------- ações ---------- */
+function answer(i, el){
+  const m = byId(V.mid), q = m.quiz[V.qi]; if (!q || S.ans[q.id]) return;
+  startClock();
+  const c = i === q.a; S.ans[q.id] = { pick: i, c, t: Date.now() };
+  S.streak = c ? S.streak + 1 : 0; S.best = Math.max(S.best, S.streak);
+  seen(m.id, "quiz");
+  if (m.id === "sim" && mStats(m).a === m.quiz.length) S.done.sim = "ok";
+  touch(); save();
+  render();
+  const btn = $(`[data-opt="${i}"]`);
+  if (c && btn) floaty(btn, "+" + PTS);
+  if (S.streak === 5 || S.streak === 10) toast(`${S.streak} acertos seguidos. Continue assim!`);
+  if (!S.finishedAt && totals().a === TOTAL_Q){ S.finishedAt = Date.now(); S.paused = false; save(); setTimeout(() => go("result"), 2500);
+    toast("Você respondeu todas as questões do módulo.", [["Ver relatório", () => go("result")]], 15000); }
+  const n = $("#qNext"); if (n) n.focus({ preventScroll: true });
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("button, input"); if (!b) return;
+  if (b.matches("#homeBtn")) return go("home");
+  if (b.matches("#goNext")) return nextTarget().fn();
+  if (b.dataset.go) return go(b.dataset.go, b.dataset.go === "errors" ? { practiceIds: null } : {});
+  if (b.dataset.mid && b.closest("#view")){ const m = byId(b.dataset.mid); return go("mission", { mid: m.id, step: nextStepFor(m), qi: firstOpenQ(m), fi: 0, flipped: false, openSec: firstUnread(m) }); }
+  if (b.dataset.step){ V.step = b.dataset.step; if (V.step === "flash"){ V.fi = 0; V.flipped = false; V.deck = null; } if (V.step === "quiz"){ V.qi = firstOpenQ(byId(V.mid)); }
+    if (V.step === "entenda") V.openSec = firstUnread(byId(V.mid));
+    seen(V.mid, V.step); render(); window.scrollTo({ top: 0 }); return; }
+  if (b.dataset.acc != null){ const i = +b.dataset.acc; V.openSec = V.openSec === i ? -1 : i; render();
+    const el = $(`[data-acc="${i}"]`); if (el) el.scrollIntoView({ block: "start", behavior: S.prefs.motion === "off" ? "auto" : "smooth" }); return; }
+  if (b.dataset.read != null){ const i = +b.dataset.read, m = byId(V.mid); S.read[m.id] = S.read[m.id] || []; if (!S.read[m.id].includes(i)) S.read[m.id].push(i); touch();
+    const nxt = m.sections.findIndex((_,k) => !S.read[m.id].includes(k)); V.openSec = nxt; render();
+    if (nxt >= 0){ const el = $(`[data-acc="${nxt}"]`); if (el) el.scrollIntoView({ block: "start", behavior: S.prefs.motion === "off" ? "auto" : "smooth" }); }
+    else toast("Todos os blocos lidos. Agora, as pegadinhas.", [["Ir", () => { V.step = "pegadinhas"; seen(V.mid, "pegadinhas"); render(); window.scrollTo({ top: 0 }); }]]);
+    return; }
+  if (b.id === "card"){ V.flipped = !V.flipped; $("#card").classList.toggle("flipped", V.flipped); $$("[data-fc]").forEach(x => x.disabled = !V.flipped);
+    $("#card").setAttribute("aria-label", V.flipped ? "Resposta mostrada" : "Pergunta"); return; }
+  if (b.dataset.fc){ const m = byId(V.mid), idx = V.deck[V.fi]; S.flash[m.id+":"+idx] = b.dataset.fc; touch(); startClock();
+    V.fi++; V.flipped = false;
+    if (V.fi >= V.deck.length){ V.deck = null; const k = m.flash.filter((_,i) => S.flash[m.id+":"+i] === "sei").length;
+      toast(k === m.flash.length ? "Baralho dominado! Hora das questões." : `Rodada completa: ${k} de ${m.flash.length} sabidos. Os que faltam voltam primeiro.`,
+        k === m.flash.length ? [["Ir às questões", () => { V.step = "quiz"; V.qi = firstOpenQ(m); seen(m.id,"quiz"); render(); window.scrollTo({top:0}); }]] : []); }
+    render(); return; }
+  if (b.dataset.qi != null){ V.qi = +b.dataset.qi; render(); return; }
+  if (b.dataset.opt != null) return answer(+b.dataset.opt, b);
+  if (b.id === "qNext"){ const m = byId(V.mid); const open = m.quiz.findIndex((q,k) => k > V.qi && !S.ans[q.id]);
+    V.qi = open >= 0 ? open : (m.quiz.findIndex(q => !S.ans[q.id]) >= 0 ? m.quiz.findIndex(q => !S.ans[q.id]) : m.quiz.length); render(); window.scrollTo({ top: 0 }); return; }
+  if (b.dataset.conf){ S.done[V.mid] = b.dataset.conf; touch(); save(); render(); return; }
+  if (b.id === "toNext"){ const m = byId(V.mid), n = ALL[ALL.indexOf(m) + 1]; return go("mission", { mid: n.id, step: nextStepFor(n), qi: firstOpenQ(n), fi: 0, flipped: false, openSec: firstUnread(n) }); }
+  if (b.id === "doPractice"){ V.practiceIds = wrongIds(); V.pi = 0; V.ppick = null; render(); return; }
+  if (b.dataset.popt != null){ const id = V.practiceIds[V.pi], q = QMAP[id]; V.ppick = +b.dataset.popt; if (V.ppick === q.a) S.practice[id] = true; touch(); render(); return; }
+  if (b.id === "pNext"){ V.pi++; V.ppick = null; render(); window.scrollTo({ top: 0 }); return; }
+  if (b.id === "endPractice"){ V.practiceIds = null; render(); return; }
+  if (b.dataset.ed){ S.edital[b.dataset.ed] = b.checked; touch(); return; }
+  if (b.id === "copyRes"){ const t = totals(); const txt = `UFBA 2026 — Direito Administrativo: ${t.c * PTS}/${t.t * PTS} pts (${t.c}/${t.t} acertos), tempo ativo ${clock(S.active)}.`;
+    const ok = () => toast("Resumo copiado."), fail = () => toast(txt, [], 12000);
+    try { navigator.clipboard.writeText(txt).then(ok, fail); } catch (err) { fail(); } return; }
+  if (b.id === "resetAll" || b.id === "resetAll2" || b.id === "resetPause") return resetAll();
+  if (b.id === "pauseBtn") return setPause(!S.paused);
+  if (b.id === "resumeBtn") return setPause(false);
+  if (b.id === "copyRep"){ const txt = reportText(); const fail = () => toast("Não deu para copiar aqui. Use o print da tela.", [], 6000);
+    try { navigator.clipboard.writeText(txt).then(() => toast("Relatório copiado. Cole no WhatsApp do seu pai."), fail); } catch (err) { fail(); } return; }
+  if (b.dataset.copyPqr){
+    const raw = decodeURIComponent(b.dataset.copyPqr);
+    const fail = () => { try { prompt("Copie o conteúdo abaixo para leitura manual no Painel do Professor:", raw); } catch (err) {} };
+    try { navigator.clipboard.writeText(raw).then(() => toast("Conteúdo do QR copiado."), fail); } catch (err) { fail(); }
+    return;
+  }
+  if (b.id === "menuBtn"){ document.body.classList.add("drawer"); const f = $("#side button"); if (f) f.focus(); return; }
+  if (b.id === "focusBtn"){ document.body.classList.toggle("focus"); b.setAttribute("aria-pressed", document.body.classList.contains("focus")); return; }
+  if (b.id === "setBtn") return openSettings();
+  if (b.id === "closeSet") return closeSettings();
+  if (b.id === "pomoBtn"){ if (P.mode === "off"){ pomoStart("focus"); startClock(); toast(`Bloco de ${S.prefs.pomo} minutos começou. Só esta missão agora.`); } else { P = { mode:"off", end:0 }; paintPomo(); } return; }
+  if (b.dataset.pref){ let v = b.dataset.val; if (b.dataset.pref === "size" || b.dataset.pref === "pomo") v = +v; S.prefs[b.dataset.pref] = v; touch(); save(); applyPrefs(); paintPomo(); openSettings(); return; }
+  if (b.dataset.tog){ S.prefs[b.dataset.tog] = !S.prefs[b.dataset.tog]; touch(); save(); applyPrefs(); openSettings(); return; }
+});
+$("#scrim").onclick = () => document.body.classList.remove("drawer");
+$("#sheet").addEventListener("click", e => { if (e.target.id === "sheet") closeSettings(); });
+
+/* ---------- teclado ---------- */
+document.addEventListener("keydown", e => {
+  if (e.target.matches("input, textarea, select") || e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key;
+  if ((k === " " || k === "Enter") && e.target.closest && e.target.closest("button")) return;
+  if (k === "Escape"){ if ($("#sheet").classList.contains("open")) closeSettings(); document.body.classList.remove("drawer"); return; }
+  if ($("#sheet").classList.contains("open") || S.paused || !S.name) return;
+  if (k === "f" || k === "F"){ $("#focusBtn").click(); return; }
+  if (V.name === "mission" && V.step === "quiz"){
+    const m = byId(V.mid), q = m.quiz[V.qi];
+    let i = "abcde".indexOf(k.toLowerCase()); if (i < 0) i = "12345".indexOf(k);
+    if (q && i >= 0 && !S.ans[q.id]){ e.preventDefault(); answer(i); return; }
+    if ((k === "Enter" || k === "ArrowRight") && $("#qNext")){ e.preventDefault(); $("#qNext").click(); return; }
+  }
+  if (V.name === "mission" && V.step === "flash"){
+    if (k === " "){ e.preventDefault(); $("#card").click(); return; }
+    if (V.flipped && (k === "1" || k === "2")){ $(`[data-fc="${k === "1" ? "sei" : "rever"}"]`).click(); return; }
+  }
+  if (V.name === "errors" && V.practiceIds && V.ppick == null){ let i = "abcde".indexOf(k.toLowerCase()); if (i < 0) i = "12345".indexOf(k);
+    if (i >= 0){ const b = $(`[data-popt="${i}"]`); if (b) b.click(); } }
+  else if (V.name === "errors" && V.practiceIds && k === "Enter" && $("#pNext")) $("#pNext").click();
+});
+
+/* ---------- régua de leitura ---------- */
+window.addEventListener("pointermove", e => { if (S.prefs.ruler) $("#ruler").style.top = e.clientY + "px"; }, { passive: true });
+
+document.addEventListener("visibilitychange", () => {
+  const active = S.started && !S.finishedAt && !S.paused;
+  if (document.visibilityState === "hidden"){ if (active){ S.leaves++; touch(); } save(); }
+  else if (active) toast("Você saiu da aba. Deixe esta aba aberta até terminar; para parar, use ⏸ Pausar.", [], 7000);
+});
+window.addEventListener("beforeunload", e => { save(); if (S.started && !S.finishedAt && !S.paused){ e.preventDefault(); e.returnValue = ""; } });
+applyPrefs(); paintPomo(); render();
+})();
+
+</script>
+</body>
+</html>
